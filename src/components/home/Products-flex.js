@@ -7,13 +7,13 @@ import Col from "react-bootstrap/Col";
 import styled from "styled-components";
 
 const ProductContainer = styled.div`
-  margin: 0 3%;
+  padding: 0 3%;
 `;
 
 const ProductsAll = () => {
   return (
     <ProductContainer>
-      <Container fluid style={{padding: "5% 3% 10% 3%"}}>
+      <Container fluid style={{padding: "5% 0 10% 0"}}>
         <Row>
           <Col sm={4} md={3}>
             <ProductItem />

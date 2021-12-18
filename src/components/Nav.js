@@ -1,7 +1,3 @@
-import { useState } from "react";
-
-import NavOnHover from "./NavOnHover";
-
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -45,31 +41,12 @@ const Right = styled.div`
   justify-content: flex-end;
 `;
 
-const timeoutLength = 300;
-
-const Navigation = () => {
-  const [shopAllMenu, setShopAllMenu] = useState({
-    mouseOnShopAll: false,
-    mouseOnShopAllOptions: false,
-  });
-
-  const handleShopAllMouseEnter = (target) => {
-    setShopAllMenu({ target: true });
-  };
-
-  const handleShopAllMouseLeave = (target) => {
-    setTimeout(() => {
-      setShopAllMenu({ target: false });
-    }, timeoutLength);
-  };
-
+const Navbar = (props) => {
   return (
-    <div>
       <Container>
         <Left>
           <LeftItem
-            onMouseEnter={handleShopAllMouseEnter("mouseOnShopAll")}
-            onMouseLeave={handleShopAllMouseLeave("mouseOnShopAll")}
+            onMouseEnter={() => props.handleShopAllMouseEnter("mouseOnShopAll")}
           >
             SHOP ALL
           </LeftItem>
@@ -99,18 +76,7 @@ const Navigation = () => {
           </span>
         </Right>
       </Container>
-      <div
-        style={`display: ${
-          shopAllMenu.mouseOnShopAll === true ||
-          shopAllMenu.mouseOnShopAllOptions === true
-            ? "block"
-            : "none"
-        }`}
-      >
-        <NavOnHover handleShopAllMouseEnter={handleShopAllMouseEnter} handleShopAllMouseLeave={handleShopAllMouseLeave}/>
-      </div>
-    </div>
   );
 };
 
-export default Navigation;
+export default Navbar;

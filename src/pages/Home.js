@@ -1,17 +1,15 @@
 import Announcement from '../components/Announcement'
-import CarouselSlide from '../components/CarouselSlide'
-import Categories from '../components/Categories'
+import Categories from '../components/home/Categories'
 import Footer from '../components/Footer'
-import HomeProducts from '../components/HomeProducts'
-import Navigation from '../components/Nav'
-import SectionTitle from '../components/SectionTitle'
+import HomeProducts from '../components/home/HomeProducts'
+import NavSlide from '../components/home/NavSlide'
+import SectionTitle from '../components/home/SectionTitle'
 
 const Home = () => {
     return (
         <div>
             <Announcement/>
-            <Navigation/>
-            <CarouselSlide/>
+            <NavSlide/>
             <Categories/>
             <SectionTitle/>
             <HomeProducts/>
