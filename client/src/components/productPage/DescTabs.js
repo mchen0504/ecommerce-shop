@@ -3,13 +3,16 @@ import { useState } from "react";
 import styled, { css } from "styled-components";
 
 const TabContainer = styled.div`
+  width: 20rem;
   margin: 2rem 0;
   display: flex;
   flex-direction: column;
 `;
 
 const Sidebar = styled.div`
+  width: 80%;
   display: flex;
+  justify-content: space-between;
   gap: 5%;
   margin-bottom: 1.5rem;
 `;

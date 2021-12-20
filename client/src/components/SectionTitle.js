@@ -9,10 +9,10 @@ const Title = styled.h1`
   font-size: 2.1rem;
 `;
 
-const SectionTitle = () => {
+const SectionTitle = (props) => {
   return (
     <Container>
-      <Title>OUR BEST SELLERS</Title>
+      <Title>{props.title}</Title>
     </Container>
   );
 };

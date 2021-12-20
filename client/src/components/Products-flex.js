@@ -1,4 +1,4 @@
-import ProductItem from "./ProductItem";
+import ProductItem from "./home/ProductItem";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -13,7 +13,7 @@ const ProductContainer = styled.div`
 const ProductsAll = () => {
   return (
     <ProductContainer>
-      <Container fluid style={{padding: "5% 0 10% 0"}}>
+      <Container fluid style={{ padding: "5% 0 10% 0" }}>
         <Row>
           <Col sm={4} md={3}>
             <ProductItem />
@@ -44,6 +44,5 @@ const ProductsAll = () => {
     </ProductContainer>
   );
 };
-
 
 export default ProductsAll;

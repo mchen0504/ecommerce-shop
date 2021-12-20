@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ProductsAll from "../home/Products-flex";
+import ProductsAll from "../Products-flex";
 
 const Container = styled.div``;
 
@@ -15,7 +15,7 @@ const Title = styled.h1`
 `;
 
 const Select = styled.select`
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 `;
 
 const Option = styled.option``;
