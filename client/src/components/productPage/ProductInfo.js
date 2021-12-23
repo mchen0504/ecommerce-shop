@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import DescTabs from "./DescTabs";
+import Tabs from "../Tabs";
 
 const Container = styled.div`
   padding: 5% 10% 10% 10%;
@@ -146,7 +146,7 @@ const ProductInfo = () => {
           <Button>ADD TO CART</Button>
         </Section>
         <Section>
-          <DescTabs />
+          <Tabs />
         </Section>
       </Right>
     </Container>

@@ -1,360 +1,346 @@
-{
-    "products": [
-        {
-            "id": "11519012",
-            "title": "Selena Polo Contrast Collar 100% Wool Knit Sweater",
-            "categories": [
-                "knitwear"
-            ],
-            "price": "93.74",
-            "quantity": 32,
-            "src": "cdn.shopify.com/s/files/1/1276/0919/products/20200930144925_1800x1800.jpg?v=1632901109",
-            "sizes": [
-                "XS",
-                "S",
-                "M",
-                "L",
-                "XL",
-                "XXL"
-            ],
-            "colors": [
-                {
-                    "color_name": "Black",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/black_50x.png",
-                    "color_backup": "black"
-                },
-                {
-                    "color_name": "Brown",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/brown_50x.png",
-                    "color_backup": "brown"
-                },
-                {
-                    "color_name": "Creamy Blue",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/creamy-blue_50x.png",
-                    "color_backup": "blue"
-                },
-                {
-                    "color_name": "Atrovirens",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/atrovirens_50x.png",
-                    "color_backup": "atrovirens"
-                },
-                {
-                    "color_name": "Wine Red",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/wine-red_50x.png",
-                    "color_backup": "red"
-                }
-            ],
-            "detail": "Contrast Color, Polo Collar, Skin-friendly",
-            "composition": "100% Wool (Black/Caramel/Wine Red/Atrovirens) / 50% Wool, 20% Chinlon, 30% PTT Fiber(Creamy Blue)",
-            "care": "Turn your wool garment inside out, then hand wash in clean, lukewarm water, approximately 30°C, using a mild and gentle detergent."
-        },
-        {
-            "id": "22127033",
-            "title": "Jasmine Cable Polo Brown Knit Sweater",
-            "categories": [
-                "knitwear"
-            ],
-            "price": "76.91",
-            "quantity": 28,
-            "src": "cdn.shopify.com/s/files/1/1276/0919/products/18_3e6265e3-ed0e-4300-b3b2-e0aa61cbf77d_1800x1800.jpg?v=1602033589",
-            "sizes": [
-                "S",
-                "M",
-                "L",
-                "XL"
-            ],
-            "colors": [
-                {
-                    "color_name": "Brown",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/brown_50x.png",
-                    "color_backup": "brown"
-                }
-            ],
-            "detail": "Cable, Polo, Lapel; Hollow knitting pattern",
-            "composition": "30% Nylon, 4% Spandex, 66% Acrylic",
-            "care": "Hand wash in cold water"
-        },
-        {
-            "id": "11519042",
-            "title": "Selena Polo Contrast Collar 100% Wool Atrovirens Knit Sweater",
-            "categories": [
-                "knitwear"
-            ],
-            "price": "93.74",
-            "quantity": 54,
-            "src": "cdn.shopify.com/s/files/1/1276/0919/products/2_35a4a4cb-1de0-4113-bbc2-068c29ad383e_1800x1800.jpg?v=1632820526",
-            "sizes": [
-                "XS",
-                "S",
-                "M",
-                "L",
-                "XL"
-            ],
-            "colors": [
-                {
-                    "color_name": "Atrovirens",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/atrovirens_50x.png",
-                    "color_backup": "atrovirens"
-                }
-            ],
-            "detail": "Contrast Color, Polo Collar, Skin-friendly",
-            "composition": "100% Wool",
-            "care": "Turn your wool garment inside out, then hand wash in clean, lukewarm water, approximately 30°C, using a mild and gentle detergent."
-        },
-        {
-            "id": "22233022",
-            "title": "Ariana Floral Patterned Yellow Midi Knitted Dress",
-            "categories": [
-                "knitwear"
-            ],
-            "price": "59.99",
-            "quantity": 1,
-            "src": "cdn.shopify.com/s/files/1/1276/0919/products/8_50aba2fe-45ce-4668-aed1-d5b0ad54f2f5_1800x1800.jpg?v=1637983972",
-            "sizes": [
-                "XS",
-                "S",
-                "M",
-                "L",
-                "XL"
-            ],
-            "colors": [
-                {
-                    "color_name": "Yellow",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/yellow_50x.png",
-                    "color_backup": "yellow"
-                }
-            ],
-            "detail": "Iris Jacquard Series, Lapel,Floral Patterned",
-            "composition": "6% Wool, 20% Acrylic, 20% Nylon, 54% Polyester",
-            "care": "Hand wash in cold water, using a mild and gentle detergent. Do not scrub or use a brush, and do not twist it forcefully."
-        },
-        {
-            "id": "11519022",
-            "title": "Selena Polo Contrast Collar 100% Wool Knit Sweater",
-            "categories": [
-                "knitwear"
-            ],
-            "price": "93.74",
-            "quantity": 49,
-            "src": "cdn.shopify.com/s/files/1/1276/0919/products/3_f4752686-9d81-4d48-a814-b9464711495c_1800x1800.jpg?v=1611136737",
-            "sizes": [
-                "XS",
-                "S",
-                "M",
-                "L",
-                "XL"
-            ],
-            "colors": [
-                {
-                    "color_name": "Brown",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/brown_50x.png",
-                    "color_backup": "brown"
-                }
-            ],
-            "detail": "Polo Collar; Skin-friendly",
-            "composition": "100% Wool",
-            "care": "Turn your wool garment inside out, then hand wash in clean, lukewarm water, approximately 30°C, using a mild and gentle detergent."
-        },
-        {
-            "id": "66025022",
-            "title": "Ariana Iris Floral Patterned Light Beige Long Sleeves Knit Sweater",
-            "categories": [
-                "knitwear"
-            ],
-            "price": "54.99",
-            "quantity": 46,
-            "src": "cdn.shopify.com/s/files/1/1276/0919/products/11_d76fee4d-4b85-488b-a2c2-19103a1a835b_1800x1800.jpg?v=1630736159",
-            "sizes": [
-                "XS",
-                "S",
-                "M",
-                "L",
-                "XL",
-                "XXL"
-            ],
-            "colors": [
-                {
-                    "color_name": "Light Beige",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/light-beige_50x.png",
-                    "color_backup": "beige"
-                }
-            ],
-            "detail": "Iris Jacquard Series, Lapel,Floral Patterned",
-            "composition": "6% Wool, 20% Acrylic, 20% Nylon, 54% Polyester",
-            "care": "Hand wash in cold water, using a mild and gentle detergent. Do not scrub or use a brush, and do not twist it forcefully."
-        },
-        {
-            "id": "11519054",
-            "title": "Selena Polo Contrast Collar 100% Wool Wine Red Knit Sweater",
-            "categories": [
-                "knitwear"
-            ],
-            "price": "93.74",
-            "quantity": 40,
-            "src": "cdn.shopify.com/s/files/1/1276/0919/products/10_68622185-2cc6-4d34-8863-c445ff1f3ab6_1800x1800.jpg?v=1632821945",
-            "sizes": [
-                "XS",
-                "S",
-                "M",
-                "L",
-                "XL"
-            ],
-            "colors": [
-                {
-                    "color_name": "Wine Red",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/wine-red_50x.png",
-                    "color_backup": "red"
-                }
-            ],
-            "detail": "Contrast Color, Polo Collar, Skin-friendly",
-            "composition": "100% Wool",
-            "care": "Turn your wool garment inside out, then hand wash in clean, lukewarm water, approximately 30°C, using a mild and gentle detergent."
-        },
-        {
-            "id": "77016012",
-            "title": "Elliott Floral Printed White Knit Sweater",
-            "categories": [
-                "knitwear"
-            ],
-            "price": "59.99",
-            "quantity": 37,
-            "src": "cdn.shopify.com/s/files/1/1276/0919/products/88da6fee9bc39c6c135d0e30a64c4766_1800x1800.jpg?v=1634296059",
-            "sizes": [
-                "XS",
-                "S",
-                "M",
-                "L"
-            ],
-            "colors": [
-                {
-                    "color_name": "White",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/white_50x.png",
-                    "color_backup": "white"
-                }
-            ],
-            "detail": "Round Neck, Rose Printed",
-            "composition": "42% Acrylic Fiber, 28% Nylon, 30% Polyester Fiber",
-            "care": "Hand wash in cold water softly, using a mild and gentle detergent."
-        },
-        {
-            "id": "22127013",
-            "title": "Jasmine Cable Polo Yellow Knit Sweater",
-            "categories": [
-                "knitwear"
-            ],
-            "price": "76.91",
-            "quantity": 50,
-            "src": "cdn.shopify.com/s/files/1/1276/0919/products/3_46ed5401-fe9e-4b66-9ed6-447d57aaaf39_1800x1800.jpg?v=1602033766",
-            "sizes": [
-                "S",
-                "M",
-                "L"
-            ],
-            "colors": [
-                {
-                    "color_name": "Yellow",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/yellow_50x.png",
-                    "color_backup": "yellow"
-                }
-            ],
-            "detail": "Cable, Polo, Lapel; Hollow knitting pattern",
-            "composition": "30% Nylon, 4% Spandex, 66% Acrylic",
-            "care": "Hand wash in cold water"
-        },
-        {
-            "id": "22084023",
-            "title": "Ally Floral Handmade Embroidery Avocado Green Knit Cardigan",
-            "categories": [
-                "knitwear"
-            ],
-            "price": "74.99",
-            "quantity": 42,
-            "src": "cdn.shopify.com/s/files/1/1276/0919/products/22084_3_1800x1800.jpg?v=1609987977",
-            "sizes": [
-                "XS",
-                "S",
-                "M",
-                "L",
-                "XL"
-            ],
-            "colors": [
-                {
-                    "color_name": "Avocado Green",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/avocado-green_50x.png",
-                    "color_backup": "green"
-                }
-            ],
-            "detail": "Handmade Floral Embroideries, Skin-friendly",
-            "composition": "30% Acrylic, 22% Viscose, 20% Spandex, 28% Polyester Fiber",
-            "care": "Hand Wash"
-        },
-        {
-            "id": "66028013",
-            "title": "Jasmine Cable Polo Knit Sweater",
-            "categories": [
-                "knitwear"
-            ],
-            "price": "76.91",
-            "quantity": 3,
-            "src": "cdn.shopify.com/s/files/1/1276/0919/products/17_18c18bdd-e410-4f6b-aea1-24685b4291aa_1800x1800.jpg?v=1618973521",
-            "sizes": [
-                "S",
-                "M",
-                "L",
-                "XS",
-                "XL"
-            ],
-            "colors": [
-                {
-                    "color_name": "White",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/white_50x.png",
-                    "color_backup": "white"
-                },
-                {
-                    "color_name": "Blue",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/blue_50x.png",
-                    "color_backup": "blue"
-                },
-                {
-                    "color_name": "Yellow",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/yellow_50x.png",
-                    "color_backup": "yellow"
-                },
-                {
-                    "color_name": "Brown",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/brown_50x.png",
-                    "color_backup": "brown"
-                }
-            ],
-            "detail": "Cable, Polo, Lapel; Hollow knitting pattern",
-            "composition": "30% Nylon, 4% Spandex, 66% Acrylic",
-            "care": "Hand wash in cold water, using a mild and gentle detergent."
-        },
-        {
-            "id": "11523012",
-            "title": "Tessa Rib Knit French Mustard Green Midi Knitted Dress",
-            "categories": [
-                "knitwear"
-            ],
-            "price": "59.99",
-            "quantity": 20,
-            "src": "cdn.shopify.com/s/files/1/1276/0919/products/8_1_c71e44ce-fdcb-491c-9fda-dfa36ae7ccac_1800x1800.jpg?v=1630477745",
-            "sizes": [
-                "XS",
-                "S",
-                "M",
-                "L"
-            ],
-            "colors": [
-                {
-                    "color_name": "Mustard Green",
-                    "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/mustard-green_50x.png",
-                    "color_backup": "green"
-                }
-            ],
-            "detail": "Rib Knit, Square Collar, Slit at the back",
-            "composition": "100% Viscose",
-            "care": "Hand wash in cold water softly, using a mild and gentle detergent."
-        }
-    ]
-}
+[
+    {
+        "title": "Selena Polo Contrast Collar 100% Wool Knit Sweater",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 93.74,
+        "quantity": 50,
+        "src": "cdn.shopify.com/s/files/1/1276/0919/products/20200930144925_1800x1800.jpg?v=1632901109",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ],
+        "colors": [
+            {
+                "color_name": "Black",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/black_50x.png",
+                "color_backup": "black"
+            },
+            {
+                "color_name": "Brown",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/brown_50x.png",
+                "color_backup": "brown"
+            },
+            {
+                "color_name": "Creamy Blue",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/creamy-blue_50x.png",
+                "color_backup": "blue"
+            },
+            {
+                "color_name": "Atrovirens",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/atrovirens_50x.png",
+                "color_backup": "atrovirens"
+            },
+            {
+                "color_name": "Wine Red",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/wine-red_50x.png",
+                "color_backup": "red"
+            }
+        ],
+        "detail": "Contrast Color, Polo Collar, Skin-friendly",
+        "composition": "100% Wool (Black/Caramel/Wine Red/Atrovirens) / 50% Wool, 20% Chinlon, 30% PTT Fiber(Creamy Blue)",
+        "care": "Turn your wool garment inside out, then hand wash in clean, lukewarm water, approximately 30°C, using a mild and gentle detergent."
+    },
+    {
+        "title": "Jasmine Cable Polo Brown Knit Sweater",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 76.91,
+        "quantity": 18,
+        "src": "cdn.shopify.com/s/files/1/1276/0919/products/18_3e6265e3-ed0e-4300-b3b2-e0aa61cbf77d_1800x1800.jpg?v=1602033589",
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            {
+                "color_name": "Brown",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/brown_50x.png",
+                "color_backup": "brown"
+            }
+        ],
+        "detail": "Cable, Polo, Lapel; Hollow knitting pattern",
+        "composition": "30% Nylon, 4% Spandex, 66% Acrylic",
+        "care": "Hand wash in cold water"
+    },
+    {
+        "title": "Selena Polo Contrast Collar 100% Wool Atrovirens Knit Sweater",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 93.74,
+        "quantity": 19,
+        "src": "cdn.shopify.com/s/files/1/1276/0919/products/2_35a4a4cb-1de0-4113-bbc2-068c29ad383e_1800x1800.jpg?v=1632820526",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            {
+                "color_name": "Atrovirens",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/atrovirens_50x.png",
+                "color_backup": "atrovirens"
+            }
+        ],
+        "detail": "Contrast Color, Polo Collar, Skin-friendly",
+        "composition": "100% Wool",
+        "care": "Turn your wool garment inside out, then hand wash in clean, lukewarm water, approximately 30°C, using a mild and gentle detergent."
+    },
+    {
+        "title": "Ariana Floral Patterned Yellow Midi Knitted Dress",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 59.99,
+        "quantity": 39,
+        "src": "cdn.shopify.com/s/files/1/1276/0919/products/8_50aba2fe-45ce-4668-aed1-d5b0ad54f2f5_1800x1800.jpg?v=1637983972",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            {
+                "color_name": "Yellow",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/yellow_50x.png",
+                "color_backup": "yellow"
+            }
+        ],
+        "detail": "Iris Jacquard Series, Lapel,Floral Patterned",
+        "composition": "6% Wool, 20% Acrylic, 20% Nylon, 54% Polyester",
+        "care": "Hand wash in cold water, using a mild and gentle detergent. Do not scrub or use a brush, and do not twist it forcefully."
+    },
+    {
+        "title": "Selena Polo Contrast Collar 100% Wool Knit Sweater",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 93.74,
+        "quantity": 8,
+        "src": "cdn.shopify.com/s/files/1/1276/0919/products/3_f4752686-9d81-4d48-a814-b9464711495c_1800x1800.jpg?v=1611136737",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            {
+                "color_name": "Brown",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/brown_50x.png",
+                "color_backup": "brown"
+            }
+        ],
+        "detail": "Polo Collar; Skin-friendly",
+        "composition": "100% Wool",
+        "care": "Turn your wool garment inside out, then hand wash in clean, lukewarm water, approximately 30°C, using a mild and gentle detergent."
+    },
+    {
+        "title": "Ariana Iris Floral Patterned Light Beige Long Sleeves Knit Sweater",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 54.99,
+        "quantity": 14,
+        "src": "cdn.shopify.com/s/files/1/1276/0919/products/11_d76fee4d-4b85-488b-a2c2-19103a1a835b_1800x1800.jpg?v=1630736159",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ],
+        "colors": [
+            {
+                "color_name": "Light Beige",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/light-beige_50x.png",
+                "color_backup": "beige"
+            }
+        ],
+        "detail": "Iris Jacquard Series, Lapel,Floral Patterned",
+        "composition": "6% Wool, 20% Acrylic, 20% Nylon, 54% Polyester",
+        "care": "Hand wash in cold water, using a mild and gentle detergent. Do not scrub or use a brush, and do not twist it forcefully."
+    },
+    {
+        "title": "Selena Polo Contrast Collar 100% Wool Wine Red Knit Sweater",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 93.74,
+        "quantity": 45,
+        "src": "cdn.shopify.com/s/files/1/1276/0919/products/10_68622185-2cc6-4d34-8863-c445ff1f3ab6_1800x1800.jpg?v=1632821945",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            {
+                "color_name": "Wine Red",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/wine-red_50x.png",
+                "color_backup": "red"
+            }
+        ],
+        "detail": "Contrast Color, Polo Collar, Skin-friendly",
+        "composition": "100% Wool",
+        "care": "Turn your wool garment inside out, then hand wash in clean, lukewarm water, approximately 30°C, using a mild and gentle detergent."
+    },
+    {
+        "title": "Selah Sunflower Floral Handmade Embroidery Knit Cardigan",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 89.99,
+        "quantity": 57,
+        "src": "cdn.shopify.com/s/files/1/1276/0919/products/4_6f210a50-ae5a-4321-a076-ed0d7c81d31f_1800x1800.jpg?v=1630998056",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            {
+                "color_name": "Dark Blue",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/dark-blue_50x.png",
+                "color_backup": "blue"
+            }
+        ],
+        "detail": "Floral,Handmade Embroidery",
+        "composition": "Garment: 41.8% Acrylic Fibers, 29.7% Polyester, 28.5% Nylon Embroidery: 8% Mohair, 15% Wool, 30% Nylon, 47% Acrylic Fibers",
+        "care": "Hand wash in cold water, using a mild and gentle detergent."
+    },
+    {
+        "title": "Elliott Floral Printed White Knit Sweater",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 59.99,
+        "quantity": 13,
+        "src": "cdn.shopify.com/s/files/1/1276/0919/products/88da6fee9bc39c6c135d0e30a64c4766_1800x1800.jpg?v=1634296059",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            {
+                "color_name": "White",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/white_50x.png",
+                "color_backup": "white"
+            }
+        ],
+        "detail": "Round Neck, Rose Printed",
+        "composition": "42% Acrylic Fiber, 28% Nylon, 30% Polyester Fiber",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent."
+    },
+    {
+        "title": "Jasmine Cable Polo Yellow Knit Sweater",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 76.91,
+        "quantity": 32,
+        "src": "cdn.shopify.com/s/files/1/1276/0919/products/3_46ed5401-fe9e-4b66-9ed6-447d57aaaf39_1800x1800.jpg?v=1602033766",
+        "sizes": [
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            {
+                "color_name": "Yellow",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/yellow_50x.png",
+                "color_backup": "yellow"
+            }
+        ],
+        "detail": "Cable, Polo, Lapel; Hollow knitting pattern",
+        "composition": "30% Nylon, 4% Spandex, 66% Acrylic",
+        "care": "Hand wash in cold water"
+    },
+    {
+        "title": "Ally Floral Handmade Embroidery Avocado Green Knit Cardigan",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 74.99,
+        "quantity": 42,
+        "src": "cdn.shopify.com/s/files/1/1276/0919/products/22084_3_1800x1800.jpg?v=1609987977",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            {
+                "color_name": "Avocado Green",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/avocado-green_50x.png",
+                "color_backup": "green"
+            }
+        ],
+        "detail": "Handmade Floral Embroideries, Skin-friendly",
+        "composition": "30% Acrylic, 22% Viscose, 20% Spandex, 28% Polyester Fiber",
+        "care": "Hand Wash"
+    },
+    {
+        "title": "Jasmine Cable Polo Knit Sweater",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 76.91,
+        "quantity": 1,
+        "src": "cdn.shopify.com/s/files/1/1276/0919/products/17_18c18bdd-e410-4f6b-aea1-24685b4291aa_1800x1800.jpg?v=1618973521",
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XS",
+            "XL"
+        ],
+        "colors": [
+            {
+                "color_name": "White",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/white_50x.png",
+                "color_backup": "white"
+            },
+            {
+                "color_name": "Blue",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/blue_50x.png",
+                "color_backup": "blue"
+            },
+            {
+                "color_name": "Yellow",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/yellow_50x.png",
+                "color_backup": "yellow"
+            },
+            {
+                "color_name": "Brown",
+                "color_url": "https://cdn.shopify.com/s/files/1/1276/0919/t/27/assets/brown_50x.png",
+                "color_backup": "brown"
+            }
+        ],
+        "detail": "Cable, Polo, Lapel; Hollow knitting pattern",
+        "composition": "30% Nylon, 4% Spandex, 66% Acrylic",
+        "care": "Hand wash in cold water, using a mild and gentle detergent."
+    }
+]

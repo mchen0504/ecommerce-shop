@@ -1,7 +1,12 @@
+from typing import Collection
 import requests as r
 from bs4 import BeautifulSoup as bs
 from random import randrange
 import json
+
+import pymongo
+import json
+from pymongo import MongoClient, InsertOne
 
 URL = "https://www.simpleretro.com/collections/knitwear"
 
@@ -21,13 +26,13 @@ def getProductLinks(page):
 
 def getProductInfo(link):
     product = getHTML(link)
-    id = product.find("p", class_="product-single__sku").text.strip()
+    # id = product.find("p", class_="product-single__sku").text.strip()
     title = product.find("h1").text.strip().split("】")[-1]
 
     categories = []
     categories.append(URL.split("/")[4])
 
-    price = product.find("span", class_="money").text[1:]
+    price = float(product.find("span", class_="money").text[1:])
     src = product.find("div", class_="product-image-main").find("img")["data-photoswipe-src"][2:]
 
     sizes = []
@@ -54,7 +59,6 @@ def getProductInfo(link):
     care = info[-1]
 
     productInfo = {
-        "id": id,
         "title": title,
         "categories": categories,
         "price": price,
@@ -70,8 +74,6 @@ def getProductInfo(link):
     return productInfo
 
 
-
-
 category_page = getHTML(URL)
 product_links = getProductLinks(category_page)
 all_product_info = []
@@ -79,8 +81,7 @@ for product in product_links:
     all_product_info.append(getProductInfo(product))
 
 
-data = {"products": all_product_info}
-
 with open("data.json", "w", encoding="utf-8") as file:
-    json.dump(data, file, ensure_ascii=False, indent=4)
+    json.dump(all_product_info, file, ensure_ascii=False, indent=4)
+
 
