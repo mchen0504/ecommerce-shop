@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ProductsAll from "../Products-flex";
-import ProductsPartial from "./Products-scroll";
+import ProductsPartial from "../Products-scroll";
 
 const AllProducts = styled.div`
   @media (max-width: 576px) {

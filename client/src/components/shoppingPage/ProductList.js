@@ -20,13 +20,13 @@ const Select = styled.select`
 
 const Option = styled.option``;
 
-const ProductList = () => {
+const ProductList = ({ category, products }) => {
   return (
     <Container>
       <Top>
-        <Title>Tops</Title>
-        <Select name="sortby" id="sortby">
-          <Option disabled selected>
+        <Title>{category.charAt(0).toUpperCase() + category.slice(1)}</Title>
+        <Select name="sortby" id="sortby" defaultValue={"default"}>
+          <Option value="default" disabled>
             Sort by
           </Option>
           <Option value="best-sellers">Best Sellers</Option>
@@ -34,7 +34,7 @@ const ProductList = () => {
           <Option value="price-asc">Price - Low to High</Option>
         </Select>
       </Top>
-      <ProductsAll />
+      <ProductsAll products={products} />
     </Container>
   );
 };

@@ -27,7 +27,6 @@ function App() {
         />
       </Routes>
     </Router>
-    // if user ? /redirect
   );
 }
 
