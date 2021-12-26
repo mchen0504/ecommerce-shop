@@ -43,39 +43,39 @@ const Right = styled.div`
 
 const Navbar = (props) => {
   return (
-      <Container>
-        <Left>
-          <LeftItem
-            onMouseEnter={() => props.handleShopAllMouseEnter("mouseOnShopAll")}
-          >
-            SHOP ALL
-          </LeftItem>
-          <LeftItem style={{ marginLeft: "10%" }}>BEST SELLERS</LeftItem>
-        </Left>
-        <Center>
-          <Logo>MICHELLE</Logo>
-        </Center>
-        <Right>
-          <span
-            class="material-icons-outlined"
-            style={{ fontSize: "1.4rem", cursor: "pointer" }}
-          >
-            search
-          </span>
-          <span
-            class="material-icons-outlined"
-            style={{ fontSize: "1.4rem", marginLeft: "10%", cursor: "pointer" }}
-          >
-            person
-          </span>
-          <span
-            class="material-icons-outlined"
-            style={{ fontSize: "1.4rem", marginLeft: "10%", cursor: "pointer" }}
-          >
-            shopping_bag
-          </span>
-        </Right>
-      </Container>
+    <Container>
+      <Left>
+        <LeftItem
+          onMouseEnter={() => props.handleShopAllMouseEnter("mouseOnShopAll")}
+        >
+          SHOP ALL
+        </LeftItem>
+        <LeftItem style={{ marginLeft: "10%" }}>BEST SELLERS</LeftItem>
+      </Left>
+      <Center>
+        <Logo>MICHELLE</Logo>
+      </Center>
+      <Right>
+        <span
+          className="material-icons-outlined"
+          style={{ fontSize: "1.4rem", cursor: "pointer" }}
+        >
+          search
+        </span>
+        <span
+          className="material-icons-outlined"
+          style={{ fontSize: "1.4rem", marginLeft: "10%", cursor: "pointer" }}
+        >
+          person
+        </span>
+        <span
+          className="material-icons-outlined"
+          style={{ fontSize: "1.4rem", marginLeft: "10%", cursor: "pointer" }}
+        >
+          shopping_bag
+        </span>
+      </Right>
+    </Container>
   );
 };
 

@@ -3,13 +3,13 @@ import { useState } from "react";
 import styled from "styled-components";
 
 const SizeOption = styled.button`
-  height: 28px;
-  width: 28px;
+  height: 25px;
+  width: 25px;
   border: 0.1px solid gray;
   border-radius: 3px;
   background-color: ${(props) => (props.isSelected ? "black" : "white")};
-  color: ${(props) => (props.isSelected ? "white" : "black")};
-  font-size: 0.9rem;
+  color: ${(props) => (props.isSelected ? "white" : "gray")};
+  font-size: 0.8rem;
   &:hover {
     background-color: black;
     color: white;
@@ -17,9 +17,9 @@ const SizeOption = styled.button`
 `;
 
 const ColorOption = styled.button`
-  width: 20px;
-  height: 20px;
-  border: none;
+  width: 19px;
+  height: 19px;
+  border: ${(props) => (props.color === "white" ? "0.1px solid gray" : "none")};
   border-radius: 50%;
   background-color: ${(props) => props.color};
   color: gray;

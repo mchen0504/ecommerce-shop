@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
+
 import ProductsAll from "../Products-flex";
 
 const Container = styled.div``;
@@ -20,21 +22,28 @@ const Select = styled.select`
 
 const Option = styled.option``;
 
-const ProductList = ({ category, products }) => {
+const ProductList = ({ category, filters }) => {
+  const [sort, setSort] = useState();
+
   return (
     <Container>
       <Top>
         <Title>{category.charAt(0).toUpperCase() + category.slice(1)}</Title>
-        <Select name="sortby" id="sortby" defaultValue={"default"}>
+        <Select
+          name="sortby"
+          id="sortby"
+          defaultValue={"default"}
+          onChange={(e) => setSort(e.target.value)}
+        >
           <Option value="default" disabled>
             Sort by
           </Option>
-          <Option value="best-sellers">Best Sellers</Option>
+          <Option value="newest">Newest</Option>
           <Option value="price-desc">Price - High to Low</Option>
           <Option value="price-asc">Price - Low to High</Option>
         </Select>
       </Top>
-      <ProductsAll products={products} />
+      <ProductsAll category={category} filters={filters} sort={sort} />
     </Container>
   );
 };

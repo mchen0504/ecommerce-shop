@@ -64,10 +64,10 @@ const Title = styled.h2`
 `;
 
 const Price = styled.span`
-    font-size: 1.2rem;
-    text-align: center;
-    font-weight: 400;
-    margin-top: -0.2rem;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 400;
+  margin-top: -0.2rem;
 `;
 
 const ProductsPartial = () => {
@@ -106,7 +106,9 @@ const ProductsPartial = () => {
     <Container>
       {productIndex > 0 && (
         <Arrow direction="left" onClick={() => handleClick("left")}>
-          <span class="material-icons-outlined" style={{color: "white"}}>chevron_left</span>
+          <span className="material-icons-outlined" style={{ color: "white" }}>
+            chevron_left
+          </span>
         </Arrow>
       )}
 
@@ -118,7 +120,9 @@ const ProductsPartial = () => {
         <Product>
           <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/20200930144925_1080x.jpg?v=1632901109"></Image>
           <Info>
-            <Title>Ally Floral Handmade Embroidery Creamy Yellow Knit Cardigan</Title>
+            <Title>
+              Ally Floral Handmade Embroidery Creamy Yellow Knit Cardigan
+            </Title>
             <Price>$235.99</Price>
           </Info>
         </Product>
@@ -181,7 +185,9 @@ const ProductsPartial = () => {
       </ProductContainer>
       {productIndex < 7 && (
         <Arrow direction="right" onClick={() => handleClick("right")}>
-          <span class="material-icons-outlined" style={{color: "white"}}>chevron_right</span>
+          <span className="material-icons-outlined" style={{ color: "white" }}>
+            chevron_right
+          </span>
         </Arrow>
       )}
     </Container>

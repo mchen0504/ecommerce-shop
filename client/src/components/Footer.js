@@ -46,7 +46,7 @@ const ContentWrapper = styled.div`
 const Span = styled.div`
   color: gray;
   font-size: 0.9rem;
-`
+`;
 
 const Footer = () => {
   return (
@@ -56,14 +56,12 @@ const Footer = () => {
           <Col sm>
             <SectionWrapper>
               <Title>NEWSLETTER</Title>
-              <Span>
-                Get exclusive updates on deals and new styles!
-              </Span>
+              <Span>Get exclusive updates on deals and new styles!</Span>
               <EmailContainer>
                 <Input type="email" placeholder="Your email address" />
                 <span
                   style={{ cursor: "pointer" }}
-                  class="material-icons-round"
+                  className="material-icons-round"
                 >
                   send
                 </span>

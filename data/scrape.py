@@ -1,14 +1,10 @@
-from typing import Collection
 import requests as r
 from bs4 import BeautifulSoup as bs
 from random import randrange
 import json
+import datetime
 
-import pymongo
-import json
-from pymongo import MongoClient, InsertOne
-
-URL = "https://www.simpleretro.com/collections/knitwear"
+URL = "https://www.simpleretro.com/collections/jackets-coats"
 
 
 def getHTML(URL):
@@ -30,7 +26,7 @@ def getProductInfo(link):
     title = product.find("h1").text.strip().split("】")[-1]
 
     categories = []
-    categories.append(URL.split("/")[4])
+    categories.append("outerwear" if URL.split("/")[4] == "jackets-coats" else URL.split("/")[4])
 
     price = float(product.find("span", class_="money").text[1:])
     src = product.find("div", class_="product-image-main").find("img")["data-photoswipe-src"][2:]
@@ -68,7 +64,8 @@ def getProductInfo(link):
         "colors": colors,
         "detail": detail,
         "composition": composition,
-        "care": care
+        "care": care,
+        "createdAt": datetime.datetime.now().isoformat(),
     }
 
     return productInfo

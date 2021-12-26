@@ -1,6 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState } from "react";
 
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
@@ -33,25 +32,9 @@ const ShoppingPage = () => {
     sizes: [],
     colors: [],
   });
-  const [products, setProducts] = useState();
-
-  // useEffect(() => {
-  //   const getProducts = async () => {
-  //     try {
-  //       const res = await axios.get(
-  //         category
-  //           ? `http://localhost:5000/api/products?category=${category}`
-  //           : "http://localhost:5000/api/products"
-  //       );
-  //       setProducts(res.data);
-  //     } catch (error) {}
-  //   };
-  //   getProducts();
-  // }, [category]);
 
   return (
     <div>
-      {console.log(products)}
       <Announcement />
       <Navbar />
       <Container>
@@ -64,7 +47,7 @@ const ShoppingPage = () => {
             />
           </Left>
           <Right>
-            {/* <ProductList category={category} products={products} /> */}
+            <ProductList category={category} filters={filters} />
           </Right>
         </Content>
       </Container>
