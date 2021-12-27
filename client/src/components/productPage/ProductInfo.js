@@ -1,5 +1,17 @@
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+import axios from "axios";
+
 import Tabs from "../Tabs";
+
+import Spinner from "react-bootstrap/Spinner";
+import SizeColorOption from "./SizeColorOption";
+
+const LoadingContainer = styled.div`
+  padding: 5% 10% 10% 10%;
+  text-align: center;
+`;
 
 const Container = styled.div`
   padding: 5% 10% 10% 10%;
@@ -91,52 +103,96 @@ const Button = styled.button`
 `;
 
 const ProductInfo = () => {
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+
+  const [loading, setLoading] = useState(false);
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const getProduct = async () => {
+      setLoading(true);
+      try {
+        const res = await axios.get(`http://localhost:5000/api/products/${id}`);
+        setProduct(res.data);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+        setLoading(false);
+      }
+    };
+    getProduct();
+  }, [id]);
+
+  const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
+  const colors = [
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "blue",
+    "purple",
+    "brown",
+    "black",
+    "beige",
+    "white",
+  ];
+
+  let maxQuantity = 10;
+  if (product) {
+    maxQuantity = Math.min(product.quantity, maxQuantity);
+  }
+  let quantityOptions = [...Array(10).keys()].map((q) => {
+    return (
+      <Option key={q + 1} value={q + 1}>
+        {q + 1}
+      </Option>
+    );
+  });
+
+  if (loading) {
+    return (
+      <LoadingContainer>
+        <Spinner animation="border" variant="secondary" />
+      </LoadingContainer>
+    );
+  }
+
   return (
     <Container>
       <Left>
-        <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/20200930144925_720x.jpg?v=1632901109" />
+        <Image src={`https://${product.src}`} />
       </Left>
       <Right>
         <Section>
-          <Title>
-            Elsie Chiffon Striping Blouse sdfasdasdfas sdfafwersa sdfasfsdfasdf
-            sdfadsfdsa
-          </Title>
-          <Price>$235.99</Price>
+          <Title>{product.title}</Title>
+          <Price>${product.price?.$numberDecimal}</Price>
         </Section>
         <Section>
           <FilterContainer>
             <Filter>
               <FilterTitle>SIZE</FilterTitle>
               <FilterOptions>
-                <SizeOption>XS</SizeOption>
-                <SizeOption>S</SizeOption>
-                <SizeOption>M</SizeOption>
-                <SizeOption>L</SizeOption>
-                <SizeOption>XL</SizeOption>
+                {product.sizes?.map((size) => {
+                  return <SizeOption key={size}>{size}</SizeOption>;
+                })}
               </FilterOptions>
             </Filter>
             <Filter>
               <FilterTitle>COLOR</FilterTitle>
               <FilterOptions>
-                <ColorOption color="red"></ColorOption>
-                <ColorOption color="orange"></ColorOption>
-                <ColorOption color="yellow"></ColorOption>
-                <ColorOption color="green"></ColorOption>
-                <ColorOption color="blue"></ColorOption>
-                <ColorOption color="black"></ColorOption>
+                {product.colors?.map((color) => {
+                  return (
+                    <SizeColorOption key={color.color_name} color={color} />
+                  );
+                })}
               </FilterOptions>
             </Filter>
             <Filter>
               <FilterTitle>QUANTITY</FilterTitle>
               <FilterOptions>
                 <Select name="quantity" id="quantity">
-                  <Option value="1" selected>
-                    1
-                  </Option>
-                  <Option value="2">2</Option>
-                  <Option value="3">3</Option>
-                  <Option value="4">4</Option>
+                  {quantityOptions}
                 </Select>
               </FilterOptions>
             </Filter>
@@ -146,7 +202,7 @@ const ProductInfo = () => {
           <Button>ADD TO CART</Button>
         </Section>
         <Section>
-          <Tabs />
+          <Tabs product={product} />
         </Section>
       </Right>
     </Container>

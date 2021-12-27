@@ -36,7 +36,7 @@ const Paragraph = styled.p`
   font-size: 0.9rem;
 `;
 
-const Tabs = () => {
+const Tabs = ({ product }) => {
   const [displayTab, setDisplayTab] = useState({
     details: true,
     fabricCare: false,
@@ -61,15 +61,10 @@ const Tabs = () => {
   return (
     <TabContainer>
       <Sidebar>
-        <TabButton
-          class="tablinks"
-          active={displayTab.details}
-          onClick={handleDetailsClick}
-        >
+        <TabButton active={displayTab.details} onClick={handleDetailsClick}>
           Details
         </TabButton>
         <TabButton
-          class="tablinks"
           active={displayTab.fabricCare}
           onClick={handleFabricCareClick}
         >
@@ -79,22 +74,17 @@ const Tabs = () => {
 
       <TabContent
         id="Details"
-        class="tabcontent"
         style={{ display: displayTab.details ? "block" : "none" }}
       >
-        <Paragraph>Iris Jacquard Series, Lapel,Floral Patterned</Paragraph>
+        <Paragraph>{product.detail}</Paragraph>
       </TabContent>
 
       <TabContent
         id="Fabric &#38; Care"
-        class="tabcontent"
         style={{ display: displayTab.fabricCare ? "block" : "none" }}
       >
-        <Paragraph>6% Wool, 20% Acrylic, 20% Nylon, 54% Polyester.</Paragraph>
-        <Paragraph>
-          Hand wash in cold water, using a mild and gentle detergent. Do not
-          scrub or use a brush, and do not twist it forcefully.
-        </Paragraph>
+        <Paragraph>{product.composition}</Paragraph>
+        <Paragraph>{product.care}</Paragraph>
       </TabContent>
     </TabContainer>
   );

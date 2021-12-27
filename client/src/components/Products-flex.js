@@ -72,7 +72,6 @@ const ProductsAll = ({ category, filters, sort }) => {
   useEffect(() => {
     if (sort) {
       if (sort === "newest") {
-        console.log(sort);
         setFilteredProducts((prev) =>
           [...prev].sort((a, b) => {
             return new Date(b.createdAt) - new Date(a.createdAt);
@@ -81,7 +80,6 @@ const ProductsAll = ({ category, filters, sort }) => {
       }
 
       if (sort === "price-desc") {
-        console.log(sort);
         setFilteredProducts((prev) =>
           [...prev].sort((a, b) => {
             return (
@@ -93,7 +91,6 @@ const ProductsAll = ({ category, filters, sort }) => {
       }
 
       if (sort === "price-asc") {
-        console.log(sort);
         setFilteredProducts((prev) =>
           [...prev].sort((a, b) => {
             return (
@@ -104,31 +101,53 @@ const ProductsAll = ({ category, filters, sort }) => {
         );
       }
     }
-  }, [sort]);
+  }, [filters, sort]);
+
+  let displayedProducts = category
+    ? filteredProducts
+    : filteredProducts.slice(0, 8);
+
+  if (products.length === 0) {
+    return (
+      <ProductContainer>
+        <div style={{ textAlign: "center" }}>
+          <Spinner
+            style={{ alignItems: "center" }}
+            animation="border"
+            variant="secondary"
+          />
+        </div>
+      </ProductContainer>
+    );
+  }
+
+  if (
+    filters &&
+    filteredProducts.length === 0 &&
+    (filters.sizes.length > 0 || filters.colors.length > 0)
+  ) {
+    return (
+      <ProductContainer>
+        <div style={{ textAlign: "center" }}>
+          <span>No products found</span>
+        </div>
+      </ProductContainer>
+    );
+  }
 
   return (
     <ProductContainer>
-      {products.length === 0 && !filters && (
-        <Spinner animation="border" variant="secondary" />
-      )}
-
-      {filters.length > 0 && filteredProducts.length === 0 && (
-        <span style={{ textAlign: "center" }}>No products found</span>
-      )}
-
-      {filteredProducts.length > 0 && (
-        <Container fluid style={{ padding: "5% 0 10% 0" }}>
-          <Row>
-            {filteredProducts.map((product) => {
-              return (
-                <Col key={product._id} sm={4} md={3}>
-                  <ProductItem product={product} />
-                </Col>
-              );
-            })}
-          </Row>
-        </Container>
-      )}
+      <Container fluid style={{ padding: "5% 0 10% 0" }}>
+        <Row>
+          {displayedProducts.map((product) => {
+            return (
+              <Col key={product._id} sm={4} md={3}>
+                <ProductItem product={product} />
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
     </ProductContainer>
   );
 };

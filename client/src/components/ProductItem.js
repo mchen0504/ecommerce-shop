@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -32,9 +33,13 @@ const Price = styled.span`
 const ProductItem = ({ product }) => {
   return (
     <Container>
-      <Img src={`https://${product.src}`} />
+      <Link to={`/product/${product._id}`}>
+        <Img src={`https://${product.src}`} />
+      </Link>
       <ProductInfo>
-        <Title>{product.title}</Title>
+        <Link style={{ textDecoration: "none" }} to={`/product/${product._id}`}>
+          <Title>{product.title}</Title>
+        </Link>
         <Price>${product.price.$numberDecimal}</Price>
       </ProductInfo>
     </Container>
