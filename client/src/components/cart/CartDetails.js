@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { useSelector } from "react-redux";
+
 const Container = styled.div`
   padding: 5% 5% 10% 5%;
 `;
@@ -131,6 +133,8 @@ const Link = styled.a`
 `;
 
 const CartDetails = () => {
+  const cart = useSelector((state) => state.cart);
+
   return (
     <Container>
       <Title>SHOPPING BAG</Title>
@@ -141,36 +145,51 @@ const CartDetails = () => {
         <SubtotalContainer>SUBTOTAL</SubtotalContainer>
       </PropertyContainer>
       <hr />
-      <ProductContainer>
-        <ItemContainer>
-          <ImageContainer>
-            <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/20200930144925_720x.jpg?v=1632901109" />
-          </ImageContainer>
-          <DescContainer>
-            <ProductTitle>
-              Elsie Chiffon Striping Blouse sdfasdasdfas sdfafwersa
-              sdfasfsdfasdf
-            </ProductTitle>
-            <SizeColor>XS | Brown</SizeColor>
-          </DescContainer>
-        </ItemContainer>
-        <PriceContainer>$235.99</PriceContainer>
-        <QuantityContainer>
-          <div>
-            <Select name="quantity" id="quantity">
-              <Option value="1" selected>
-                1
-              </Option>
-              <Option value="2">2</Option>
-              <Option value="3">3</Option>
-              <Option value="4">4</Option>
-            </Select>
-          </div>
-        </QuantityContainer>
-        <SubtotalContainer>$235.99</SubtotalContainer>
-      </ProductContainer>
 
-      <ProductContainer>
+      {cart.products.map((product) => {
+        return (
+          <ProductContainer>
+            <ItemContainer>
+              <ImageContainer>
+                <Image src={`https://${product.src}`} />
+              </ImageContainer>
+              <DescContainer>
+                <ProductTitle>{product.title}</ProductTitle>
+                <SizeColor>
+                  {product.selectedSize} | {product.selectedColor}
+                </SizeColor>
+              </DescContainer>
+            </ItemContainer>
+            <PriceContainer>${product.price.$numberDecimal}</PriceContainer>
+            <QuantityContainer>
+              <div>
+                {console.log([...Array(Math.min(10, product.quantity)).keys()])}
+                <Select
+                  name="quantity"
+                  id="quantity"
+                  value={product.selectedQuantity}
+                  // onChange={(e) => setSelectedQuantity(e.target.value)}
+                >
+                  {[...Array(Math.min(10, product.quantity)).keys()].map(
+                    (q) => {
+                      return (
+                        <Option key={q + 1} value={q + 1}>
+                          {q + 1}
+                        </Option>
+                      );
+                    }
+                  )}
+                </Select>
+              </div>
+            </QuantityContainer>
+            <SubtotalContainer>
+              ${product.selectedQuantity * product.price.$numberDecimal}
+            </SubtotalContainer>
+          </ProductContainer>
+        );
+      })}
+
+      {/* <ProductContainer>
         <ItemContainer>
           <ImageContainer>
             <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/20200930144925_720x.jpg?v=1632901109" />
@@ -197,7 +216,7 @@ const CartDetails = () => {
           </div>
         </QuantityContainer>
         <SubtotalContainer>$235.99</SubtotalContainer>
-      </ProductContainer>
+      </ProductContainer> */}
       <hr />
 
       <SummaryContainer>

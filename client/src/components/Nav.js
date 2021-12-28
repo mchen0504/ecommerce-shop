@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+import { useSelector } from "react-redux";
 
 const Container = styled.div`
   height: 3rem;
@@ -14,7 +17,7 @@ const Left = styled.div`
   justify-content: flex-start;
 `;
 
-const LeftItem = styled.span`
+const LeftItem = styled.div`
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
@@ -30,7 +33,7 @@ const Center = styled.div`
   justify-content: center;
 `;
 
-const Logo = styled.span`
+const Logo = styled.div`
   font-weight: bold;
   font-size: 1.7rem;
 `;
@@ -42,6 +45,8 @@ const Right = styled.div`
 `;
 
 const Navbar = (props) => {
+  const quantity = useSelector((state) => state.cart.quantity);
+
   return (
     <Container>
       <Left>
@@ -56,24 +61,31 @@ const Navbar = (props) => {
         <Logo>MICHELLE</Logo>
       </Center>
       <Right>
-        <span
+        <div
           className="material-icons-outlined"
           style={{ fontSize: "1.4rem", cursor: "pointer" }}
         >
           search
-        </span>
-        <span
+        </div>
+        <div
           className="material-icons-outlined"
           style={{ fontSize: "1.4rem", marginLeft: "10%", cursor: "pointer" }}
         >
           person
-        </span>
-        <span
-          className="material-icons-outlined"
-          style={{ fontSize: "1.4rem", marginLeft: "10%", cursor: "pointer" }}
+        </div>
+        <Link
+          to={"/cart"}
+          style={{ textDecoration: "none", marginLeft: "10%" }}
         >
-          shopping_bag
-        </span>
+          <div
+            className={
+              quantity === 0 ? "material-icons-outlined" : "material-icons"
+            }
+            style={{ fontSize: "1.4rem", cursor: "pointer" }}
+          >
+            shopping_bag
+          </div>
+        </Link>
       </Right>
     </Container>
   );

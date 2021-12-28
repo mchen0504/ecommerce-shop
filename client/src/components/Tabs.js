@@ -23,7 +23,7 @@ const TabButton = styled.div`
   outline: none;
   color: gray;
   ${(props) =>
-    props.active &&
+    props.selected &&
     css`
       border-bottom: 2px solid rgb(255, 69, 0);
       color: rgb(255, 69, 0);
@@ -37,54 +37,34 @@ const Paragraph = styled.p`
 `;
 
 const Tabs = ({ product }) => {
-  const [displayTab, setDisplayTab] = useState({
-    details: true,
-    fabricCare: false,
-  });
-
-  const handleDetailsClick = () => {
-    setDisplayTab({
-      ...displayTab,
-      details: true,
-      fabricCare: false,
-    });
-  };
-
-  const handleFabricCareClick = () => {
-    setDisplayTab({
-      ...displayTab,
-      details: false,
-      fabricCare: true,
-    });
-  };
+  const [selectedTab, setSelectedTab] = useState("details");
 
   return (
     <TabContainer>
       <Sidebar>
-        <TabButton active={displayTab.details} onClick={handleDetailsClick}>
+        <TabButton
+          selected={selectedTab === "details"}
+          onClick={() => setSelectedTab("details")}
+        >
           Details
         </TabButton>
         <TabButton
-          active={displayTab.fabricCare}
-          onClick={handleFabricCareClick}
+          selected={selectedTab === "compositionCare"}
+          onClick={() => setSelectedTab("compositionCare")}
         >
-          Fabric &#38; Care
+          Composition &#38; Care
         </TabButton>
       </Sidebar>
 
-      <TabContent
-        id="Details"
-        style={{ display: displayTab.details ? "block" : "none" }}
-      >
-        <Paragraph>{product.detail}</Paragraph>
-      </TabContent>
-
-      <TabContent
-        id="Fabric &#38; Care"
-        style={{ display: displayTab.fabricCare ? "block" : "none" }}
-      >
-        <Paragraph>{product.composition}</Paragraph>
-        <Paragraph>{product.care}</Paragraph>
+      <TabContent id="Details">
+        {selectedTab === "details" ? (
+          <Paragraph>{product.detail}</Paragraph>
+        ) : (
+          <div>
+            <Paragraph>{product.composition}</Paragraph>
+            <Paragraph>{product.care}</Paragraph>
+          </div>
+        )}
       </TabContent>
     </TabContainer>
   );

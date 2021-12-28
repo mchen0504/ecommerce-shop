@@ -3,10 +3,14 @@ import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
 
+import Spinner from "react-bootstrap/Spinner";
+
+import ColorOption from "./ColorOption";
+import SizeOption from "./SizeOption";
 import Tabs from "../Tabs";
 
-import Spinner from "react-bootstrap/Spinner";
-import SizeColorOption from "./SizeColorOption";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/cartRedux";
 
 const LoadingContainer = styled.div`
   padding: 5% 10% 10% 10%;
@@ -27,7 +31,7 @@ const Left = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   object-fit: cover;
 `;
 
@@ -37,7 +41,7 @@ const Right = styled.div`
 `;
 
 const Section = styled.div`
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 `;
 
 const Title = styled.h1`
@@ -51,7 +55,7 @@ const Price = styled.span`
 const FilterContainer = styled.div``;
 
 const Filter = styled.div`
-  margin: 0.8rem 0;
+  margin: 1rem 0;
 `;
 
 const FilterTitle = styled.span`
@@ -61,27 +65,8 @@ const FilterTitle = styled.span`
 
 const FilterOptions = styled.div`
   display: flex;
-  gap: 5px;
-`;
-
-const SizeOption = styled.button`
-  height: 28px;
-  width: 28px;
-  border: 0.1px solid gray;
-  border-radius: 3px;
-  background-color: white;
-  color: black;
-  font-size: 0.9rem;
-`;
-
-const ColorOption = styled.div`
-  width: 20px;
-  height: 20px;
-  border: none;
-  border-radius: 50%;
-  background-color: ${(props) => props.color};
-  color: gray;
-  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0.5rem;
 `;
 
 const Select = styled.select`
@@ -92,11 +77,12 @@ const Select = styled.select`
 
 const Option = styled.option``;
 
-const Button = styled.button`
+const AddToCartButton = styled.button`
   width: 80%;
   padding: 0.4rem;
-  background-color: black;
+  background-color: ${(props) => (props.disabled ? "gray" : "black")};
   color: white;
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   border: none;
   font-size: 0.9rem;
   border-radius: 3px;
@@ -108,6 +94,11 @@ const ProductInfo = () => {
 
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState({});
+  const [selectedSize, setSelectedSize] = useState();
+  const [selectedColor, setSelectedColor] = useState();
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -124,25 +115,11 @@ const ProductInfo = () => {
     getProduct();
   }, [id]);
 
-  const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
-  const colors = [
-    "red",
-    "orange",
-    "yellow",
-    "green",
-    "blue",
-    "purple",
-    "brown",
-    "black",
-    "beige",
-    "white",
-  ];
-
   let maxQuantity = 10;
-  if (product) {
+  if (product.quantity) {
     maxQuantity = Math.min(product.quantity, maxQuantity);
   }
-  let quantityOptions = [...Array(10).keys()].map((q) => {
+  let quantityOptions = [...Array(maxQuantity).keys()].map((q) => {
     return (
       <Option key={q + 1} value={q + 1}>
         {q + 1}
@@ -157,6 +134,17 @@ const ProductInfo = () => {
       </LoadingContainer>
     );
   }
+
+  const handleAddToCart = () => {
+    dispatch(
+      addProduct({
+        ...product,
+        selectedSize,
+        selectedColor,
+        selectedQuantity,
+      })
+    );
+  };
 
   return (
     <Container>
@@ -174,7 +162,14 @@ const ProductInfo = () => {
               <FilterTitle>SIZE</FilterTitle>
               <FilterOptions>
                 {product.sizes?.map((size) => {
-                  return <SizeOption key={size}>{size}</SizeOption>;
+                  return (
+                    <SizeOption
+                      key={size}
+                      size={size}
+                      selectedSize={selectedSize}
+                      setSelectedSize={setSelectedSize}
+                    />
+                  );
                 })}
               </FilterOptions>
             </Filter>
@@ -183,7 +178,12 @@ const ProductInfo = () => {
               <FilterOptions>
                 {product.colors?.map((color) => {
                   return (
-                    <SizeColorOption key={color.color_name} color={color} />
+                    <ColorOption
+                      key={color.color_name}
+                      color={color}
+                      selectedColor={selectedColor}
+                      setSelectedColor={setSelectedColor}
+                    />
                   );
                 })}
               </FilterOptions>
@@ -191,7 +191,11 @@ const ProductInfo = () => {
             <Filter>
               <FilterTitle>QUANTITY</FilterTitle>
               <FilterOptions>
-                <Select name="quantity" id="quantity">
+                <Select
+                  name="quantity"
+                  id="quantity"
+                  onChange={(e) => setSelectedQuantity(e.target.value)}
+                >
                   {quantityOptions}
                 </Select>
               </FilterOptions>
@@ -199,7 +203,17 @@ const ProductInfo = () => {
           </FilterContainer>
         </Section>
         <Section>
-          <Button>ADD TO CART</Button>
+          <AddToCartButton
+            disabled={
+              !(
+                typeof selectedSize !== "undefined" &&
+                typeof selectedColor !== "undefined"
+              )
+            }
+            onClick={handleAddToCart}
+          >
+            ADD TO CART
+          </AddToCartButton>
         </Section>
         <Section>
           <Tabs product={product} />

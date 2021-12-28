@@ -1,4 +1,5 @@
 import "./App.css";
+
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import ProductPage from "./pages/ProductPage";
@@ -11,11 +12,13 @@ import {
   Navigate,
 } from "react-router-dom";
 import SignUpLogin from "./pages/SignUpLogin";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   const user = true;
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products/:category" element={<ShoppingPage />} />
