@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import SignUpLogin from "./pages/SignUpLogin";
 import ScrollToTop from "./ScrollToTop";
+import PaymentSuccess from "./pages/PaymentSuccess";
 
 function App() {
   const user = true;
@@ -28,6 +29,7 @@ function App() {
           path="/login"
           element={user ? <Navigate to="/" /> : <SignUpLogin />}
         />
+        <Route path="/success" element={<PaymentSuccess />} />
       </Routes>
     </Router>
   );

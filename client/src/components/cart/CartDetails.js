@@ -1,6 +1,21 @@
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
 import styled from "styled-components";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { removeFromCart } from "../../redux/cartSlice";
+
+import CartItem from "./CartItem";
+
+import StripeCheckout from "react-stripe-checkout";
+
+const KEY =
+  "pk_test_51KBwafLsJMKgwPZfRMS0rIiml3PC3cdMNWpnD5ZbWzcRumnVsMmWSYZWqO7sC8rlOOPI27nLBQeEVZqouSZzvGxt00vRFHUPQ0";
+
+const userToken =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzNhZTUwOTAwM2MxMDMzMWQwYjRkZCIsImlhdCI6MTY0MDc2NTY3OSwiZXhwIjoxNjQxMDI0ODc5fQ.2eGiyUJE0RzgbqND62vnKyq-3HgHSQm_1zrUhv5G6ZU";
 
 const Container = styled.div`
   padding: 5% 5% 10% 5%;
@@ -18,36 +33,10 @@ const PropertyContainer = styled.div`
   padding: 0 2%;
 `;
 
-const ProductContainer = styled.div`
-  display: flex;
-  margin-bottom: 1rem;
-  padding: 0 2%;
-`;
-
 const ItemContainer = styled.div`
   flex: 3;
   display: flex;
 `;
-
-const ImageContainer = styled.div`
-  flex: 1;
-`;
-
-const Image = styled.img`
-  width: 70%;
-  height: 25vh;
-  object-fit: cover;
-`;
-
-const DescContainer = styled.div`
-  flex: 2;
-`;
-
-const ProductTitle = styled.h2`
-  font-size: 1rem;
-`;
-
-const SizeColor = styled.span``;
 
 const PriceContainer = styled.div`
   flex: 1;
@@ -60,14 +49,6 @@ const QuantityContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
-
-const Select = styled.select`
-  width: 4rem;
-  font-size: 0.8rem;
-  text-align: center;
-`;
-
-const Option = styled.option``;
 
 const SubtotalContainer = styled.div`
   flex: 1;
@@ -119,21 +100,62 @@ const Fee = styled.div`
   justify-content: space-between;
 `;
 
-const Type = styled.span``;
-
 const Amount = styled.span`
   margin-left: 9rem;
 `;
 
-const Link = styled.a`
-  color: inherit;
-  cursor: pointer;
-  &:hover {
-    color: inherit;
-`;
-
 const CartDetails = () => {
-  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.cart.products);
+  const [stripeToken, setStripeToken] = useState(null);
+  const history = useNavigate();
+
+  const removeProduct = (id) => {
+    dispatch(removeFromCart(id));
+  };
+
+  const onToken = (token) => {
+    setStripeToken(token);
+  };
+
+  const subTotal = products.reduce(
+    (price, product) => product.price * product.qty + price,
+    0
+  );
+
+  useEffect(() => {
+    const makePaymentRequest = async () => {
+      try {
+        const res = await axios.post(
+          "http://localhost:5000/api/checkout/payment",
+          {
+            // header: { token: `Bearer ${userToken}` },
+            tokenId: stripeToken.id,
+            amount: subTotal * 100,
+          }
+        );
+        console.log(res.data);
+        // history.push("/success", { data: res.data });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    stripeToken && subTotal > 0 && makePaymentRequest();
+  }, [stripeToken, subTotal, history]);
+
+  if (products.length === 0) {
+    return (
+      <Container style={{ height: "60vh" }}>
+        <Title>SHOPPING BAG</Title>
+        <div style={{ textAlign: "center", marginTop: "5rem" }}>
+          Your bag is empty.{" "}
+          <Link to={"/"} style={{ color: "inherit" }}>
+            Continue Shopping
+          </Link>
+        </div>
+      </Container>
+    );
+  }
 
   return (
     <Container>
@@ -146,105 +168,49 @@ const CartDetails = () => {
       </PropertyContainer>
       <hr />
 
-      {cart.products.map((product) => {
-        return (
-          <ProductContainer>
-            <ItemContainer>
-              <ImageContainer>
-                <Image src={`https://${product.src}`} />
-              </ImageContainer>
-              <DescContainer>
-                <ProductTitle>{product.title}</ProductTitle>
-                <SizeColor>
-                  {product.selectedSize} | {product.selectedColor}
-                </SizeColor>
-              </DescContainer>
-            </ItemContainer>
-            <PriceContainer>${product.price.$numberDecimal}</PriceContainer>
-            <QuantityContainer>
-              <div>
-                {console.log([...Array(Math.min(10, product.quantity)).keys()])}
-                <Select
-                  name="quantity"
-                  id="quantity"
-                  value={product.selectedQuantity}
-                  // onChange={(e) => setSelectedQuantity(e.target.value)}
-                >
-                  {[...Array(Math.min(10, product.quantity)).keys()].map(
-                    (q) => {
-                      return (
-                        <Option key={q + 1} value={q + 1}>
-                          {q + 1}
-                        </Option>
-                      );
-                    }
-                  )}
-                </Select>
-              </div>
-            </QuantityContainer>
-            <SubtotalContainer>
-              ${product.selectedQuantity * product.price.$numberDecimal}
-            </SubtotalContainer>
-          </ProductContainer>
-        );
+      {products.map((product) => {
+        return <CartItem product={product} removeProduct={removeProduct} />;
       })}
-
-      {/* <ProductContainer>
-        <ItemContainer>
-          <ImageContainer>
-            <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/20200930144925_720x.jpg?v=1632901109" />
-          </ImageContainer>
-          <DescContainer>
-            <ProductTitle>
-              Elsie Chiffon Striping Blouse sdfasdasdfas sdfafwersa
-              sdfasfsdfasdf
-            </ProductTitle>
-            <SizeColor>XS | Brown</SizeColor>
-          </DescContainer>
-        </ItemContainer>
-        <PriceContainer>$235.99</PriceContainer>
-        <QuantityContainer>
-          <div>
-            <Select name="quantity" id="quantity">
-              <Option value="1" selected>
-                1
-              </Option>
-              <Option value="2">2</Option>
-              <Option value="3">3</Option>
-              <Option value="4">4</Option>
-            </Select>
-          </div>
-        </QuantityContainer>
-        <SubtotalContainer>$235.99</SubtotalContainer>
-      </ProductContainer> */}
       <hr />
 
-      <SummaryContainer>
+      {/* <SummaryContainer>
         <Input placeholder="Enter promo code" />
         <Button>APPLY</Button>
-      </SummaryContainer>
+      </SummaryContainer> */}
 
       <SummaryContainer>
         <FeeWrapper>
           <Fee>
-            <Type>Subtotal</Type>
-            <Amount>$471.98</Amount>
+            <span>Subtotal</span>
+            <Amount>${subTotal}</Amount>
           </Fee>
           <Fee>
-            <Type>Shipping</Type>
+            <span>Shipping</span>
             <Amount>$0.00</Amount>
           </Fee>
           <Fee>
-            <Type>Subtotal</Type>
-            <Amount>$471.98</Amount>
+            <span>Estimated Total</span>
+            <Amount>${subTotal}</Amount>
           </Fee>
         </FeeWrapper>
       </SummaryContainer>
 
       <hr />
       <SummaryContainer type="continueOrCheckout">
-        <Link>Continue Shopping</Link>
-        <Button type="checkout">CHECK OUT</Button>
+        <Link to="/" style={{ color: "inherit" }}>
+          Continue Shopping
+        </Link>
+        <StripeCheckout
+          name="Michelle Shop"
+          billingAddress
+          shippingAddress
+          description={`Your total is ${subTotal}`}
+          amount={subTotal * 100}
+          token={onToken}
+          stripeKey={KEY}
+        >
+          <Button type="checkout">CHECK OUT</Button>
+        </StripeCheckout>
       </SummaryContainer>
     </Container>
   );

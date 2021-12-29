@@ -45,7 +45,7 @@ const Right = styled.div`
 `;
 
 const Navbar = (props) => {
-  const quantity = useSelector((state) => state.cart.quantity);
+  const products = useSelector((state) => state.cart.products);
 
   return (
     <Container>
@@ -58,7 +58,9 @@ const Navbar = (props) => {
         <LeftItem style={{ marginLeft: "10%" }}>BEST SELLERS</LeftItem>
       </Left>
       <Center>
-        <Logo>MICHELLE</Logo>
+        <Link to="/" style={{ color: "inhert", textDecoration: "none" }}>
+          <Logo>MICHELLE</Logo>
+        </Link>
       </Center>
       <Right>
         <div
@@ -79,7 +81,9 @@ const Navbar = (props) => {
         >
           <div
             className={
-              quantity === 0 ? "material-icons-outlined" : "material-icons"
+              products.length === 0
+                ? "material-icons-outlined"
+                : "material-icons"
             }
             style={{ fontSize: "1.4rem", cursor: "pointer" }}
           >

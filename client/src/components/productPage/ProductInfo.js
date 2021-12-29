@@ -10,7 +10,7 @@ import SizeOption from "./SizeOption";
 import Tabs from "../Tabs";
 
 import { useDispatch } from "react-redux";
-import { addProduct } from "../../redux/cartRedux";
+import { addToCart } from "../../redux/cartSlice";
 
 const LoadingContainer = styled.div`
   padding: 5% 10% 10% 10%;
@@ -89,6 +89,8 @@ const AddToCartButton = styled.button`
 `;
 
 const ProductInfo = () => {
+  const dispatch = useDispatch();
+
   const location = useLocation();
   const id = location.pathname.split("/")[2];
 
@@ -97,8 +99,6 @@ const ProductInfo = () => {
   const [selectedSize, setSelectedSize] = useState();
   const [selectedColor, setSelectedColor] = useState();
   const [selectedQuantity, setSelectedQuantity] = useState(1);
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -137,13 +137,16 @@ const ProductInfo = () => {
 
   const handleAddToCart = () => {
     dispatch(
-      addProduct({
-        ...product,
+      addToCart({
+        id: product._id,
         selectedSize,
         selectedColor,
         selectedQuantity,
       })
     );
+    setSelectedSize();
+    setSelectedColor();
+    setSelectedQuantity(1);
   };
 
   return (
