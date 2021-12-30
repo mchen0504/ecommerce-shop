@@ -69,12 +69,17 @@ const Navbar = (props) => {
         >
           search
         </div>
-        <div
-          className="material-icons-outlined"
-          style={{ fontSize: "1.4rem", marginLeft: "10%", cursor: "pointer" }}
+        <Link
+          to={"/login"}
+          style={{ textDecoration: "none", marginLeft: "10%" }}
         >
-          person
-        </div>
+          <div
+            className="material-icons-outlined"
+            style={{ fontSize: "1.4rem", marginLeft: "10%", cursor: "pointer" }}
+          >
+            person
+          </div>
+        </Link>
         <Link
           to={"/cart"}
           style={{ textDecoration: "none", marginLeft: "10%" }}

@@ -7,7 +7,7 @@ import Spinner from "react-bootstrap/Spinner";
 
 import ColorOption from "./ColorOption";
 import SizeOption from "./SizeOption";
-import Tabs from "../Tabs";
+import Tabs from "./InfoTabs";
 
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";

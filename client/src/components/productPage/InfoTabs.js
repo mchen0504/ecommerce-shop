@@ -30,8 +30,6 @@ const TabButton = styled.div`
     `}
 `;
 
-const TabContent = styled.div``;
-
 const Paragraph = styled.p`
   font-size: 0.9rem;
 `;
@@ -56,7 +54,7 @@ const Tabs = ({ product }) => {
         </TabButton>
       </Sidebar>
 
-      <TabContent id="Details">
+      <div id="Details">
         {selectedTab === "details" ? (
           <Paragraph>{product.detail}</Paragraph>
         ) : (
@@ -65,7 +63,7 @@ const Tabs = ({ product }) => {
             <Paragraph>{product.care}</Paragraph>
           </div>
         )}
-      </TabContent>
+      </div>
     </TabContainer>
   );
 };

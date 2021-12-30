@@ -55,12 +55,13 @@ const SubtotalContainer = styled.div`
   justify-content: flex-end;
 `;
 
-const CartItem = ({ product, removeProduct }) => {
+const CartItem = ({ product, removeProduct, setSubTotal }) => {
   const [selectedQuantity, setSelectedQuantity] = useState(product.qty);
 
   const handleQtyChange = (e) => {
     if (e.target.value > 0) {
       setSelectedQuantity(e.target.value);
+      setSubTotal(e.target.value);
     } else {
       removeProduct(product.id);
     }

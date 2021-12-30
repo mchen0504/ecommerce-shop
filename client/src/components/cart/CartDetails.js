@@ -15,7 +15,7 @@ const KEY =
   "pk_test_51KBwafLsJMKgwPZfRMS0rIiml3PC3cdMNWpnD5ZbWzcRumnVsMmWSYZWqO7sC8rlOOPI27nLBQeEVZqouSZzvGxt00vRFHUPQ0";
 
 const userToken =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzNhZTUwOTAwM2MxMDMzMWQwYjRkZCIsImlhdCI6MTY0MDc2NTY3OSwiZXhwIjoxNjQxMDI0ODc5fQ.2eGiyUJE0RzgbqND62vnKyq-3HgHSQm_1zrUhv5G6ZU";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzNhZTUwOTAwM2MxMDMzMWQwYjRkZCIsImlhdCI6MTY0MDgwMzgwNywiZXhwIjoxNjQxMDYzMDA3fQ.VyqCz_uVSJbQshCfQKh32IO9P8PeRG6ofbt6483coJg";
 
 const Container = styled.div`
   padding: 5% 5% 10% 5%;
@@ -66,19 +66,6 @@ const SummaryContainer = styled.div`
     props.type === "continueOrCheckout" ? "2rem 0 0 0" : "1rem 0"};
 `;
 
-const Input = styled.input`
-  font-size: 0.9rem;
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid gray;
-  margin-right: 2rem;
-  padding: 0.2rem 0.3rem;
-  color: none;
-  box-shadow: none;
-  &:hover {
-    outline: none;
-`;
-
 const Button = styled.button`
   padding: 0.3rem 1rem;
   background-color: ${(props) =>
@@ -107,8 +94,9 @@ const Amount = styled.span`
 const CartDetails = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.cart.products);
+  const [subTotal, setSubTotal] = useState(0);
   const [stripeToken, setStripeToken] = useState(null);
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const removeProduct = (id) => {
     dispatch(removeFromCart(id));
@@ -118,10 +106,9 @@ const CartDetails = () => {
     setStripeToken(token);
   };
 
-  const subTotal = products.reduce(
-    (price, product) => product.price * product.qty + price,
-    0
-  );
+  const getSubTotal = () => {
+    products.reduce((price, product) => product.price * product.qty + price, 0);
+  };
 
   useEffect(() => {
     const makePaymentRequest = async () => {
@@ -129,19 +116,20 @@ const CartDetails = () => {
         const res = await axios.post(
           "http://localhost:5000/api/checkout/payment",
           {
-            // header: { token: `Bearer ${userToken}` },
+            header: { token: `Bearer ${userToken}` },
             tokenId: stripeToken.id,
             amount: subTotal * 100,
           }
         );
-        console.log(res.data);
-        // history.push("/success", { data: res.data });
+        navigate("/success", {
+          state: { stripeInfo: res.data, products: products },
+        });
       } catch (error) {
         console.log(error);
       }
     };
     stripeToken && subTotal > 0 && makePaymentRequest();
-  }, [stripeToken, subTotal, history]);
+  }, [stripeToken, subTotal, products, navigate]);
 
   if (products.length === 0) {
     return (
@@ -169,20 +157,22 @@ const CartDetails = () => {
       <hr />
 
       {products.map((product) => {
-        return <CartItem product={product} removeProduct={removeProduct} />;
+        return (
+          <CartItem
+            key={product.id}
+            product={product}
+            removeProduct={removeProduct}
+            setSubTotal={setSubTotal}
+          />
+        );
       })}
       <hr />
-
-      {/* <SummaryContainer>
-        <Input placeholder="Enter promo code" />
-        <Button>APPLY</Button>
-      </SummaryContainer> */}
 
       <SummaryContainer>
         <FeeWrapper>
           <Fee>
             <span>Subtotal</span>
-            <Amount>${subTotal}</Amount>
+            <Amount>${getSubTotal()}</Amount>
           </Fee>
           <Fee>
             <span>Shipping</span>
@@ -190,7 +180,7 @@ const CartDetails = () => {
           </Fee>
           <Fee>
             <span>Estimated Total</span>
-            <Amount>${subTotal}</Amount>
+            <Amount>${getSubTotal()}</Amount>
           </Fee>
         </FeeWrapper>
       </SummaryContainer>

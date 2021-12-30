@@ -1,22 +1,22 @@
 import "./App.css";
-
-import Cart from "./pages/Cart";
-import Home from "./pages/Home";
-import ProductPage from "./pages/ProductPage";
-import ShoppingPage from "./pages/ShoppingPage";
-
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
-import SignUpLogin from "./pages/SignUpLogin";
 import ScrollToTop from "./ScrollToTop";
+import { useSelector } from "react-redux";
+
+import Cart from "./pages/Cart";
+import Home from "./pages/Home";
+import ProductPage from "./pages/ProductPage";
+import ShoppingPage from "./pages/ShoppingPage";
+import SignUpLoginPage from "./pages/SignUpLoginPage";
 import PaymentSuccess from "./pages/PaymentSuccess";
 
 function App() {
-  const user = true;
+  const user = useSelector((state) => state.user.currentUser);
   return (
     <Router>
       <ScrollToTop />
@@ -27,7 +27,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route
           path="/login"
-          element={user ? <Navigate to="/" /> : <SignUpLogin />}
+          element={user ? <Navigate to="/" /> : <SignUpLoginPage />}
         />
         <Route path="/success" element={<PaymentSuccess />} />
       </Routes>

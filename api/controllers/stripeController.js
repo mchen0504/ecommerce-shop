@@ -1,3 +1,4 @@
+require("dotenv").config();
 const KEY = process.env.STRIPE_KEY;
 const stripe = require("stripe")(KEY);
 
@@ -9,10 +10,7 @@ const makeStripePayment = (req, res) => {
       currency: "usd",
     },
     (stripeErr, stripeRes) => {
-      console.log(stripeErr);
-      console.log(stripeRes);
       if (stripeErr) {
-        console.log(stripeErr);
         res.status(500).json(stripeErr);
       } else {
         res.status(200).json(stripeRes);

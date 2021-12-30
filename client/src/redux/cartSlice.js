@@ -34,6 +34,9 @@ const cartSlice = createSlice({
         (existedProduct) => existedProduct.id !== action.payload
       );
     },
+    resetCart(state) {
+      state.products = [];
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(addToCart.fulfilled, (state, action) => {
@@ -53,5 +56,5 @@ const cartSlice = createSlice({
   },
 });
 
-export const { removeFromCart } = cartSlice.actions;
+export const { removeFromCart, resetCart } = cartSlice.actions;
 export default cartSlice.reducer;

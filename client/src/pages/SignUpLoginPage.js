@@ -1,7 +1,7 @@
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
+import Tabs from "../components/signUpLogin/Tabs";
 import Navbar from "../components/Nav";
-import Tabs from "../components/Tabs";
 
 const SignUpLogin = () => {
   return (
