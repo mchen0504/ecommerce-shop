@@ -4,18 +4,14 @@ import axios from "axios";
 
 import styled from "styled-components";
 
-import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart } from "../../redux/cartSlice";
+import { useSelector } from "react-redux";
 
 import CartItem from "./CartItem";
 
 import StripeCheckout from "react-stripe-checkout";
 
-const KEY =
+const PUBLIC_KEY =
   "pk_test_51KBwafLsJMKgwPZfRMS0rIiml3PC3cdMNWpnD5ZbWzcRumnVsMmWSYZWqO7sC8rlOOPI27nLBQeEVZqouSZzvGxt00vRFHUPQ0";
-
-const userToken =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzNhZTUwOTAwM2MxMDMzMWQwYjRkZCIsImlhdCI6MTY0MDgwMzgwNywiZXhwIjoxNjQxMDYzMDA3fQ.VyqCz_uVSJbQshCfQKh32IO9P8PeRG6ofbt6483coJg";
 
 const Container = styled.div`
   padding: 5% 5% 10% 5%;
@@ -92,22 +88,20 @@ const Amount = styled.span`
 `;
 
 const CartDetails = () => {
-  const dispatch = useDispatch();
-  const products = useSelector((state) => state.cart.products);
-  const [subTotal, setSubTotal] = useState(0);
+  const cart = useSelector((state) => state.cart);
+  const currentUser = useSelector((state) => state.user.currentUser);
+  const userToken = currentUser?.accessToken;
   const [stripeToken, setStripeToken] = useState(null);
   const navigate = useNavigate();
-
-  const removeProduct = (id) => {
-    dispatch(removeFromCart(id));
-  };
 
   const onToken = (token) => {
     setStripeToken(token);
   };
 
-  const getSubTotal = () => {
-    products.reduce((price, product) => product.price * product.qty + price, 0);
+  const handleCheckout = () => {
+    if (!currentUser) {
+      navigate("/login");
+    }
   };
 
   useEffect(() => {
@@ -118,20 +112,38 @@ const CartDetails = () => {
           {
             header: { token: `Bearer ${userToken}` },
             tokenId: stripeToken.id,
-            amount: subTotal * 100,
+            amount: cart.total * 100,
           }
         );
         navigate("/success", {
-          state: { stripeInfo: res.data, products: products },
+          state: { stripeInfo: res.data, cart },
         });
       } catch (error) {
         console.log(error);
       }
     };
-    stripeToken && subTotal > 0 && makePaymentRequest();
-  }, [stripeToken, subTotal, products, navigate]);
+    stripeToken && cart.total > 0 && makePaymentRequest();
+  }, [stripeToken, cart.total, navigate]);
 
-  if (products.length === 0) {
+  const checkoutButton = currentUser ? (
+    <StripeCheckout
+      name="Michelle Shop"
+      billingAddress
+      shippingAddress
+      description={`Your total is $${cart.total}`}
+      amount={cart.total * 100}
+      token={onToken}
+      stripeKey={PUBLIC_KEY}
+    >
+      <Button type="checkout">CHECK OUT</Button>
+    </StripeCheckout>
+  ) : (
+    <Button type="checkout" onClick={handleCheckout}>
+      CHECK OUT
+    </Button>
+  );
+
+  if (cart.products.length === 0) {
     return (
       <Container style={{ height: "60vh" }}>
         <Title>SHOPPING BAG</Title>
@@ -156,15 +168,8 @@ const CartDetails = () => {
       </PropertyContainer>
       <hr />
 
-      {products.map((product) => {
-        return (
-          <CartItem
-            key={product.id}
-            product={product}
-            removeProduct={removeProduct}
-            setSubTotal={setSubTotal}
-          />
-        );
+      {cart.products.map((product) => {
+        return <CartItem key={product.id} product={product} />;
       })}
       <hr />
 
@@ -172,7 +177,7 @@ const CartDetails = () => {
         <FeeWrapper>
           <Fee>
             <span>Subtotal</span>
-            <Amount>${getSubTotal()}</Amount>
+            <Amount>${cart.total}</Amount>
           </Fee>
           <Fee>
             <span>Shipping</span>
@@ -180,7 +185,7 @@ const CartDetails = () => {
           </Fee>
           <Fee>
             <span>Estimated Total</span>
-            <Amount>${getSubTotal()}</Amount>
+            <Amount>${cart.total}</Amount>
           </Fee>
         </FeeWrapper>
       </SummaryContainer>
@@ -190,17 +195,7 @@ const CartDetails = () => {
         <Link to="/" style={{ color: "inherit" }}>
           Continue Shopping
         </Link>
-        <StripeCheckout
-          name="Michelle Shop"
-          billingAddress
-          shippingAddress
-          description={`Your total is ${subTotal}`}
-          amount={subTotal * 100}
-          token={onToken}
-          stripeKey={KEY}
-        >
-          <Button type="checkout">CHECK OUT</Button>
-        </StripeCheckout>
+        {checkoutButton}
       </SummaryContainer>
     </Container>
   );

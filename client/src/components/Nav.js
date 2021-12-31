@@ -46,6 +46,8 @@ const Right = styled.div`
 
 const Navbar = (props) => {
   const products = useSelector((state) => state.cart.products);
+  const currentUser = useSelector((state) => state.user.currentUser);
+  console.log(currentUser);
 
   return (
     <Container>
@@ -70,7 +72,7 @@ const Navbar = (props) => {
           search
         </div>
         <Link
-          to={"/login"}
+          to={currentUser ? "/profile" : "/login"}
           style={{ textDecoration: "none", marginLeft: "10%" }}
         >
           <div

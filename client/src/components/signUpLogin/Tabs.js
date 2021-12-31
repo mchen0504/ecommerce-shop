@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled, { css } from "styled-components";
 
 import { useDispatch } from "react-redux";
-import { login } from "../../redux/userSlice";
+import { signUp, login } from "../../redux/userSlice";
 
 const Container = styled.div`
   height: 70vh;
@@ -77,6 +77,10 @@ const Tabs = () => {
     dispatch(login({ email, password }));
   };
 
+  const handleSignUp = () => {
+    dispatch(signUp({ email, password }));
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -116,7 +120,7 @@ const Tabs = () => {
           {selectedTab === "signIn" ? (
             <SubmitButton onClick={handleLogin}>SIGN IN</SubmitButton>
           ) : (
-            <SubmitButton>CREATE ACCOUNT</SubmitButton>
+            <SubmitButton onClick={handleSignUp}>CREATE ACCOUNT</SubmitButton>
           )}
         </InputContainer>
       </Wrapper>

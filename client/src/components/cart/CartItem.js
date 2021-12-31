@@ -1,6 +1,7 @@
 import { useState } from "react";
-
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { editCart, removeFromCart } from "../../redux/cartSlice";
 
 const ProductContainer = styled.div`
   display: flex;
@@ -55,15 +56,23 @@ const SubtotalContainer = styled.div`
   justify-content: flex-end;
 `;
 
-const CartItem = ({ product, removeProduct, setSubTotal }) => {
+const CartItem = ({ product }) => {
+  const dispatch = useDispatch();
   const [selectedQuantity, setSelectedQuantity] = useState(product.qty);
 
   const handleQtyChange = (e) => {
     if (e.target.value > 0) {
       setSelectedQuantity(e.target.value);
-      setSubTotal(e.target.value);
+      dispatch(
+        editCart({
+          id: product.id,
+          size: product.size,
+          color: product.color,
+          qty: e.target.value,
+        })
+      );
     } else {
-      removeProduct(product.id);
+      dispatch(removeFromCart(product.id));
     }
   };
 
@@ -99,7 +108,9 @@ const CartItem = ({ product, removeProduct, setSubTotal }) => {
           </Select>
         </div>
       </QuantityContainer>
-      <SubtotalContainer>${product.qty * product.price}</SubtotalContainer>
+      <SubtotalContainer>
+        ${(product.qty * product.price).toFixed(2)}
+      </SubtotalContainer>
     </ProductContainer>
   );
 };

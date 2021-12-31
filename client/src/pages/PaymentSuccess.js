@@ -1,6 +1,6 @@
 import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import axios from "axios";
 
@@ -31,10 +31,9 @@ const PaymentSuccess = () => {
 
   const { state } = useLocation();
   const data = state.stripeInfo;
-  const products = state.products;
+  const cart = state.cart;
 
-  const user = JSON.parse(localStorage.getItem("persist:root"))?.user;
-  const currentUser = user && JSON.parse(user).currentUser;
+  const currentUser = useSelector((state) => state.user.currentUser);
   const TOKEN = currentUser?.accessToken;
 
   const [orderId, setOrderId] = useState();
@@ -48,13 +47,13 @@ const PaymentSuccess = () => {
           headers: { Authorization: `Bearer ${TOKEN}` },
           data: {
             userId: currentUser._id,
-            products: products.map((product) => ({
+            products: cart.products.map((product) => ({
               productId: product.id,
               size: product.size,
               color: product.color,
               quantity: product.qty,
             })),
-            amount: data.amount / 100,
+            amount: cart.total / 100,
             address: data.billing_details.address,
           },
         });
@@ -65,7 +64,7 @@ const PaymentSuccess = () => {
       createOrder();
       dispatch(resetCart());
     }
-  }, [data, products, TOKEN]);
+  }, [data, cart, TOKEN]);
 
   if (!orderId) {
     return (
@@ -77,7 +76,7 @@ const PaymentSuccess = () => {
 
   return (
     <Container>
-      Thank you for shopping with us. Your order number is ${orderId}.
+      Thank you for shopping with us. Your order number is {orderId}.
       <Link to="/">
         <Button style={{ padding: 10, marginTop: 20 }}>Go to Homepage</Button>
       </Link>
