@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { dropdownImgItems, newArrivals } from "../../homeData";
 
 const Container = styled.div`
   background-color: rgba(247, 240, 219);
@@ -6,6 +8,8 @@ const Container = styled.div`
   padding: 2% 3%;
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  z-index: 2;
 `;
 
 const Left = styled.div`
@@ -59,13 +63,13 @@ const Desc = styled.span`
   margin-top: 0.3rem;
 `;
 
-const NavOptionsExpand = (props) => {
-  const {
-    mouseOnShopAll,
-    mouseOnShopAllOptions,
-    handleShopAllMouseEnter,
-    handleShopAllOptionsMouseLeave
-  } = props;
+const NavOptionsExpand = ({
+  mouseOnShopAll,
+  mouseOnShopAllOptions,
+  handleShopAllMouseEnter,
+  handleShopAllOptionsMouseLeave,
+}) => {
+  const categories = ["tops", "dresses", "bottoms", "knitwear", "outerwear"];
 
   return (
     <div
@@ -84,49 +88,62 @@ const NavOptionsExpand = (props) => {
           <Section>
             <Title>CATEGORIES</Title>
             <Options>
-              <OptionItem>Tops</OptionItem>
-              <OptionItem>Dresses</OptionItem>
-              <OptionItem>Bottoms</OptionItem>
-              <OptionItem>Knitwear</OptionItem>
-              <OptionItem>Outerwear</OptionItem>
+              {categories.map((category) => {
+                return (
+                  <OptionItem
+                    key={category}
+                    onClick={handleShopAllOptionsMouseLeave}
+                  >
+                    <Link
+                      style={{ textDecoration: "none", color: "inherit" }}
+                      to={`/products/${category}`}
+                    >
+                      {category.charAt(0).toUpperCase() + category.slice(1)}
+                    </Link>
+                  </OptionItem>
+                );
+              })}
             </Options>
           </Section>
           <Section style={{ flex: "2" }}>
             <Title>NEW ARRIVALS</Title>
             <Options>
-              <OptionItem>Morgan Wool Coat</OptionItem>
-              <OptionItem>Elizabeth Retro Printed Dress</OptionItem>
-              <OptionItem>Fiona Cotton White Midi Dress</OptionItem>
-              <OptionItem>Elsie Chiffon Striping Blouse</OptionItem>
-              <OptionItem>Nafisa Printed Midi Dress</OptionItem>
+              {newArrivals.map((item) => {
+                return (
+                  <OptionItem
+                    key={item.id}
+                    onClick={handleShopAllOptionsMouseLeave}
+                  >
+                    <Link
+                      style={{ textDecoration: "none", color: "inherit" }}
+                      to={`/product/${item.id}`}
+                    >
+                      {item.title}
+                    </Link>
+                  </OptionItem>
+                );
+              })}
             </Options>
           </Section>
         </Left>
         <Right>
-          <ProductContainer>
-            <ImageContainer>
-              <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/20201216104658_1080x.jpg?v=1611136789"></Image>
-            </ImageContainer>
-            <Desc>Best Sellers</Desc>
-          </ProductContainer>
-          <ProductContainer>
-            <ImageContainer>
-              <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/20201216104658_1080x.jpg?v=1611136789"></Image>
-            </ImageContainer>
-            <Desc>New Arrivals</Desc>
-          </ProductContainer>
-          <ProductContainer>
-            <ImageContainer>
-              <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/7_70897da3-c8f1-4dfb-9ce8-363fc4acd6b7_1080x.jpg?v=1632820526"></Image>
-            </ImageContainer>
-            <Desc>New Sweaters</Desc>
-          </ProductContainer>
-          <ProductContainer>
-            <ImageContainer>
-              <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/7_70897da3-c8f1-4dfb-9ce8-363fc4acd6b7_1080x.jpg?v=1632820526"></Image>
-            </ImageContainer>
-            <Desc>Staying Warm</Desc>
-          </ProductContainer>
+          {dropdownImgItems.map((item) => {
+            return (
+              <ProductContainer
+                key={item.id}
+                onClick={handleShopAllOptionsMouseLeave}
+              >
+                <Link
+                  style={{ textDecoration: "none", color: "inherit" }}
+                  to={`/product/${item.id}`}
+                >
+                  <ImageContainer>
+                    <Image src={`https:${item.src}`}></Image>
+                  </ImageContainer>
+                </Link>
+              </ProductContainer>
+            );
+          })}
         </Right>
       </Container>
     </div>

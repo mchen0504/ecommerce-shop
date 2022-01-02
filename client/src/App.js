@@ -20,29 +20,13 @@ import ProfilePage from "./pages/ProfilePage";
 function App() {
   const user = useSelector((state) => state.user.currentUser);
 
-  const PrivateRoute = ({ children }) => {
-    let location = useLocation();
-    if (!user) {
-      return <Navigate to="/login" state={{ from: location }} />;
-    }
-    console.log(location);
-    return children;
-    // <Route
-    //   {...rest}
-    //   render={(props) =>
-    //     user ? (
-    //       <Component {...props} />
-    //     ) : (
-    //       <Navigate
-    //         to={{
-    //           pathname: "/login",
-    //           state: { from: props.location },
-    //         }}
-    //       />
-    //     )
-    //   }
-    // />
-  };
+  // const PrivateRoute = ({ children }) => {
+  //   let location = useLocation();
+  //   if (!user) {
+  //     return <Navigate to="/login" state={{ from: location }} />;
+  //   }
+  //   return children;
+  // };
 
   return (
     <Router>
@@ -53,20 +37,12 @@ function App() {
         <Route path="/product/:id" element={<ProductPage />} />
         <Route
           path="/login"
-          element={user ? <Navigate to="/" /> : <SignUpLoginPage />}
+          element={user ? <Navigate to="/profile" /> : <SignUpLoginPage />}
         />
-        <Route
-          path="/cart"
-          element={!user ? <Navigate to="/login" /> : <Cart />}
-        />
-        {/* <Route path="/cart" element={<Cart />} /> */}
+        <Route path="/cart" element={<Cart />} />
         <Route
           path="/profile"
-          element={
-            <PrivateRoute>
-              <ProfilePage />
-            </PrivateRoute>
-          }
+          element={user ? <ProfilePage /> : <Navigate to="/login" />}
         />
         <Route path="/success" element={<PaymentSuccess />} />
       </Routes>

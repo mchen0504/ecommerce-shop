@@ -182,7 +182,7 @@ const ProductInfo = () => {
                 {product.colors?.map((color) => {
                   return (
                     <ColorOption
-                      key={color.color_name}
+                      key={color}
                       color={color}
                       selectedColor={selectedColor}
                       setSelectedColor={setSelectedColor}

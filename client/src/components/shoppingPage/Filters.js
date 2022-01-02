@@ -17,7 +17,7 @@ const FilterOptions = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: ${(props) => (props.type === "category" ? "0.1rem" : "0.5rem")};
+  gap: ${(props) => (props.type === "category" ? "0.6rem" : "0.5rem")};
   flex-direction: ${(props) => (props.type === "category" ? "column" : "row")};
 `;
 
@@ -58,7 +58,6 @@ const Filters = ({ category, filters, setFilters }) => {
 
   let sizeButtons = sizes.map((size) => {
     let selected = false;
-    // if (filters && filters.sizes) {
     if (filters.sizes.includes(size)) {
       selected = true;
     }
@@ -76,11 +75,9 @@ const Filters = ({ category, filters, setFilters }) => {
 
   let colorButtons = colors.map((color) => {
     let selected = false;
-    // if (filters) {
     if (filters.colors.includes(color)) {
       selected = true;
     }
-    // }
     return (
       <FilterOption
         key={color}

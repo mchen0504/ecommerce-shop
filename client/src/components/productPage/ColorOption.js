@@ -8,7 +8,6 @@ const ColorButton = styled.button`
   height: 22px;
   border-radius: 50%;
   border: 0.1px solid #d3d3d3;
-  background-image: url(${(props) => props.url});
   background-color: ${(props) => props.color};
   cursor: pointer;
   &:hover {
@@ -25,7 +24,7 @@ const SizeColorOption = ({ color, selectedColor, setSelectedColor }) => {
   const renderTooltip = (props) => {
     return (
       <Tooltip id="button-tooltip" {...props}>
-        {color.color_name}
+        {color}
       </Tooltip>
     );
   };
@@ -33,10 +32,9 @@ const SizeColorOption = ({ color, selectedColor, setSelectedColor }) => {
   return (
     <OverlayTrigger placement="top" overlay={renderTooltip}>
       <ColorButton
-        url={color.color_url}
-        color={color.color_backup}
-        selected={selectedColor === color.color_name}
-        onClick={() => setSelectedColor(color.color_name)}
+        color={color}
+        selected={selectedColor === color}
+        onClick={() => setSelectedColor(color)}
       />
     </OverlayTrigger>
   );

@@ -1,0 +1,395 @@
+[
+    {
+        "sku": "11310012",
+        "title": "Fannie Printed Floral Tea Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 72.99,
+        "qtyInStock": 38,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/21_738721df-c91b-4eaa-bdcf-eeb6e63d08e2.jpg?v=1640760012",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ],
+        "colors": [
+            "Yellow",
+            "Apricot",
+            "Green"
+        ],
+        "detail": "V-neck, Suit Collar, Can Be Lace-up, Lined",
+        "composition": "100% Polyester",
+        "care": "Wash in cold water.",
+        "createdAt": "2022-01-01T15:48:56.414325"
+    },
+    {
+        "sku": "11322012",
+        "title": "Magnolia Printed Floral Midi Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 69.99,
+        "qtyInStock": 24,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/187.jpg?v=1640758801",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ],
+        "colors": [
+            "Yellow",
+            "Apricot",
+            "Green"
+        ],
+        "detail": "Square Collar, Adjustable Drawstring Design, High-waisted, Split Skirt, Can Be Lace-up, Lined",
+        "composition": "100% Polyester",
+        "care": "Wash in cold water.",
+        "createdAt": "2022-01-01T15:48:56.980626"
+    },
+    {
+        "sku": "11320012",
+        "title": "Magnolia Printed Floral Short Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 74.99,
+        "qtyInStock": 15,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/DSC05111.jpg?v=1640760651",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Yellow",
+            "Apricot",
+            "Green"
+        ],
+        "detail": "Square Collar, Adjustable Drawstring Design, High-waisted, Can Be Lace-up, Lined",
+        "composition": "100% Polyester",
+        "care": "Wash in cold water.",
+        "createdAt": "2022-01-01T15:48:57.689553"
+    },
+    {
+        "sku": "11337012",
+        "title": "Carolyn Yellow Midi Floral Slip Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 74.99,
+        "qtyInStock": 2,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/0284.jpg?v=1640757495",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Yellow"
+        ],
+        "detail": "Ruffled Square Collar, Adjustable Straps, Can Be Lace-up",
+        "composition": "100% Polyester",
+        "care": "Wash in cold water.",
+        "createdAt": "2022-01-01T15:48:58.290083"
+    },
+    {
+        "sku": "11254012",
+        "title": "Lyric Printed Stand Collar Midi Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 89.99,
+        "qtyInStock": 46,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/2_146630bf-0e4e-4db6-bb86-2f2a32c642c1.jpg?v=1629271421",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ],
+        "colors": [
+            "Dark Apricot"
+        ],
+        "detail": "Lace Neckline and Placket, Enamel Buttons, Lace-up Waistbelt, Lined",
+        "composition": "100% Polyester",
+        "care": "Hand Wash",
+        "createdAt": "2022-01-01T15:48:59.083188"
+    },
+    {
+        "sku": "22010012",
+        "title": "Fiona Cotton White Midi Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 92.29,
+        "qtyInStock": 26,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/4-7.jpg?v=1624005557",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ],
+        "colors": [
+            "White"
+        ],
+        "detail": "Embroidery",
+        "composition": "100% Cotton",
+        "care": "Hand Wash",
+        "createdAt": "2022-01-01T15:48:59.695173"
+    },
+    {
+        "sku": "22233022",
+        "title": "Ariana Floral Patterned Yellow Midi Knitted Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 59.99,
+        "qtyInStock": 0,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/8_50aba2fe-45ce-4668-aed1-d5b0ad54f2f5.jpg?v=1637983972",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            "Yellow"
+        ],
+        "detail": "Iris Jacquard Series, Lapel,Floral Patterned",
+        "composition": "6% Wool, 20% Acrylic, 20% Nylon, 54% Polyester",
+        "care": "Hand wash in cold water, using a mild and gentle detergent. Do not scrub or use a brush, and do not twist it forcefully.",
+        "createdAt": "2022-01-01T15:49:00.273823"
+    },
+    {
+        "sku": "11523012",
+        "title": "Tessa Rib Knit French Midi Knitted Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 59.99,
+        "qtyInStock": 48,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/1_7120b88c-f893-425d-9e65-c1db2690f6c6.jpg?v=1630468548",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Mustard Green",
+            "Wine Red",
+            "Black"
+        ],
+        "detail": "Rib Knit, Square Collar, Slit at the back",
+        "composition": "100% Viscose",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:49:01.207082"
+    },
+    {
+        "sku": "66016012",
+        "title": "Brielle Checkerboard Maxi Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 89.99,
+        "qtyInStock": 40,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/2_ba2d060e-c426-41f2-97bd-a71ce00fbc5b.jpg?v=1635234284",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Green",
+            "Black"
+        ],
+        "detail": "Front Half-open Placket, A-line Skirt",
+        "composition": "28.6% Polyester, 20.7% Nylon, 50.7% Viscose",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:49:02.034336"
+    },
+    {
+        "sku": "22172032",
+        "title": "Jovie  Contrast Sailor Collar Midi Knitted Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 54.99,
+        "qtyInStock": 9,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/2_4f3e9189-49ad-4900-b0be-22e788906f1f.jpg?v=1629785647",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Black",
+            "Ginger",
+            "Blue"
+        ],
+        "detail": "Contrast Sailor Collar, Rib-knit",
+        "composition": "100% Viscose",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:49:02.643753"
+    },
+    {
+        "sku": "22233012",
+        "title": "Ariana Floral Patterned Midi Knitted Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 59.99,
+        "qtyInStock": 10,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/22223.jpg?v=1628066735",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Light Beige",
+            "Yellow"
+        ],
+        "detail": "Iris Jacquard Series, Lapel,Floral Patterned",
+        "composition": "6% Wool, 20% Acrylic, 20% Nylon, 54% Polyester",
+        "care": "Hand wash in cold water, using a mild and gentle detergent. Do not scrub or use a brush, and do not twist it forcefully.",
+        "createdAt": "2022-01-01T15:49:03.247273"
+    },
+    {
+        "sku": "22172022",
+        "title": "Jovie  Contrast Sailor Collar Ginger Midi Knitted Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 54.99,
+        "qtyInStock": 58,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/7_bdd6cf6a-ec2d-4b40-b19f-798329c86b82.jpg?v=1638257861",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Black",
+            "Ginger",
+            "Blue"
+        ],
+        "detail": "Contrast Sailor Collar, Rib-knit",
+        "composition": "100% Viscose",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:49:03.840705"
+    },
+    {
+        "sku": "11123014",
+        "title": "Elizabeth Retro Printed Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 133.17,
+        "qtyInStock": 21,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/6_d96a1b89-fccf-4957-a40c-f566ebb97978.jpg?v=1611135732",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            "Deep Apricot"
+        ],
+        "detail": "Positioning Printed Craft; Special Pattern Printed Design",
+        "composition": "100% Polyester",
+        "care": "Washing in the cold water; Floating phenomenon in its first washing is normal for printed fabric.",
+        "createdAt": "2022-01-01T15:49:04.352572"
+    },
+    {
+        "sku": "1210009Z28209",
+        "title": "Aria Floral Cotton Maxi Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 79.99,
+        "qtyInStock": 24,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/5_49586893-7994-4152-bfe1-00c96a028aa8.jpg?v=1617680800",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            "Off White"
+        ],
+        "detail": "Rosa Multiflora Embroidery, Front Buttons, Lined",
+        "composition": "100% Cotton",
+        "care": "Hand wash in cold water, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:49:04.935683"
+    },
+    {
+        "sku": "11523033",
+        "title": "Tessa Rib Knit French Black Midi Knitted Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 59.99,
+        "qtyInStock": 6,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/16_8b25f2e7-83a9-4e9a-b910-53b0557574fb.jpg?v=1630477978",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "detail": "Rib Knit, Square Collar, Slit at the back",
+        "composition": "100% Viscose",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:49:05.404266"
+    },
+    {
+        "sku": "66024013",
+        "title": "Malia Embroidered White Midi Victorian Dress",
+        "categories": [
+            "dresses"
+        ],
+        "price": 104.99,
+        "qtyInStock": 35,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/2_8a57540e-8f6f-42b5-9cec-9486b0fd6847.jpg?v=1637737504",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "White"
+        ],
+        "detail": "Delicate Lacework, Peter Pan Collar, Can Be Laced",
+        "composition": "65% Rayon, 35% Polyester",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:49:06.030443"
+    }
+]

@@ -1,0 +1,373 @@
+[
+    {
+        "sku": "11168012",
+        "title": "Izellah Pants",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 49.99,
+        "qtyInStock": 45,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/5_f8d5314e-ea53-4444-b0a6-5892c010c2a1.jpg?v=1630917309",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Creamy white"
+        ],
+        "detail": "Overlapping design; Metal enamel buckle",
+        "composition": "78% Polyester, 18% Cotton, 4% Spandex",
+        "care": "Hand wash",
+        "createdAt": "2022-01-01T15:51:02.423972"
+    },
+    {
+        "sku": "55106012",
+        "title": "Noelle Cotton Umbrella Skirt",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 79.99,
+        "qtyInStock": 21,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/3_b92b120b-259a-4577-a095-ec09027f98de.jpg?v=1630545180",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Deep Blue"
+        ],
+        "detail": "Elastic Waist, Lace-up, Pockets",
+        "composition": "65% Cotton, 35% Composite Fiber",
+        "care": "Hand wash in cold water separately.",
+        "createdAt": "2022-01-01T15:51:03.043922"
+    },
+    {
+        "sku": "66044021",
+        "title": "Aurora High-waisted Wide Leg Blue Jeans",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 74.99,
+        "qtyInStock": 17,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/1127simple0329.jpg?v=1640918875",
+        "sizes": [
+            "24",
+            "25",
+            "26",
+            "27",
+            "28"
+        ],
+        "colors": [
+            "Deep Blue"
+        ],
+        "detail": "The back pocket has a small embroidery with our SR logo.",
+        "composition": "94% Cotton, 5% Polyester, 1% Spandex",
+        "care": "Wash seperately in cold water; Can add a small amount of salt to reduce the phenomenon of fading.",
+        "createdAt": "2022-01-01T15:51:03.556443"
+    },
+    {
+        "sku": "66030012",
+        "title": "Bethany Straight Black Midi Velvet Skirt",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 49.99,
+        "qtyInStock": 49,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/3_622555dd-0891-4443-8023-df3f36a23a84.jpg?v=1638264362",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "detail": "Slits on both sides; Lined; Side zipper, easy to put on and take off.",
+        "composition": "92% Polyester, 8% Spandex",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:51:04.060548"
+    },
+    {
+        "sku": "11303012",
+        "title": "Alora Caramel Midi Cheongsam Skirt",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 79.99,
+        "qtyInStock": 21,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/5_19d3942f-2390-4c18-999e-7bc328c6b77f.jpg?v=1638263639",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Caramel"
+        ],
+        "detail": "Frog Buttons, Lined",
+        "composition": "70% Cuprammonium Rayon, 30% Cellulose",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:51:04.878620"
+    },
+    {
+        "sku": "11306012",
+        "title": "Novah High-waisted Bell-bottomed Caramel Trousers",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 64.99,
+        "qtyInStock": 3,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/4_33c4bedb-8ac7-4345-bc97-ffed6a9d27c9.jpg?v=1638263763",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Reddish Brown"
+        ],
+        "detail": "High-waisted, Bell-bottomed",
+        "composition": "100% Polyester",
+        "care": "Hand Wash",
+        "createdAt": "2022-01-01T15:51:05.445207"
+    },
+    {
+        "sku": "11276012",
+        "title": "Quinn Lace White Midi Skirt",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 89.99,
+        "qtyInStock": 9,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/5_8cf4cf7a-b8cc-4932-9d1a-be92abc54f51.jpg?v=1637737546",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Off White"
+        ],
+        "detail": "Elastic Waist, Lined",
+        "composition": "88% Nylon, 12% Spandex",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:51:06.102806"
+    },
+    {
+        "sku": "11294012",
+        "title": "Oaklee Bell-bottomed Black Twill Trousers",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 64.99,
+        "qtyInStock": 29,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/7_2f219301-2eab-4223-a0e6-300d33beb00f.jpg?v=1634711431",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "detail": "Slight Bell-bottoms",
+        "composition": "100% Polyester",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:51:06.696257"
+    },
+    {
+        "sku": "11298022",
+        "title": "Leah High-waisted Straight Trousers",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 59.99,
+        "qtyInStock": 25,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/8_9c5a7324-68f1-434e-81b8-9f27696f53f5.jpg?v=1636447239",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Coffee",
+            "Gray"
+        ],
+        "detail": "Slits at the cuffs with three buttons",
+        "composition": "75% Polyester, 25% Rayon",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:51:07.357422"
+    },
+    {
+        "sku": "11533012",
+        "title": "Alice Houndstooth Brown Straight Knitted Skirt",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 64.99,
+        "qtyInStock": 2,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/1_8e18ab86-ad63-4461-8f29-2c4f020207a6.jpg?v=1636448716",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Reddish Brown & Apricot Pink"
+        ],
+        "detail": "Colour Blocking, Slits at the side",
+        "composition": "100% Nylon",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:51:07.996527"
+    },
+    {
+        "sku": "66015012",
+        "title": "Ansley Checkerboard Midi Knitted Skirt",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 64.99,
+        "qtyInStock": 37,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/11_a2a6164b-572a-4b06-8e61-87f8375e93fc.jpg?v=1635841219",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Black&White, Brown&Apricot"
+        ],
+        "detail": "Straight Pattern, Metal Velvet Buttons",
+        "composition": "46.5% Acrylic, 25.5% Polyester, 28% Nylon",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:51:08.571980"
+    },
+    {
+        "sku": "66026011",
+        "title": "Blake High Waisted Wide leg Blue Jeans",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 79.99,
+        "qtyInStock": 55,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/5_289dd230-2413-434b-a41c-c16ec5ef6bee.jpg?v=1636969302",
+        "sizes": [
+            "24",
+            "25",
+            "26",
+            "27"
+        ],
+        "colors": [
+            "Light Blue"
+        ],
+        "detail": "Wide Leg",
+        "composition": "100% Cotton",
+        "care": "Turn your jeans inside out and hand wash separately.",
+        "createdAt": "2022-01-01T15:51:09.220321"
+    },
+    {
+        "sku": "66015022",
+        "title": "Ansley Checkerboard Black Midi Knitted Skirt",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 64.99,
+        "qtyInStock": 4,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/1_c3f9bff1-7525-4cbf-a2d9-c47cbd34aeb9.jpg?v=1635841749",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Black&White"
+        ],
+        "detail": "Straight Pattern, Metal Velvet Buttons",
+        "composition": "46.5% Acrylic, 25.5% Polyester, 28% Nylon",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:51:09.997383"
+    },
+    {
+        "sku": "11293012",
+        "title": "Meg Vintage Khaki Midi Corduroy Skirt",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 48.99,
+        "qtyInStock": 24,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/6_80da0b9a-baa0-4472-9d77-3d6794617054.jpg?v=1635840479",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Khaki"
+        ],
+        "detail": "Front Slit",
+        "composition": "97% Cotton, 3% Spandex",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:51:10.788162"
+    },
+    {
+        "sku": "66015012",
+        "title": "Ansley Checkerboard Brown Midi Knitted Skirt",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 64.99,
+        "qtyInStock": 2,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/7_25744697-0f65-4bf7-9705-506dfeb4e425.jpg?v=1635841655",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Brown&Apricot"
+        ],
+        "detail": "Straight Pattern, Metal Velvet Buttons",
+        "composition": "46.5% Acrylic, 25.5% Polyester, 28% Nylon",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:51:11.933469"
+    },
+    {
+        "sku": "11294012",
+        "title": "Oaklee Bell-bottomed Corduroy Trousers",
+        "categories": [
+            "bottoms"
+        ],
+        "price": 64.99,
+        "qtyInStock": 22,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/9_48b0611d-8e02-4a7d-8c38-70563c18567e.jpg?v=1634711618",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Khaki",
+            "Black"
+        ],
+        "detail": "Slight Bell-bottoms",
+        "composition": "97% Cotton, 3% Spandex(Khaki); 100% Polyester(Black)",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:51:12.871572"
+    }
+]

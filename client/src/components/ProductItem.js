@@ -2,11 +2,17 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+`;
+
+const ImageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Img = styled.img`
-  width: 100%;
+  width: 90%;
   object-fit: cover;
 `;
 
@@ -34,7 +40,9 @@ const ProductItem = ({ product }) => {
   return (
     <Container>
       <Link to={`/product/${product._id}`}>
-        <Img src={`https://${product.src}`} />
+        <ImageContainer>
+          <Img src={`https://${product.src}`} />
+        </ImageContainer>
       </Link>
       <ProductInfo>
         <Link style={{ textDecoration: "none" }} to={`/product/${product._id}`}>

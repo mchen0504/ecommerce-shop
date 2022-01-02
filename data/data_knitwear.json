@@ -1,0 +1,394 @@
+[
+    {
+        "sku": "916012",
+        "title": "Anna Cable Apricot Knit Cardigan",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 69.99,
+        "qtyInStock": 16,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/8_f0fa17c4-ac69-48f7-ba7f-5589389fc1ff.jpg?v=1626935890",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            "Apricot"
+        ],
+        "detail": "Glazed Buttons, V Neck,Cable Knit",
+        "composition": "6% Wool, 20% Nylon, 20% Acrylon, 54% Polyester",
+        "care": "Hand wash in cold water, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:53:02.876069"
+    },
+    {
+        "sku": "916042",
+        "title": "Anna Cable Olive Brown Knit Cardigan",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 69.99,
+        "qtyInStock": 43,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/20210221142912.jpg?v=1613888997",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            "Olive Brown"
+        ],
+        "detail": "Glazed Buttons, V Neck,Cable Knit",
+        "composition": "6% Wool, 20% Nylon, 20% Acrylon, 54% Polyester",
+        "care": "Hand wash in cold water, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:53:03.415148"
+    },
+    {
+        "sku": "55095013",
+        "title": "Olivia French V-Neck Lapel Blouse",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 44.99,
+        "qtyInStock": 6,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/3_50c64a45-250d-4d1a-b98c-6514878060fe.jpg?v=1625627618",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Dark Khaki"
+        ],
+        "detail": "Skin-friendly, One Front Pocket",
+        "composition": "100% Rayon",
+        "care": "Hand wash in cold water, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:53:04.149781"
+    },
+    {
+        "sku": "22209012",
+        "title": "Ariana Iris Floral Patterned Knit Sweater",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 49.99,
+        "qtyInStock": 24,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/11_269ee975-62c1-4803-b499-c0af7ff2cb6c.jpg?v=1631083453",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Light Beige",
+            "Yellow",
+            "Avocado Green"
+        ],
+        "detail": "Iris Jacquard Series, Lapel,Floral Patterned",
+        "composition": "6% Wool, 20% Acrylic, 20% Nylon, 54% Polyester",
+        "care": "Hand wash in cold water, using a mild and gentle detergent. Do not scrub or use a brush, and do not twist it forcefully.",
+        "createdAt": "2022-01-01T15:53:04.727397"
+    },
+    {
+        "sku": "22209012",
+        "title": "Ariana Iris Floral Patterned Light Beige Knit Sweater",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 49.99,
+        "qtyInStock": 20,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/12_2a1ddae4-c9f1-40e9-996d-ca7477774884.jpg?v=1631700708",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ],
+        "colors": [
+            "Light Beige"
+        ],
+        "detail": "Iris Jacquard Series, Lapel,Floral Patterned",
+        "composition": "6% Wool, 20% Acrylic, 20% Nylon, 54% Polyester",
+        "care": "Hand wash in cold water, using a mild and gentle detergent. Do not scrub or use a brush, and do not twist it forcefully.",
+        "createdAt": "2022-01-01T15:53:05.333863"
+    },
+    {
+        "sku": "22209032",
+        "title": "Ariana Iris Floral Patterned Yellow Knit Sweater",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 49.99,
+        "qtyInStock": 44,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/6_ce4f52a1-500b-4f8e-b30a-a742713b15b2.jpg?v=1628047076",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "colors": [
+            "Yellow"
+        ],
+        "detail": "Iris Jacquard Series, Lapel,Floral Patterned",
+        "composition": "6% Wool, 20% Acrylic, 20% Nylon, 54% Polyester",
+        "care": "Hand wash in cold water, using a mild and gentle detergent. Do not scrub or use a brush, and do not twist it forcefully.",
+        "createdAt": "2022-01-01T15:53:05.848161"
+    },
+    {
+        "sku": "22209022",
+        "title": "Ariana Iris Floral Patterned Avocado Green Knit Sweater",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 49.99,
+        "qtyInStock": 40,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/1_7cb3e15c-9b40-4906-8030-82f70bf5dae0.jpg?v=1631700758",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Light Beige",
+            "Yellow",
+            "Avocado Green"
+        ],
+        "detail": "Iris Jacquard Series, Lapel,Floral Patterned",
+        "composition": "6% Wool, 20% Acrylic, 20% Nylon, 54% Polyester",
+        "care": "Hand wash in cold water, using a mild and gentle detergent. Do not scrub or use a brush, and do not twist it forcefully.",
+        "createdAt": "2022-01-01T15:53:06.846113"
+    },
+    {
+        "sku": "55115032",
+        "title": "Diana Cotton Pullover Sweatshirt",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 39.99,
+        "qtyInStock": 41,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/105_0714d2b3-18c7-453a-8577-63d8b56813fd.jpg?v=1629273292",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Light Beige",
+            "Khaki",
+            "Deep Blue"
+        ],
+        "detail": "Round Neckline, Eagle Pattern and Simple Retro Logo",
+        "composition": "85.5% Cotton, 14.5% PolyesterCollar/Cuffs/Hem : 97.7% Cotton, 2.3% Spandex",
+        "care": "Hand wash in cold water, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:53:07.554030"
+    },
+    {
+        "sku": "55118012",
+        "title": "Khloe Cotton Pullover Hoodie",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 54.99,
+        "qtyInStock": 21,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/2_a605ef55-f1c1-4d1b-a819-bd5bd022857e.jpg?v=1629195722",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Brown",
+            "Light Grey"
+        ],
+        "detail": "COZY&CHIC Embroidery, Hooded, Front Pocket",
+        "composition": "87.6% Cotton, 12.4% Polyester",
+        "care": "Hand wash in cold water, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:53:08.376150"
+    },
+    {
+        "sku": "55115032",
+        "title": "Diana Cotton Pullover Sweatshirt - Khaki",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 39.99,
+        "qtyInStock": 42,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/I80A3662.jpg?v=1629273538",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Light Beige",
+            "Khaki",
+            "Deep Blue"
+        ],
+        "detail": "Round Neckline, Eagle Pattern and Simple Retro Logo",
+        "composition": "85.5% Cotton, 14.5% PolyesterCollar/Cuffs/Hem : 97.7% Cotton, 2.3% Spandex",
+        "care": "Hand wash in cold water, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:53:08.960295"
+    },
+    {
+        "sku": "55115012",
+        "title": "Diana Cotton Pullover Sweatshirt - Light Beige",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 39.99,
+        "qtyInStock": 29,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/9_c2308fb3-cfda-4d94-8a15-b3e3bd4fbd38.jpg?v=1629195622",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Light Beige",
+            "Khaki",
+            "Deep Blue"
+        ],
+        "detail": "Round Neckline, Eagle Pattern and Simple Retro Logo",
+        "composition": "85.5% Cotton, 14.5% PolyesterCollar/Cuffs/Hem : 97.7% Cotton, 2.3% Spandex",
+        "care": "Hand wash in cold water, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:53:09.578874"
+    },
+    {
+        "sku": "55115042",
+        "title": "Diana Cotton Pullover Sweatshirt - Deep Blue",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 39.99,
+        "qtyInStock": 33,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/5_2b56a4c9-3612-400a-bccf-a3e3b84965ee.jpg?v=1629195626",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Light Beige",
+            "Khaki",
+            "Deep BlueBlue"
+        ],
+        "detail": "Round Neckline, Eagle Pattern and Simple Retro Logo",
+        "composition": "85.5% Cotton, 14.5% PolyesterCollar/Cuffs/Hem : 97.7% Cotton, 2.3% Spandex",
+        "care": "Hand wash in cold water, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:53:10.150958"
+    },
+    {
+        "sku": "55118022",
+        "title": "Khloe Cotton Pullover Hoodie - Light Grey",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 54.99,
+        "qtyInStock": 10,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/3_5cc88fae-734e-4d4a-8786-54c20e30b611.jpg?v=1629195727",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Brown",
+            "Light Grey"
+        ],
+        "detail": "COZY&CHIC Embroidery, Hooded, Front Pocket",
+        "composition": "87.6% Cotton, 12.4% Polyester",
+        "care": "Hand wash in cold water, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:53:10.829072"
+    },
+    {
+        "sku": "55118012",
+        "title": "Khloe Cotton Pullover Hoodie - Brown",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 54.99,
+        "qtyInStock": 21,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/6_5b19c761-1814-46f4-876b-097d2ce75097.jpg?v=1629195733",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Brown",
+            "Light Grey"
+        ],
+        "detail": "COZY&CHIC Embroidery, Hooded, Front Pocket",
+        "composition": "87.6% Cotton, 12.4% Polyester",
+        "care": "Hand wash in cold water, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:53:11.466211"
+    },
+    {
+        "sku": "22213032",
+        "title": "Jovie Contrast Sailor Collar Knit Sweater",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 39.99,
+        "qtyInStock": 49,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/11_dcf0ae04-355b-4b98-be38-090c14d811a3.jpg?v=1629798450",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Black",
+            "Ginger",
+            "Blue"
+        ],
+        "detail": "The collar can be worn in different ways,Contrast Sailor Collar",
+        "composition": "100% Viscose",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:53:12.142627"
+    },
+    {
+        "sku": "22213012",
+        "title": "Jovie Contrast Sailor Collar Blue Knit Sweater",
+        "categories": [
+            "knitwear"
+        ],
+        "price": 39.99,
+        "qtyInStock": 26,
+        "src": "//cdn.shopify.com/s/files/1/1276/0919/products/3_14c55393-3c03-4f9f-8c6b-69b19527df18.jpg?v=1629790357",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L"
+        ],
+        "colors": [
+            "Black",
+            "Ginger",
+            "Blue"
+        ],
+        "detail": "Contrast Color,The collar can be worn in different ways",
+        "composition": "100% Viscose",
+        "care": "Hand wash in cold water softly, using a mild and gentle detergent.",
+        "createdAt": "2022-01-01T15:53:12.751477"
+    }
+]

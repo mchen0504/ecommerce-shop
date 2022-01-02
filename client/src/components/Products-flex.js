@@ -46,7 +46,7 @@ const ProductsAll = ({ category, filters, sort }) => {
       if (filters.sizes.length === 0 && filters.colors.length > 0) {
         filtered = products.filter((product) => {
           return product.colors.some((eachValue) => {
-            return filters.colors.includes(eachValue.color_backup);
+            return filters.colors.includes(eachValue);
           });
         });
       }
@@ -55,11 +55,7 @@ const ProductsAll = ({ category, filters, sort }) => {
         filtered = products.filter((product) => {
           return Object.entries(filters).every(([key, value]) => {
             return product[key].some((eachValue) => {
-              if (key === "sizes") {
-                return value.includes(eachValue);
-              } else {
-                return value.includes(eachValue.color_backup);
-              }
+              return value.includes(eachValue);
             });
           });
         });
