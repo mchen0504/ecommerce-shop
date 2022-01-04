@@ -62,3 +62,54 @@ export const dropdownImgItems = [
     src: "//cdn.shopify.com/s/files/1/1276/0919/products/6_5b19c761-1814-46f4-876b-097d2ce75097.jpg?v=1629195733",
   },
 ];
+
+export const bestSellers = [
+  {
+    id: "61d0e8adc1a118a805cf1816",
+    src: "//cdn.shopify.com/s/files/1/1276/0919/products/5_49586893-7994-4152-bfe1-00c96a028aa8.jpg?v=1617680800",
+    title: "Aria Floral Cotton Maxi Dress",
+    price: "79.99",
+  },
+  {
+    id: "61d0e82ee07bb945ffae3a7e",
+    src: "//cdn.shopify.com/s/files/1/1276/0919/products/2_11718a79-63a8-4f43-b313-84248af94cbf.jpg?v=1638264013",
+    title: "Emely Crewneck Khaki Knit Sweater",
+    price: "69.99",
+  },
+  {
+    id: "61d0eb13b44c5db3eaae0f4d",
+    src: "//cdn.shopify.com/s/files/1/1276/0919/products/A11232.jpg?v=1624960155",
+    title: "Natalie Chiffon Suit Midi Dress",
+    price: "89.99",
+  },
+  {
+    id: "61d0e82ee07bb945ffae3a82",
+    src: "//cdn.shopify.com/s/files/1/1276/0919/products/1127simple0041.jpg?v=1640757360",
+    title: "Carolyn Yellow Floral Tank Top",
+    price: "49.99",
+  },
+  {
+    id: "61d0e82ee07bb945ffae3a87",
+    src: "//cdn.shopify.com/s/files/1/1276/0919/products/9_4d05ac20-ba11-4c63-b20c-c7fa6b29b2ad.jpg?v=1635842313",
+    title: "Jayla Turtleneck White Bottoming Top",
+    price: "34.99",
+  },
+  {
+    id: "61d0e99509db150508c3332b",
+    src: "//cdn.shopify.com/s/files/1/1276/0919/products/6_5b19c761-1814-46f4-876b-097d2ce75097.jpg?v=1629195733",
+    title: "Khloe Cotton Pullover Hoodie - Brown",
+    price: "54.99",
+  },
+  {
+    id: "61d0e921a479a95ab0215004",
+    src: "//cdn.shopify.com/s/files/1/1276/0919/products/8_9c5a7324-68f1-434e-81b8-9f27696f53f5.jpg?v=1636447239",
+    title: "Leah High-waisted Straight Trousers",
+    price: "59.99",
+  },
+  {
+    id: "61d0e921a479a95ab0215005",
+    src: "//cdn.shopify.com/s/files/1/1276/0919/products/1_8e18ab86-ad63-4461-8f29-2c4f020207a6.jpg?v=1636448716",
+    title: "Alice Houndstooth Brown Straight Knitted Skirt",
+    price: "64.99",
+  },
+];

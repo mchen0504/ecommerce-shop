@@ -58,15 +58,10 @@ const Image = styled.img`
   height: 100%;
 `;
 
-const Desc = styled.span`
-  font-size: 0.9rem;
-  margin-top: 0.3rem;
-`;
-
 const NavOptionsExpand = ({
   mouseOnShopAll,
   mouseOnShopAllOptions,
-  handleShopAllMouseEnter,
+  handleShopAllOptionsMouseEnter,
   handleShopAllOptionsMouseLeave,
 }) => {
   const categories = ["tops", "dresses", "bottoms", "knitwear", "outerwear"];
@@ -81,7 +76,7 @@ const NavOptionsExpand = ({
       }}
     >
       <Container
-        onMouseEnter={() => handleShopAllMouseEnter("mouseOnShopAllOptions")}
+        onMouseEnter={handleShopAllOptionsMouseEnter}
         onMouseLeave={handleShopAllOptionsMouseLeave}
       >
         <Left>

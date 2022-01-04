@@ -116,8 +116,8 @@ const ProductInfo = () => {
   }, [id]);
 
   let maxQuantity = 10;
-  if (product.quantity) {
-    maxQuantity = Math.min(product.quantity, maxQuantity);
+  if (product.qtyInStock) {
+    maxQuantity = Math.min(product.qtyInStock, maxQuantity);
   }
   let quantityOptions = [...Array(maxQuantity).keys()].map((q) => {
     return (

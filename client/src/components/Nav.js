@@ -46,27 +46,40 @@ const Right = styled.div`
   justify-content: flex-end;
 `;
 
-const Navbar = (props) => {
+const Navbar = () => {
   const products = useSelector((state) => state.cart.products);
-  const currentUser = useSelector((state) => state.user.currentUser);
 
   const [shopAllMenu, setShopAllMenu] = useState({
     mouseOnShopAll: false,
     mouseOnShopAllOptions: false,
   });
 
-  const handleShopAllMouseEnter = (target) => {
-    setShopAllMenu({ [target]: true });
+  const handleShopAllMouseEnter = () => {
+    setShopAllMenu({ ...shopAllMenu, mouseOnShopAll: true });
   };
 
-  const handleShopAllMenuMouseLeave = () => {
-    // setTimeout(() => {
-    setShopAllMenu({ mouseOnShopAll: false });
-    // }, timeoutLength);
+  const handleShopAllOptionsMouseEnter = () => {
+    setShopAllMenu({
+      ...shopAllMenu,
+      mouseOnShopAllOptions: true,
+      mouseOnShopAll: false,
+    });
   };
+
+  // const handleShopAllMenuMouseLeave = () => {
+  //   setTimeout(() => {
+  //     setShopAllMenu({
+  //       ...shopAllMenu,
+  //       mouseOnShopAll: false,
+  //     });
+  //   }, 500);
+  // };
 
   const handleShopAllOptionsMouseLeave = () => {
-    setShopAllMenu({ mouseOnShopAllOptions: false });
+    setShopAllMenu({
+      ...shopAllMenu,
+      mouseOnShopAllOptions: false,
+    });
   };
 
   return (
@@ -74,7 +87,8 @@ const Navbar = (props) => {
       <Container>
         <Left>
           <LeftItem
-            onMouseEnter={() => handleShopAllMouseEnter("mouseOnShopAll")}
+            onMouseEnter={handleShopAllMouseEnter}
+            // onMouseLeave={handleShopAllMenuMouseLeave}
           >
             SHOP ALL
           </LeftItem>
@@ -127,7 +141,7 @@ const Navbar = (props) => {
       <NavOptionsExpand
         mouseOnShopAll={shopAllMenu.mouseOnShopAll}
         mouseOnShopAllOptions={shopAllMenu.mouseOnShopAllOptions}
-        handleShopAllMouseEnter={handleShopAllMouseEnter}
+        handleShopAllOptionsMouseEnter={handleShopAllOptionsMouseEnter}
         handleShopAllOptionsMouseLeave={handleShopAllOptionsMouseLeave}
       />
     </div>

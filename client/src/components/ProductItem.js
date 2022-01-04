@@ -36,19 +36,24 @@ const Price = styled.span`
   margin-top: -0.2rem;
 `;
 
-const ProductItem = ({ product }) => {
+const ProductItem = ({ product, type }) => {
   return (
     <Container>
-      <Link to={`/product/${product._id}`}>
+      <Link to={`/product/${type === "home" ? product.id : product._id}`}>
         <ImageContainer>
-          <Img src={`https://${product.src}`} />
+          <Img src={`https:${product.src}`} />
         </ImageContainer>
       </Link>
       <ProductInfo>
-        <Link style={{ textDecoration: "none" }} to={`/product/${product._id}`}>
+        <Link
+          style={{ textDecoration: "none" }}
+          to={`/product/${type === "home" ? product.id : product._id}`}
+        >
           <Title>{product.title}</Title>
         </Link>
-        <Price>${product.price.$numberDecimal}</Price>
+        <Price>
+          ${type === "home" ? product.price : product.price.$numberDecimal}
+        </Price>
       </ProductInfo>
     </Container>
   );

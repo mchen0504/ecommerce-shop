@@ -17,7 +17,7 @@ export const addToCart = createAsyncThunk(
       title: data.title,
       src: data.src,
       price: data.price.$numberDecimal,
-      quantity: data.quantity,
+      qtyInStock: data.qtyInStock,
       size: selectedSize,
       color: selectedColor,
       qty: selectedQuantity,

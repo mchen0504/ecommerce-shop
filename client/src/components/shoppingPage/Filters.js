@@ -61,7 +61,6 @@ const Filters = ({ category, filters, setFilters }) => {
     if (filters.sizes.includes(size)) {
       selected = true;
     }
-    // }
     return (
       <FilterOption
         key={size}

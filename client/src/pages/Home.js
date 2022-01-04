@@ -3,20 +3,20 @@ import Navbar from "../components/Nav";
 import CarouselSlide from "../components/home/CarouselSlide";
 import Categories from "../components/home/Categories";
 import SectionTitle from "../components/SectionTitle";
-import HomeProducts from "../components/home/HomeProducts";
+import BestSellers from "../components/home/BestSellers";
 import Footer from "../components/Footer";
-import NavSlide from "../components/home/NavSlide";
 
 const Home = () => {
+  // const [bestSellers, setBestSellers] = useState();
+
   return (
     <div>
       <Announcement />
-      {/* <NavSlide /> */}
       <Navbar />
       <CarouselSlide />
       <Categories />
       <SectionTitle title="OUR BEST SELLERS" />
-      <HomeProducts />
+      <BestSellers />
       <Footer />
     </div>
   );

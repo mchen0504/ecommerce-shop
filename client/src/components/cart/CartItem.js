@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
+
 import { editCart, removeFromCart } from "../../redux/cartSlice";
 
 const ProductContainer = styled.div`
@@ -80,10 +82,17 @@ const CartItem = ({ product }) => {
     <ProductContainer>
       <ItemContainer>
         <ImageContainer>
-          <Image src={`https://${product.src}`} />
+          <Link to={`/product/${product.id}`}>
+            <Image src={`https://${product.src}`} />
+          </Link>
         </ImageContainer>
         <DescContainer>
-          <ProductTitle>{product.title}</ProductTitle>
+          <Link
+            to={`/product/${product.id}`}
+            style={{ color: "inhert", textDecoration: "none" }}
+          >
+            <ProductTitle>{product.title}</ProductTitle>
+          </Link>
           <span>
             {product.size} | {product.color}
           </span>
@@ -98,7 +107,7 @@ const CartItem = ({ product }) => {
             value={selectedQuantity}
             onChange={handleQtyChange}
           >
-            {[...Array(Math.min(10, product.quantity)).keys()].map((q) => {
+            {[...Array(Math.min(10, product.qtyInStock)).keys()].map((q) => {
               return (
                 <option key={q} value={q}>
                   {q}

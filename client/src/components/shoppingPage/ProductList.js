@@ -1,50 +1,136 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import styled from "styled-components";
+import Spinner from "react-bootstrap/Spinner";
 
-import ProductsAll from "../Products-flex";
+import ProductFlex from "../ProductFlex";
 
-const Container = styled.div``;
-
-const Top = styled.div`
-  display: flex;
-  padding: 0 3% 0.5rem 3%;
-  justify-content: space-between;
-  align-items: center;
+const ProductContainer = styled.div`
+  padding: 0 3%;
 `;
 
-const Title = styled.h1`
-  font-size: 1.1rem;
-`;
+const ProductList = ({ category, filters, sort }) => {
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
-const Select = styled.select`
-  font-size: 0.8rem;
-`;
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await axios.get(
+          category
+            ? `http://localhost:5000/api/products?category=${category}`
+            : "http://localhost:5000/api/products"
+        );
+        setProducts(res.data);
+      } catch (error) {}
+    };
+    getProducts();
+  }, [category]);
 
-const Option = styled.option``;
+  useEffect(() => {
+    let filtered = products;
 
-const ProductList = ({ category, filters }) => {
-  const [sort, setSort] = useState();
+    if (category && filters) {
+      if (filters.colors.length === 0 && filters.sizes.length > 0) {
+        filtered = products.filter((product) => {
+          return product.sizes.some((eachValue) => {
+            return filters.sizes.includes(eachValue);
+          });
+        });
+      }
+
+      if (filters.sizes.length === 0 && filters.colors.length > 0) {
+        filtered = products.filter((product) => {
+          return product.colors.some((eachValue) => {
+            return filters.colors.includes(eachValue);
+          });
+        });
+      }
+
+      if (filters.sizes.length > 0 && filters.colors.length > 0) {
+        filtered = products.filter((product) => {
+          return Object.entries(filters).every(([key, value]) => {
+            return product[key].some((eachValue) => {
+              return value.includes(eachValue);
+            });
+          });
+        });
+      }
+    }
+
+    setFilteredProducts(filtered);
+  }, [category, products, filters]);
+
+  useEffect(() => {
+    if (sort) {
+      if (sort === "newest") {
+        setFilteredProducts((prev) =>
+          [...prev].sort((a, b) => {
+            return new Date(b.createdAt) - new Date(a.createdAt);
+          })
+        );
+      }
+
+      if (sort === "price-desc") {
+        setFilteredProducts((prev) =>
+          [...prev].sort((a, b) => {
+            return (
+              parseFloat(b.price.$numberDecimal) -
+              parseFloat(a.price.$numberDecimal)
+            );
+          })
+        );
+      }
+
+      if (sort === "price-asc") {
+        setFilteredProducts((prev) =>
+          [...prev].sort((a, b) => {
+            return (
+              parseFloat(a.price.$numberDecimal) -
+              parseFloat(b.price.$numberDecimal)
+            );
+          })
+        );
+      }
+    }
+  }, [filters, sort]);
+
+  let displayedProducts = category
+    ? filteredProducts
+    : filteredProducts.slice(0, 8);
+
+  if (products.length === 0) {
+    return (
+      <ProductContainer>
+        <div style={{ textAlign: "center" }}>
+          <Spinner
+            style={{ alignItems: "center" }}
+            animation="border"
+            variant="secondary"
+          />
+        </div>
+      </ProductContainer>
+    );
+  }
+
+  if (
+    filters &&
+    filteredProducts.length === 0 &&
+    (filters.sizes.length > 0 || filters.colors.length > 0)
+  ) {
+    return (
+      <ProductContainer>
+        <div style={{ textAlign: "center" }}>
+          <span>No products found</span>
+        </div>
+      </ProductContainer>
+    );
+  }
 
   return (
-    <Container>
-      <Top>
-        <Title>{category.charAt(0).toUpperCase() + category.slice(1)}</Title>
-        <Select
-          name="sortby"
-          id="sortby"
-          defaultValue={"default"}
-          onChange={(e) => setSort(e.target.value)}
-        >
-          <Option value="default" disabled>
-            Sort by
-          </Option>
-          <Option value="newest">Newest</Option>
-          <Option value="price-desc">Price - High to Low</Option>
-          <Option value="price-asc">Price - Low to High</Option>
-        </Select>
-      </Top>
-      <ProductsAll category={category} filters={filters} sort={sort} />
-    </Container>
+    <ProductContainer>
+      <ProductFlex products={displayedProducts} />
+    </ProductContainer>
   );
 };
 

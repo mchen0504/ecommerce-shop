@@ -4,7 +4,6 @@ import {
   Routes,
   Route,
   Navigate,
-  useLocation,
 } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
 import { useSelector } from "react-redux";

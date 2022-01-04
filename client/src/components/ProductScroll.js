@@ -3,7 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 100vw;
+  width: 95vw;
   display: flex;
   position: relative;
   margin-bottom: 15%;
@@ -41,6 +41,13 @@ const Product = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+`;
+
+const ImageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Image = styled.img`
@@ -54,7 +61,6 @@ const Info = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1rem;
 `;
 
 const Title = styled.h2`
@@ -70,7 +76,7 @@ const Price = styled.span`
   margin-top: -0.2rem;
 `;
 
-const ProductsPartial = () => {
+const ProductScroll = ({ products, type }) => {
   const [productIndex, setProductIndex] = useState(0);
   const [touchPosition, setTouchPosition] = useState(null);
 
@@ -117,71 +123,19 @@ const ProductsPartial = () => {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
       >
-        <Product>
-          <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/20200930144925_1080x.jpg?v=1632901109"></Image>
-          <Info>
-            <Title>
-              Ally Floral Handmade Embroidery Creamy Yellow Knit Cardigan
-            </Title>
-            <Price>$235.99</Price>
-          </Info>
-        </Product>
-
-        <Product>
-          <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/17_7125b465-f700-4228-affc-d4cdef96770d_1080x.jpg?v=1602033589"></Image>
-          <Info>
-            <Title>Jasmine Cable Polo Yellow Knit Sweater</Title>
-            <Price>$235.99</Price>
-          </Info>
-        </Product>
-
-        <Product>
-          <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/20201216104658_1080x.jpg?v=1611136789"></Image>
-          <Info>
-            <Title>Morgan Wool Coat</Title>
-            <Price>$235.99</Price>
-          </Info>
-        </Product>
-
-        <Product>
-          <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/7_70897da3-c8f1-4dfb-9ce8-363fc4acd6b7_1080x.jpg?v=1632820526"></Image>
-          <Info>
-            <Title>Morgan Wool Coat</Title>
-            <Price>$235.99</Price>
-          </Info>
-        </Product>
-
-        <Product>
-          <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/5_03be961d-2a4b-4f6c-8d00-e3eb5eb7bf68_1080x.jpg?v=1626834733"></Image>
-          <Info>
-            <Title>Morgan Wool Coat</Title>
-            <Price>$235.99</Price>
-          </Info>
-        </Product>
-
-        <Product>
-          <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/11_d76fee4d-4b85-488b-a2c2-19103a1a835b_1080x.jpg?v=1630736159"></Image>
-          <Info>
-            <Title>Morgan Wool Coat</Title>
-            <Price>$235.99</Price>
-          </Info>
-        </Product>
-
-        <Product>
-          <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/1_f16f5dfe-98d4-4f64-b7bb-4bee56ad9d4a_1080x.jpg?v=1629195968"></Image>
-          <Info>
-            <Title>Morgan Wool Coat</Title>
-            <Price>$235.99</Price>
-          </Info>
-        </Product>
-
-        <Product>
-          <Image src="https://cdn.shopify.com/s/files/1/1276/0919/products/7_95443517-90d2-40f9-b662-171d4d667c19_1080x.jpg?v=1616490320"></Image>
-          <Info>
-            <Title>Morgan Wool Coat</Title>
-            <Price>$235.99</Price>
-          </Info>
-        </Product>
+        {products.map((product) => {
+          return (
+            <Product key={product.id}>
+              <ImageContainer>
+                <Image src={`https:${product.src}`}></Image>
+              </ImageContainer>
+              <Info>
+                <Title>{product.title}</Title>
+                <Price>${product.price}</Price>
+              </Info>
+            </Product>
+          );
+        })}
       </ProductContainer>
       {productIndex < 7 && (
         <Arrow direction="right" onClick={() => handleClick("right")}>
@@ -194,4 +148,4 @@ const ProductsPartial = () => {
   );
 };
 
-export default ProductsPartial;
+export default ProductScroll;
