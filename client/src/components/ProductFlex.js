@@ -10,7 +10,12 @@ const ProductFlex = ({ products, type }) => {
       <Row>
         {products.map((product) => {
           return (
-            <Col key={type === "home" ? product.id : product._id} sm={4} md={3}>
+            <Col
+              key={type === "home" ? product.id : product._id}
+              xs={6}
+              sm={4}
+              md={3}
+            >
               <ProductItem product={product} type={type} />
             </Col>
           );

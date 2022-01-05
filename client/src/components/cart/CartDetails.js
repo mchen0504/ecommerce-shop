@@ -20,6 +20,9 @@ const Container = styled.div`
 const Title = styled.h1`
   font-size: 2rem;
   font-weight: 400;
+  @media (max-width: 575px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const PropertyContainer = styled.div`
@@ -27,6 +30,9 @@ const PropertyContainer = styled.div`
   justify-content: space-between;
   margin-top: 2.5rem;
   padding: 0 2%;
+  @media (max-width: 575px) {
+    display: none;
+  }
 `;
 
 const ItemContainer = styled.div`
@@ -56,21 +62,36 @@ const SummaryContainer = styled.div`
   padding: 0 2%;
   display: flex;
   align-items: center;
-  justify-content: ${(props) =>
-    props.type === "continueOrCheckout" ? "space-between" : "flex-end"};
-  margin: ${(props) =>
-    props.type === "continueOrCheckout" ? "2rem 0 0 0" : "1rem 0"};
+  justify-content: flex-end;
+  margin: 1rem 0;
+  @media (max-width: 575px) {
+    justify-content: space-around;
+  }
 `;
 
-const Button = styled.button`
+const NextStep = styled.div`
+  padding: 0 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  @media (max-width: 575px) {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+`;
+
+const CheckoutButton = styled.button`
   padding: 0.3rem 1rem;
-  background-color: ${(props) =>
-    props.type === "checkout" ? "black" : "transparent"};
-  color: ${(props) => (props.type === "checkout" ? "white" : "black")};
+  background-color: black;
+  color: white;
   border: 1px solid black;
   font-size: 0.9rem;
   border-radius: 3px;
-  width: ${(props) => (props.type === "checkout" ? "16rem" : "5rem")};
+  width: 16rem;
+  @media (max-width: 575px) {
+    width: 90vw;
+  }
 `;
 
 const FeeWrapper = styled.div`
@@ -135,12 +156,10 @@ const CartDetails = () => {
       token={onToken}
       stripeKey={PUBLIC_KEY}
     >
-      <Button type="checkout">CHECK OUT</Button>
+      <CheckoutButton>CHECK OUT</CheckoutButton>
     </StripeCheckout>
   ) : (
-    <Button type="checkout" onClick={handleCheckout}>
-      CHECK OUT
-    </Button>
+    <CheckoutButton onClick={handleCheckout}>CHECK OUT</CheckoutButton>
   );
 
   if (cart.products.length === 0) {
@@ -173,7 +192,7 @@ const CartDetails = () => {
       })}
       <hr />
 
-      <SummaryContainer>
+      <SummaryContainer type="summary">
         <FeeWrapper>
           <Fee>
             <span>Subtotal</span>
@@ -191,12 +210,12 @@ const CartDetails = () => {
       </SummaryContainer>
 
       <hr />
-      <SummaryContainer type="continueOrCheckout">
+      <NextStep>
         <Link to="/" style={{ color: "inherit" }}>
           Continue Shopping
         </Link>
         {checkoutButton}
-      </SummaryContainer>
+      </NextStep>
     </Container>
   );
 };

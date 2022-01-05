@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import NavOptionsExpand from "./home/NavOptionsExpand";
+import NavOptionsExpand from "./NavOptionsExpand";
+import NavbarMobile from "./NavbarMobile";
 
 const Container = styled.div`
   height: 3rem;
@@ -10,13 +11,21 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #d3d3d3;
+  @media (max-width: 575px) {
+    padding: 0 5%;
+  }
 `;
 
 const Left = styled.div`
   flex: 1;
   display: flex;
   justify-content: flex-start;
+`;
+
+const HamburgerMenu = styled.span`
+  @media (min-width: 576px) {
+    display: none;
+  }
 `;
 
 const LeftItem = styled.div`
@@ -26,6 +35,9 @@ const LeftItem = styled.div`
   border: 2px solid transparent;
   &:hover {
     border-bottom: 2px solid black;
+  }
+  @media (max-width: 575px) {
+    display: none;
   }
 `;
 
@@ -46,6 +58,15 @@ const Right = styled.div`
   justify-content: flex-end;
 `;
 
+const RightItem = styled.div`
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-left: ${(props) => props.type === "login" && "10%"};
+  @media (max-width: 576px) {
+    display: ${(props) => props.type === "login" && "none"};
+  }
+`;
+
 const Navbar = () => {
   const products = useSelector((state) => state.cart.products);
 
@@ -53,6 +74,8 @@ const Navbar = () => {
     mouseOnShopAll: false,
     mouseOnShopAllOptions: false,
   });
+
+  const [showMobileNav, setShowMobileNav] = useState(false);
 
   const handleShopAllMouseEnter = () => {
     setShopAllMenu({ ...shopAllMenu, mouseOnShopAll: true });
@@ -86,6 +109,13 @@ const Navbar = () => {
     <div>
       <Container>
         <Left>
+          <HamburgerMenu
+            className="material-icons-outlined"
+            onClick={() => setShowMobileNav(true)}
+          >
+            menu
+          </HamburgerMenu>
+
           <LeftItem
             onMouseEnter={handleShopAllMouseEnter}
             // onMouseLeave={handleShopAllMenuMouseLeave}
@@ -100,44 +130,35 @@ const Navbar = () => {
           </Link>
         </Center>
         <Right>
-          <div
-            className="material-icons-outlined"
-            style={{ fontSize: "1.4rem", cursor: "pointer" }}
-          >
-            search
-          </div>
+          <RightItem className="material-icons-outlined">search</RightItem>
           <Link
             to={"/login"}
             style={{ textDecoration: "none", marginLeft: "10%" }}
           >
-            <div
-              className="material-icons-outlined"
-              style={{
-                fontSize: "1.4rem",
-                marginLeft: "10%",
-                cursor: "pointer",
-              }}
-            >
+            <RightItem className="material-icons-outlined" type="login">
               person
-            </div>
+            </RightItem>
           </Link>
           <Link
             to={"/cart"}
             style={{ textDecoration: "none", marginLeft: "10%" }}
           >
-            <div
+            <RightItem
               className={
                 products.length === 0
                   ? "material-icons-outlined"
                   : "material-icons"
               }
-              style={{ fontSize: "1.4rem", cursor: "pointer" }}
             >
               shopping_bag
-            </div>
+            </RightItem>
           </Link>
         </Right>
       </Container>
+      <NavbarMobile
+        showMobileNav={showMobileNav}
+        setShowMobileNav={setShowMobileNav}
+      />
       <NavOptionsExpand
         mouseOnShopAll={shopAllMenu.mouseOnShopAll}
         mouseOnShopAllOptions={shopAllMenu.mouseOnShopAllOptions}

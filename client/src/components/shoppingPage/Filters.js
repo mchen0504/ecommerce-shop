@@ -2,14 +2,19 @@ import styled from "styled-components";
 import CategoryOption from "./CategoryOption";
 import FilterOption from "./FilterOption";
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding-top: 3.5rem;
+  @media (max-width: 575px) {
+    padding-top: 2rem;
+  }
+`;
 
 const Section = styled.div`
   margin-bottom: 3rem;
 `;
 
 const Title = styled.h1`
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
 `;
 
@@ -17,7 +22,7 @@ const FilterOptions = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: ${(props) => (props.type === "category" ? "0.6rem" : "0.5rem")};
+  gap: ${(props) => (props.type === "category" ? "0.1rem" : "0.5rem")};
   flex-direction: ${(props) => (props.type === "category" ? "column" : "row")};
 `;
 

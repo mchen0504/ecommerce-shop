@@ -20,24 +20,36 @@ const LoadingContainer = styled.div`
 const Container = styled.div`
   padding: 5% 10% 10% 10%;
   display: flex;
+  @media (max-width: 575px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Left = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: right;
-  padding-right: 5%;
+  @media (min-width: 576px) {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    padding-right: 5%;
+  }
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 80vh;
   object-fit: cover;
+  @media (max-width: 575px) {
+    height: 50vh;
+  }
 `;
 
 const Right = styled.div`
   flex: 1;
   padding-left: 5%;
+  @media (max-width: 575px) {
+    margin-top: 2rem;
+  }
 `;
 
 const Section = styled.div`
@@ -46,6 +58,8 @@ const Section = styled.div`
 
 const Title = styled.h1`
   font-size: 1.2rem;
+  @media (max-width: 575px) {
+  }
 `;
 
 const Price = styled.span`
@@ -177,7 +191,9 @@ const ProductInfo = () => {
               </FilterOptions>
             </Filter>
             <Filter>
-              <FilterTitle>COLOR</FilterTitle>
+              <FilterTitle>
+                {selectedColor ? `COLOR - ${selectedColor}` : "COLOR"}
+              </FilterTitle>
               <FilterOptions>
                 {product.colors?.map((color) => {
                   return (

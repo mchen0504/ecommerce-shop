@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import Announcement from "../components/Announcement";
@@ -9,8 +8,6 @@ import SectionTitle from "../components/SectionTitle";
 import Recommendation from "../components/Recommendation";
 
 const ProductPage = () => {
-  const [category, setCategory] = useState();
-
   const location = useLocation();
   const id = location.pathname.split("/")[2];
 
@@ -18,9 +15,9 @@ const ProductPage = () => {
     <div>
       <Announcement />
       <Navbar />
-      <ProductInfo setCategory={setCategory} />
+      <ProductInfo />
       <SectionTitle title={"YOU MAY ALSO LIKE"} />
-      <Recommendation category={category} id={id} />
+      <Recommendation id={id} />
       <Footer />
     </div>
   );

@@ -28,22 +28,40 @@ const Image = styled.img`
 
 const DescContainer = styled.div`
   flex: 2;
+  position: relative;
 `;
 
 const ProductTitle = styled.h2`
   font-size: 1rem;
 `;
 
+const Size = styled.span`
+  @media (max-width: 575px) {
+    bottom: 0;
+    position: absolute;
+  }
+`;
+
 const PriceContainer = styled.div`
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  @media (max-width: 575px) {
+    display: none;
+  }
 `;
 
 const QuantityContainer = styled.div`
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  @media (max-width: 575px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: end;
+    position: relative;
+  }
 `;
 
 const Select = styled.select`
@@ -56,6 +74,17 @@ const SubtotalContainer = styled.div`
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  @media (max-width: 575px) {
+    display: none;
+  }
+`;
+
+const SubtotalContainerMobile = styled.div`
+  bottom: 0;
+  position: absolute;
+  @media (min-width: 576px) {
+    display: none;
+  }
 `;
 
 const CartItem = ({ product }) => {
@@ -93,9 +122,9 @@ const CartItem = ({ product }) => {
           >
             <ProductTitle>{product.title}</ProductTitle>
           </Link>
-          <span>
+          <Size>
             {product.size} | {product.color}
-          </span>
+          </Size>
         </DescContainer>
       </ItemContainer>
       <PriceContainer>${product.price}</PriceContainer>
@@ -116,6 +145,9 @@ const CartItem = ({ product }) => {
             })}
           </Select>
         </div>
+        <SubtotalContainerMobile>
+          ${(product.qty * product.price).toFixed(2)}
+        </SubtotalContainerMobile>
       </QuantityContainer>
       <SubtotalContainer>
         ${(product.qty * product.price).toFixed(2)}

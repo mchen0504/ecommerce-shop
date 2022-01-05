@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { dropdownImgItems, newArrivals } from "../../homeData";
+import { dropdownImgItems, newArrivals } from "../homeData";
 
 const Container = styled.div`
   background-color: rgba(247, 240, 219);
-  height: 40vh;
+  height: 35vh;
+  width: 100%;
   padding: 2% 3%;
   display: flex;
   justify-content: space-between;
+  align-items: bottom;
   position: absolute;
   z-index: 2;
 `;
@@ -25,6 +27,9 @@ const Section = styled.div`
 const Title = styled.span`
   font-weight: 700;
   color: black;
+  @media (max-width: 768px) {
+    font-size: 0.6rem;
+  }
 `;
 
 const Options = styled.div`
@@ -36,26 +41,37 @@ const Options = styled.div`
 
 const OptionItem = styled.span`
   font-size: 0.9rem;
+  @media (max-width: 768px) {
+    font-size: 0.6rem;
+  }
 `;
 
 const Right = styled.div`
+  height: 30vh;
+  width: 100%;
   flex: 1;
   display: flex;
   justify-content: flex-end;
 `;
 
 const ProductContainer = styled.div`
+  width: 100%;
   display: flex;
-  margin-left: 1.5rem;
   flex-direction: column;
   align-items: center;
 `;
 
-const ImageContainer = styled.div``;
+const ImageContainer = styled.div`
+  height: 23vh;
+  @media (max-width: 768px) {
+    height: 22vh;
+  }
+`;
 
 const Image = styled.img`
   width: 100%;
   height: 100%;
+  object-fit: cover;
 `;
 
 const NavOptionsExpand = ({

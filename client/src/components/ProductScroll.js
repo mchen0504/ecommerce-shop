@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 
@@ -125,13 +126,27 @@ const ProductScroll = ({ products, type }) => {
       >
         {products.map((product) => {
           return (
-            <Product key={product.id}>
-              <ImageContainer>
-                <Image src={`https:${product.src}`}></Image>
-              </ImageContainer>
+            <Product key={type === "home" ? product.id : product._id}>
+              <Link
+                to={`/product/${type === "home" ? product.id : product._id}`}
+              >
+                <ImageContainer>
+                  <Image src={`https:${product.src}`}></Image>
+                </ImageContainer>
+              </Link>
               <Info>
-                <Title>{product.title}</Title>
-                <Price>${product.price}</Price>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/product/${type === "home" ? product.id : product._id}`}
+                >
+                  <Title>{product.title}</Title>
+                </Link>
+                <Price>
+                  $
+                  {type === "home"
+                    ? product.price
+                    : product.price.$numberDecimal}
+                </Price>
               </Info>
             </Product>
           );

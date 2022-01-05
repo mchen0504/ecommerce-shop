@@ -5,8 +5,9 @@ import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Nav";
+import FiltersMobile from "../components/shoppingPage/FiltersMobile";
 import Filters from "../components/shoppingPage/Filters";
-import ProductList from "../components/shoppingPage/ProductList";
+import ShoppingMain from "../components/shoppingPage/ShoppingMain";
 
 const Container = styled.div`
   padding: 3%;
@@ -18,6 +19,9 @@ const Content = styled.div`
 
 const Left = styled.div`
   flex: 1;
+  @media (max-width: 575px) {
+    display: none;
+  }
 `;
 
 const Right = styled.div`
@@ -33,12 +37,21 @@ const ShoppingPage = () => {
     colors: [],
   });
 
+  const [showMobileNav, setShowMobileNav] = useState(false);
+
   return (
     <div>
       <Announcement />
       <Navbar />
       <Container>
         <Content>
+          <FiltersMobile
+            category={category}
+            filters={filters}
+            setFilters={setFilters}
+            showMobileNav={showMobileNav}
+            setShowMobileNav={setShowMobileNav}
+          />
           <Left>
             <Filters
               category={category}
@@ -47,7 +60,11 @@ const ShoppingPage = () => {
             />
           </Left>
           <Right>
-            <ProductList category={category} filters={filters} />
+            <ShoppingMain
+              category={category}
+              filters={filters}
+              setShowMobileNav={setShowMobileNav}
+            />
           </Right>
         </Content>
       </Container>

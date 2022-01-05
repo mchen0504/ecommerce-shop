@@ -9,7 +9,7 @@ const Input = styled.input`
 `;
 
 const Label = styled.label`
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   color: ${(props) => (props.isPageCategory ? "black" : "gray")};
   border-bottom: ${(props) =>
     props.isPageCategory ? "2px solid black;" : "2px solid transparent"};

@@ -5,6 +5,10 @@ const Container = styled.div`
   position: relative;
   padding: 1rem 0;
   cursor: pointer;
+  @media (max-width: 575px) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 `;
 
 const Image = styled.img`

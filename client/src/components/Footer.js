@@ -10,7 +10,7 @@ const FooterContainer = styled.div`
 `;
 
 const SectionWrapper = styled.div`
-  padding-bottom: 1.5rem;
+  padding-bottom: 2rem;
 `;
 
 const Title = styled.h1`

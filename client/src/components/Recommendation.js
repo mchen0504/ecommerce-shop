@@ -12,13 +12,13 @@ const ProductContainer = styled.div`
 `;
 
 const AllProducts = styled.div`
-  @media (max-width: 576px) {
+  @media (max-width: 575px) {
     display: none;
   }
 `;
 
 const SwipeProducts = styled.div`
-  @media (min-width: 577px) {
+  @media (min-width: 576px) {
     display: none;
   }
 `;
