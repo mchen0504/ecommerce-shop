@@ -34,10 +34,9 @@ const cartSlice = createSlice({
       state.products = state.products.filter(
         (existedProduct) => existedProduct.id !== action.payload
       );
-      state.total = state.products.reduce(
-        (price, product) => product.price * product.qty + price,
-        0
-      );
+      state.total = state.products
+        .reduce((price, product) => product.price * product.qty + price, 0)
+        .toFixed(2);
     },
     editCart(state, action) {
       const product = action.payload;
@@ -48,10 +47,9 @@ const cartSlice = createSlice({
           existedProduct.color === product.color
       );
       existed.qty = Number(product.qty);
-      state.total = state.products.reduce(
-        (price, product) => product.price * product.qty + price,
-        0
-      );
+      state.total = state.products
+        .reduce((price, product) => product.price * product.qty + price, 0)
+        .toFixed(2);
     },
     resetCart(state) {
       state.products = [];
@@ -72,10 +70,9 @@ const cartSlice = createSlice({
       } else {
         state.products.push(product);
       }
-      state.total = state.products.reduce(
-        (price, product) => product.price * product.qty + price,
-        0
-      );
+      state.total = state.products
+        .reduce((price, product) => product.price * product.qty + price, 0)
+        .toFixed(2);
     });
   },
 });

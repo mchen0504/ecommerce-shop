@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   padding: 0 3%;
-  height: 60vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;

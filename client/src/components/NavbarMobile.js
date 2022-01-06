@@ -52,7 +52,7 @@ const NavbarMobile = ({ showMobileNav, setShowMobileNav }) => {
             <Options>
               {categories.map((category) => {
                 return (
-                  <OptionItem>
+                  <OptionItem key={category}>
                     <Link
                       style={{ textDecoration: "none", color: "inherit" }}
                       to={`/products/${category}`}
@@ -68,7 +68,9 @@ const NavbarMobile = ({ showMobileNav, setShowMobileNav }) => {
             </Link>
           </Top>
           <hr />
-          <Title>ACCOUNT</Title>
+          <Link to={"/login"} style={{ textDecoration: "none" }}>
+            <Title>ACCOUNT</Title>
+          </Link>
         </Offcanvas.Body>
       </Wrapper>
     </Offcanvas>

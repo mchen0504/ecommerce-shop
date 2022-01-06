@@ -15,6 +15,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 `;
 
 const Button = styled.button`
@@ -53,7 +54,7 @@ const PaymentSuccess = () => {
               color: product.color,
               quantity: product.qty,
             })),
-            amount: cart.total / 100,
+            amount: cart.total,
             address: data.billing_details.address,
           },
         });
@@ -76,7 +77,8 @@ const PaymentSuccess = () => {
 
   return (
     <Container>
-      Thank you for shopping with us. Your order number is {orderId}.
+      Thank you for shopping with us. <br />
+      Your order number is {orderId}.
       <Link to="/">
         <Button style={{ padding: 10, marginTop: 20 }}>Go to Homepage</Button>
       </Link>

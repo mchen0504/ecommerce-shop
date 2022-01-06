@@ -133,7 +133,7 @@ const CartDetails = () => {
           {
             header: { token: `Bearer ${userToken}` },
             tokenId: stripeToken.id,
-            amount: cart.total * 100,
+            amount: Math.round(cart.total * 100),
           }
         );
         navigate("/success", {
@@ -152,7 +152,7 @@ const CartDetails = () => {
       billingAddress
       shippingAddress
       description={`Your total is $${cart.total}`}
-      amount={cart.total * 100}
+      amount={Math.round(cart.total * 100)}
       token={onToken}
       stripeKey={PUBLIC_KEY}
     >
