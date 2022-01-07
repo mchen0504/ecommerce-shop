@@ -131,7 +131,7 @@ const ProductScroll = ({ products, type }) => {
                 to={`/product/${type === "home" ? product.id : product._id}`}
               >
                 <ImageContainer>
-                  <Image src={`https:${product.src}`}></Image>
+                  <Image src={product.src}></Image>
                 </ImageContainer>
               </Link>
               <Info>

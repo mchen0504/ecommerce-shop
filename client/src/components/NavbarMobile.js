@@ -5,7 +5,6 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 
 const Wrapper = styled.div`
   padding: 0 3%;
-  margin-top: 1rem;
 `;
 
 const Top = styled.div`
@@ -22,7 +21,8 @@ const Options = styled.div`
   padding: 2%;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
 `;
 
 const OptionItem = styled.span`
@@ -46,7 +46,13 @@ const NavbarMobile = ({ showMobileNav, setShowMobileNav }) => {
     >
       <Wrapper>
         <Offcanvas.Header closeButton></Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
           <Top>
             <Title>CATEGORIES</Title>
             <Options>
@@ -63,9 +69,7 @@ const NavbarMobile = ({ showMobileNav, setShowMobileNav }) => {
                 );
               })}
             </Options>
-            <Link to={"/login"} style={{ textDecoration: "none" }}>
-              <Title>BEST SELLERS</Title>
-            </Link>
+            <Title>BEST SELLERS</Title>
           </Top>
           <hr />
           <Link to={"/login"} style={{ textDecoration: "none" }}>

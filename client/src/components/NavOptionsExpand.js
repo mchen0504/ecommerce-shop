@@ -4,7 +4,6 @@ import { dropdownImgItems, newArrivals } from "../homeData";
 
 const Container = styled.div`
   background-color: rgba(247, 240, 219);
-  height: 35vh;
   width: 100%;
   padding: 2% 3%;
   display: flex;
@@ -27,8 +26,9 @@ const Section = styled.div`
 const Title = styled.span`
   font-weight: 700;
   color: black;
-  @media (max-width: 768px) {
-    font-size: 0.6rem;
+  font-size: 0.9rem;
+  @media (min-width: 768px) {
+    font-size: 0.7rem;
   }
 `;
 
@@ -40,32 +40,26 @@ const Options = styled.div`
 `;
 
 const OptionItem = styled.span`
-  font-size: 0.9rem;
-  @media (max-width: 768px) {
-    font-size: 0.6rem;
+  font-size: 0.8rem;
+  @media (min-width: 768px) {
+    font-size: 0.7rem;
   }
 `;
 
 const Right = styled.div`
-  height: 30vh;
-  width: 100%;
   flex: 1;
   display: flex;
   justify-content: flex-end;
 `;
 
 const ProductContainer = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
 const ImageContainer = styled.div`
-  height: 23vh;
-  @media (max-width: 768px) {
-    height: 22vh;
-  }
+  height: 100%;
 `;
 
 const Image = styled.img`
@@ -149,7 +143,7 @@ const NavOptionsExpand = ({
                   to={`/product/${item.id}`}
                 >
                   <ImageContainer>
-                    <Image src={`https:${item.src}`}></Image>
+                    <Image src={item.src}></Image>
                   </ImageContainer>
                 </Link>
               </ProductContainer>

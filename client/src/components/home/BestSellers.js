@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { bestSellers } from "../../homeData";
 import ProductFlex from "../ProductFlex";
 import ProductScroll from "../ProductScroll";
+import Scroll from "../Scroll";
 
 const ProductContainer = styled.div`
   padding: 0 3%;
@@ -27,7 +28,8 @@ const BestSellers = () => {
       </AllProducts>
 
       <SwipeProducts>
-        <ProductScroll products={bestSellers} type="home" />
+        <Scroll products={bestSellers} type="home" />
+        {/* <ProductScroll products={bestSellers} type="home" /> */}
       </SwipeProducts>
     </ProductContainer>
   );

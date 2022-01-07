@@ -41,7 +41,7 @@ const ProductItem = ({ product, type }) => {
     <Container>
       <Link to={`/product/${type === "home" ? product.id : product._id}`}>
         <ImageContainer>
-          <Img src={`https:${product.src}`} />
+          <Img src={product.src} />
         </ImageContainer>
       </Link>
       <ProductInfo>

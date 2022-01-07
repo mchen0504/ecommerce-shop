@@ -15,7 +15,7 @@ const FiltersMobile = ({
       show={showMobileNav}
       onHide={handleClose}
       style={{
-        width: "50%",
+        width: "60%",
       }}
     >
       <Offcanvas.Header closeButton></Offcanvas.Header>

@@ -37,7 +37,7 @@ const Left = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  height: 80vh;
+  height: 60vh;
   object-fit: cover;
   @media (max-width: 575px) {
     height: 50vh;
@@ -53,13 +53,11 @@ const Right = styled.div`
 `;
 
 const Section = styled.div`
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 `;
 
 const Title = styled.h1`
   font-size: 1.2rem;
-  @media (max-width: 575px) {
-  }
 `;
 
 const Price = styled.span`
@@ -92,7 +90,7 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const AddToCartButton = styled.button`
-  width: 80%;
+  width: 90%;
   padding: 0.4rem;
   background-color: ${(props) => (props.disabled ? "gray" : "black")};
   color: white;
@@ -166,7 +164,7 @@ const ProductInfo = () => {
   return (
     <Container>
       <Left>
-        <Image src={`https://${product.src}`} />
+        <Image src={product.src} />
       </Left>
       <Right>
         <Section>

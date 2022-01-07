@@ -15,9 +15,11 @@ const PUBLIC_KEY =
 
 const Container = styled.div`
   padding: 5% 5% 10% 5%;
+  margin-bottom: 15%;
 `;
 
 const Title = styled.h1`
+  margin: 1rem 0 2rem 0;
   font-size: 2rem;
   font-weight: 400;
   @media (max-width: 575px) {
@@ -74,7 +76,6 @@ const NextStep = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2rem;
   @media (max-width: 575px) {
     flex-direction: column-reverse;
     gap: 1rem;
@@ -82,11 +83,11 @@ const NextStep = styled.div`
 `;
 
 const CheckoutButton = styled.button`
-  padding: 0.3rem 1rem;
+  padding: 0.5rem 1rem;
   background-color: black;
   color: white;
   border: 1px solid black;
-  font-size: 0.9rem;
+  font-size: 1rem;
   border-radius: 3px;
   width: 16rem;
   @media (max-width: 575px) {

@@ -38,7 +38,7 @@ const FilterButton = styled.button`
   border: 0.1px solid black;
   font-size: 0.8rem;
   border-radius: 3px;
-  width: 13rem;
+  width: 40%;
   height: 2rem;
   @media (min-width: 576px) {
     display: none;
@@ -48,7 +48,7 @@ const FilterButton = styled.button`
 const Select = styled.select`
   font-size: 0.8rem;
   @media (max-width: 575px) {
-    width: 13rem;
+    width: 40%;
     height: 2rem;
     text-align: center;
   }

@@ -22,7 +22,7 @@ const FilterOptions = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: ${(props) => (props.type === "category" ? "0.1rem" : "0.5rem")};
+  gap: ${(props) => (props.type === "category" ? "0.2rem" : "0.5rem")};
   flex-direction: ${(props) => (props.type === "category" ? "column" : "row")};
 `;
 

@@ -6,7 +6,10 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 2.1rem;
+  font-size: 1.4rem;
+  @media (min-width: 768px) {
+    font-size: 1.9rem;
+  }
 `;
 
 const SectionTitle = (props) => {

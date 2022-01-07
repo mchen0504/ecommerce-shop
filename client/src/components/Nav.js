@@ -6,7 +6,7 @@ import NavOptionsExpand from "./NavOptionsExpand";
 import NavbarMobile from "./NavbarMobile";
 
 const Container = styled.div`
-  height: 3rem;
+  height: 2.5rem;
   padding: 0 3%;
   display: flex;
   justify-content: space-between;
@@ -36,6 +36,9 @@ const LeftItem = styled.div`
   &:hover {
     border-bottom: 2px solid black;
   }
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+  }
   @media (max-width: 575px) {
     display: none;
   }
@@ -50,6 +53,9 @@ const Center = styled.div`
 const Logo = styled.div`
   font-weight: bold;
   font-size: 1.7rem;
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const Right = styled.div`
@@ -62,6 +68,9 @@ const RightItem = styled.div`
   font-size: 1.4rem;
   cursor: pointer;
   margin-left: ${(props) => props.type === "login" && "10%"};
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
   @media (max-width: 576px) {
     display: ${(props) => props.type === "login" && "none"};
   }

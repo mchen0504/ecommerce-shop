@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { signUp, login } from "../../redux/userSlice";
 
 const Container = styled.div`
-  height: 90vh;
+  height: 70vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   @media (max-width: 575px) {
-    width: 50%;
+    width: 80%;
   }
 `;
 

@@ -6,6 +6,7 @@ import ProductFlex from "./ProductFlex";
 import ProductScroll from "./ProductScroll";
 
 import Spinner from "react-bootstrap/Spinner";
+import Scroll from "./Scroll";
 
 const ProductContainer = styled.div`
   padding: 0 4%;
@@ -73,7 +74,8 @@ const Recommendation = ({ id }) => {
       </AllProducts>
 
       <SwipeProducts>
-        <ProductScroll products={displayedProducts} type="recommendation" />
+        {/* <ProductScroll products={displayedProducts} type="recommendation" /> */}
+        <Scroll products={displayedProducts} type="recommendation" />
       </SwipeProducts>
     </ProductContainer>
   );
