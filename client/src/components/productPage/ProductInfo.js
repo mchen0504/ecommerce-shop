@@ -18,11 +18,11 @@ const LoadingContainer = styled.div`
 `;
 
 const Container = styled.div`
-  padding: 5% 10% 10% 10%;
+  padding: 5% 3%;
   display: flex;
   @media (max-width: 575px) {
     flex-direction: column;
-    align-items: center;
+    align-items: left;
   }
 `;
 
@@ -35,13 +35,18 @@ const Left = styled.div`
   }
 `;
 
+const ImageContainer = styled.div`
+  padding: 0 5%;
+  height: 80vh;
+  @media (max-width: 575px) {
+    height: 80vh;
+  }
+`;
+
 const Image = styled.img`
   width: 100%;
-  height: 60vh;
+  height: 100%;
   object-fit: cover;
-  @media (max-width: 575px) {
-    height: 50vh;
-  }
 `;
 
 const Right = styled.div`
@@ -98,6 +103,9 @@ const AddToCartButton = styled.button`
   border: none;
   font-size: 0.9rem;
   border-radius: 3px;
+  @media (min-width: 576px) {
+    width: 80%;
+  }
 `;
 
 const ProductInfo = () => {
@@ -164,7 +172,9 @@ const ProductInfo = () => {
   return (
     <Container>
       <Left>
-        <Image src={product.src} />
+        <ImageContainer>
+          <Image src={product.src} />
+        </ImageContainer>
       </Left>
       <Right>
         <Section>

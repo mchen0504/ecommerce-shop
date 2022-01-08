@@ -17,13 +17,13 @@ const Title = styled.h1`
   font-size: 1.1rem;
   @media (max-width: 575px) {
     font-size: 1.3rem;
-    padding: 2% 2.5%;
+    padding: 2%;
   }
 `;
 
 const FilterSort = styled.div`
   @media (max-width: 575px) {
-    padding: 3% 2.5%;
+    padding: 3% 2%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -36,20 +36,20 @@ const FilterButton = styled.button`
   background-color: black;
   color: white;
   border: 0.1px solid black;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   border-radius: 3px;
-  width: 40%;
-  height: 2rem;
+  width: 45%;
+  height: 2.2rem;
   @media (min-width: 576px) {
     display: none;
   }
 `;
 
 const Select = styled.select`
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   @media (max-width: 575px) {
-    width: 40%;
-    height: 2rem;
+    width: 45%;
+    height: 2.2rem;
     text-align: center;
   }
 `;

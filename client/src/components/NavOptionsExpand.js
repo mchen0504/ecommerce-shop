@@ -30,19 +30,22 @@ const Title = styled.span`
   @media (min-width: 768px) {
     font-size: 0.7rem;
   }
+  @media (min-width: 992px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const Options = styled.div`
-  padding: 0.8rem 0;
+  padding: 0.4rem 0;
   display: flex;
   flex-direction: column;
-  row-gap: 0.2rem;
+  gap: 0.3rem;
 `;
 
 const OptionItem = styled.span`
   font-size: 0.8rem;
-  @media (min-width: 768px) {
-    font-size: 0.7rem;
+  @media (min-width: 992px) {
+    font-size: 0.9rem;
   }
 `;
 

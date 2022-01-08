@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   background-color: rgba(247, 240, 219, 0.5);
-  padding: 1% 0;
+  padding: 0.6rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,11 +11,8 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 90%;
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-align: center;
-  @media (max-width: 767px) {
-    font-size: 0.9rem;
-  }
 `;
 
 const Announcement = () => {

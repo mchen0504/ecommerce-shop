@@ -14,17 +14,24 @@ const PUBLIC_KEY =
   "pk_test_51KBwafLsJMKgwPZfRMS0rIiml3PC3cdMNWpnD5ZbWzcRumnVsMmWSYZWqO7sC8rlOOPI27nLBQeEVZqouSZzvGxt00vRFHUPQ0";
 
 const Container = styled.div`
-  padding: 5% 5% 10% 5%;
-  margin-bottom: 15%;
+  padding: 0 3%;
+  margin-bottom: 7rem;
 `;
 
 const Title = styled.h1`
-  margin: 1rem 0 2rem 0;
-  font-size: 2rem;
+  margin: 2rem 0;
+  font-size: 1.6rem;
   font-weight: 400;
   @media (max-width: 575px) {
     font-size: 1.5rem;
   }
+`;
+
+const EmptyContainer = styled.div`
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const PropertyContainer = styled.div`
@@ -89,9 +96,10 @@ const CheckoutButton = styled.button`
   border: 1px solid black;
   font-size: 1rem;
   border-radius: 3px;
-  width: 16rem;
+  width: 18.5rem;
   @media (max-width: 575px) {
     width: 90vw;
+    margin-bottom: 0.5rem;
   }
 `;
 
@@ -165,14 +173,16 @@ const CartDetails = () => {
 
   if (cart.products.length === 0) {
     return (
-      <Container style={{ height: "60vh" }}>
+      <Container>
         <Title>SHOPPING BAG</Title>
-        <div style={{ textAlign: "center", marginTop: "5rem" }}>
-          Your bag is empty.{" "}
-          <Link to={"/"} style={{ color: "inherit" }}>
-            Continue Shopping
-          </Link>
-        </div>
+        <EmptyContainer>
+          <p>
+            Your bag is empty. {""}
+            <Link to={"/"} style={{ color: "inherit" }}>
+              Continue Shopping
+            </Link>
+          </p>
+        </EmptyContainer>
       </Container>
     );
   }

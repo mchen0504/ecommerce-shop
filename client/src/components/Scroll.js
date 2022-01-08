@@ -6,8 +6,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Container = styled.div`
-  padding: 5%;
-  margin-bottom: 15%;
+  padding: 1%;
+  margin-bottom: 7%;
 `;
 
 const Info = styled.div`
@@ -18,9 +18,12 @@ const Info = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-align: center;
   font-weight: 300;
+  @media (min-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 const Price = styled.span`
@@ -28,6 +31,9 @@ const Price = styled.span`
   text-align: center;
   font-weight: 400;
   margin-top: -0.2rem;
+  @media (min-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 const Scroll = ({ products, type }) => {

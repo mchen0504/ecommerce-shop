@@ -7,6 +7,12 @@ const Wrapper = styled.div`
   padding: 0 3%;
 `;
 
+const BodyContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
 const Top = styled.div`
   display: flex;
   flex-direction: column;
@@ -40,7 +46,7 @@ const NavbarMobile = ({ showMobileNav, setShowMobileNav }) => {
       onHide={handleClose}
       placement={"top"}
       style={{
-        height: "70%",
+        height: "23rem",
         backgroundColor: "rgba(247, 240, 219)",
       }}
     >
@@ -58,7 +64,7 @@ const NavbarMobile = ({ showMobileNav, setShowMobileNav }) => {
             <Options>
               {categories.map((category) => {
                 return (
-                  <OptionItem key={category}>
+                  <OptionItem key={category} onClick={handleClose}>
                     <Link
                       style={{ textDecoration: "none", color: "inherit" }}
                       to={`/products/${category}`}

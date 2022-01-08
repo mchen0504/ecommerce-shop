@@ -3,13 +3,13 @@ import { useState } from "react";
 import styled from "styled-components";
 
 const SizeOption = styled.button`
-  height: 25px;
-  width: 25px;
+  height: 27px;
+  width: 27px;
   border: 0.1px solid gray;
   border-radius: 3px;
   background-color: ${(props) => (props.isSelected ? "black" : "white")};
   color: ${(props) => (props.isSelected ? "white" : "gray")};
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   &:hover {
     background-color: black;
     color: white;
@@ -17,17 +17,17 @@ const SizeOption = styled.button`
 `;
 
 const ColorOption = styled.button`
-  width: 19px;
-  height: 19px;
+  width: 21px;
+  height: 21px;
   border: ${(props) => (props.color === "white" ? "0.1px solid gray" : "none")};
   border-radius: 50%;
   background-color: ${(props) => props.color};
   color: gray;
   flex-wrap: wrap;
   box-shadow: ${(props) =>
-    props.isSelected ? "0px 0px 0px 2.5px gray" : "none"};
+    props.isSelected ? "0px 0px 0px 1.5px gray" : "none"};
   &:hover {
-    box-shadow: 0px 0px 0px 2.5px gray;
+    box-shadow: 0px 0px 0px 1.5px gray;
   }
 `;
 

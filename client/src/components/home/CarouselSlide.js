@@ -34,7 +34,7 @@ const CarouselSlide = () => {
             src="https://cdn.shopify.com/s/files/1/1276/0919/products/5_101f4fdf-878d-4c25-a1c4-57b9026f6fda_1080x.jpg?v=1632905516"
             alt="First slide"
           />
-          <Carousel.Caption>
+          <Carousel.Caption style={{ marginBottom: "1rem" }}>
             <CaptionContainer>
               <Title>STAYING WARM</Title>
               <Paragraph>Cozy knitwear to wear under your coats.</Paragraph>
@@ -51,7 +51,7 @@ const CarouselSlide = () => {
             alt="Second slide"
           />
 
-          <Carousel.Caption>
+          <Carousel.Caption style={{ marginBottom: "1rem" }}>
             <CaptionContainer>
               <Title>STAYING WARM</Title>
               <Paragraph>Check out our outerwear for a warm winter.</Paragraph>

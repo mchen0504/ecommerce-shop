@@ -14,7 +14,7 @@ const Section = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
 `;
 
@@ -22,8 +22,9 @@ const FilterOptions = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: ${(props) => (props.type === "category" ? "0.2rem" : "0.5rem")};
+  gap: 0.7rem;
   flex-direction: ${(props) => (props.type === "category" ? "column" : "row")};
+  margin-top: 1rem;
 `;
 
 const Filters = ({ category, filters, setFilters }) => {

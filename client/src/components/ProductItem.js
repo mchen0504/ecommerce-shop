@@ -12,7 +12,7 @@ const ImageContainer = styled.div`
 `;
 
 const Img = styled.img`
-  width: 90%;
+  width: 95%;
   object-fit: cover;
 `;
 
@@ -27,13 +27,19 @@ const Title = styled.h2`
   font-size: 0.8rem;
   text-align: center;
   font-weight: 300;
+  @media (min-width: 992px) {
+    font-size: 1rem;
+  }
 `;
 
 const Price = styled.span`
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-align: center;
   font-weight: 400;
   margin-top: -0.2rem;
+  @media (min-width: 992px) {
+    font-size: 1rem;
+  }
 `;
 
 const ProductItem = ({ product, type }) => {

@@ -9,7 +9,7 @@ import Spinner from "react-bootstrap/Spinner";
 import Scroll from "./Scroll";
 
 const ProductContainer = styled.div`
-  padding: 0 4%;
+  padding: 0 2%;
 `;
 
 const AllProducts = styled.div`

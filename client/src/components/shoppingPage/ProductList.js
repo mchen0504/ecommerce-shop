@@ -9,6 +9,13 @@ const ProductContainer = styled.div`
   padding: 0 3%;
 `;
 
+const EmptyContainer = styled.div`
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const ProductList = ({ category, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -120,9 +127,9 @@ const ProductList = ({ category, filters, sort }) => {
   ) {
     return (
       <ProductContainer>
-        <div style={{ textAlign: "center" }}>
+        <EmptyContainer>
           <span>No products found</span>
-        </div>
+        </EmptyContainer>
       </ProductContainer>
     );
   }

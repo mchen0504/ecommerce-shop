@@ -5,17 +5,17 @@ import ProductScroll from "../ProductScroll";
 import Scroll from "../Scroll";
 
 const ProductContainer = styled.div`
-  padding: 0 3%;
+  padding: 0 2%;
 `;
 
 const AllProducts = styled.div`
-  @media (max-width: 575px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `;
 
 const SwipeProducts = styled.div`
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;

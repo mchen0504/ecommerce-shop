@@ -6,13 +6,13 @@ import NavOptionsExpand from "./NavOptionsExpand";
 import NavbarMobile from "./NavbarMobile";
 
 const Container = styled.div`
-  height: 2.5rem;
+  height: 3rem;
   padding: 0 3%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   @media (max-width: 575px) {
-    padding: 0 5%;
+    padding: 0 3%;
   }
 `;
 
@@ -29,18 +29,19 @@ const HamburgerMenu = styled.span`
 `;
 
 const LeftItem = styled.div`
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  border: 2px solid transparent;
-  &:hover {
-    border-bottom: 2px solid black;
+  display: none;
+  @media (min-width: 576px) {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 2px solid transparent;
+    &:hover {
+      border-bottom: 2px solid black;
+    }
   }
-  @media (max-width: 768px) {
-    font-size: 0.7rem;
-  }
-  @media (max-width: 575px) {
-    display: none;
+  @media (min-width: 768px) {
+    font-size: 1rem;
   }
 `;
 
@@ -54,7 +55,7 @@ const Logo = styled.div`
   font-weight: bold;
   font-size: 1.7rem;
   @media (max-width: 768px) {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -62,15 +63,13 @@ const Right = styled.div`
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 `;
 
 const RightItem = styled.div`
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   cursor: pointer;
   margin-left: ${(props) => props.type === "login" && "10%"};
-  @media (max-width: 768px) {
-    font-size: 1.1rem;
-  }
   @media (max-width: 576px) {
     display: ${(props) => props.type === "login" && "none"};
   }
@@ -142,7 +141,11 @@ const Navbar = () => {
           <RightItem className="material-icons-outlined">search</RightItem>
           <Link
             to={"/login"}
-            style={{ textDecoration: "none", marginLeft: "10%" }}
+            style={{
+              textDecoration: "none",
+              marginLeft: "10%",
+              marginBottom: "-0.4rem",
+            }}
           >
             <RightItem className="material-icons-outlined" type="login">
               person
@@ -150,7 +153,11 @@ const Navbar = () => {
           </Link>
           <Link
             to={"/cart"}
-            style={{ textDecoration: "none", marginLeft: "10%" }}
+            style={{
+              textDecoration: "none",
+              marginLeft: "10%",
+              marginBottom: "-0.4rem",
+            }}
           >
             <RightItem
               className={

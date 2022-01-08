@@ -3,19 +3,20 @@ import { useState } from "react";
 import styled, { css } from "styled-components";
 
 const TabContainer = styled.div`
-  width: 20rem;
   margin: 2rem 0;
   display: flex;
   flex-direction: column;
 `;
 
 const Sidebar = styled.div`
-  padding: 0 5%;
   width: 90%;
   display: flex;
   justify-content: space-between;
   gap: 5%;
   margin-bottom: 1.5rem;
+  @media (min-width: 576px) {
+    width: 80%;
+  }
 `;
 
 const TabButton = styled.div`
@@ -29,6 +30,13 @@ const TabButton = styled.div`
       border-bottom: 2px solid rgb(255, 69, 0);
       color: rgb(255, 69, 0);
     `}
+`;
+
+const ContentContainer = styled.div`
+  width: 90%;
+  @media (min-width: 576px) {
+    width: 80%;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -55,7 +63,7 @@ const Tabs = ({ product }) => {
         </TabButton>
       </Sidebar>
 
-      <div id="Details">
+      <ContentContainer id="Details">
         {selectedTab === "details" ? (
           <Paragraph>{product.detail}</Paragraph>
         ) : (
@@ -64,7 +72,7 @@ const Tabs = ({ product }) => {
             <Paragraph>{product.care}</Paragraph>
           </div>
         )}
-      </div>
+      </ContentContainer>
     </TabContainer>
   );
 };

@@ -13,11 +13,14 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 30%;
+  width: 65%;
   display: flex;
   flex-direction: column;
-  @media (max-width: 575px) {
-    width: 80%;
+  @media (min-width: 576px) {
+    width: 50%;
+  }
+  @media (min-width: 768px) {
+    width: 30%;
   }
 `;
 
@@ -29,6 +32,7 @@ const Sidebar = styled.div`
 `;
 
 const TabButton = styled.div`
+  font-size: 1.1rem;
   border: none;
   cursor: pointer;
   outline: none;
@@ -50,7 +54,8 @@ const InputContainer = styled.div`
 
 const Input = styled.input`
   width: 100%;
-  font-size: 0.9rem;
+  height: 2.1rem;
+  font-size: 1rem;
   background-color: transparent;
   border: 1.5px solid #d3d3d3;
   border-radius: 3px;
@@ -62,7 +67,8 @@ const Input = styled.input`
 
 const SubmitButton = styled.button`
   width: 100%;
-  font-size: 0.9rem;
+  height: 2.1rem;
+  font-size: 1rem;
   background-color: #2e1f0f;
   color: white;
   border: none;
