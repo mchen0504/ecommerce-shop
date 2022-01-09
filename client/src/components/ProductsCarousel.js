@@ -36,7 +36,7 @@ const Price = styled.span`
   }
 `;
 
-const Scroll = ({ products, type }) => {
+const ProductsCarousel = ({ products, type }) => {
   const settings = {
     autoplay: false,
     nav: false,
@@ -78,4 +78,4 @@ const Scroll = ({ products, type }) => {
   );
 };
 
-export default Scroll;
+export default ProductsCarousel;

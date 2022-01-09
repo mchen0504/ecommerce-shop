@@ -7,12 +7,6 @@ const Wrapper = styled.div`
   padding: 0 3%;
 `;
 
-const BodyContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-
 const Top = styled.div`
   display: flex;
   flex-direction: column;

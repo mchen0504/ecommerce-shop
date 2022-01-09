@@ -14,8 +14,8 @@ const Sidebar = styled.div`
   justify-content: space-between;
   gap: 5%;
   margin-bottom: 1.5rem;
-  @media (min-width: 576px) {
-    width: 80%;
+  @media (min-width: 768px) {
+    width: 70%;
   }
 `;
 
@@ -34,8 +34,8 @@ const TabButton = styled.div`
 
 const ContentContainer = styled.div`
   width: 90%;
-  @media (min-width: 576px) {
-    width: 80%;
+  @media (min-width: 768px) {
+    width: 70%;
   }
 `;
 

@@ -1,18 +1,24 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const initialState = {
   currentUser: null,
+  error: null,
 };
 
 export const login = createAsyncThunk(
   "user/login",
-  async ({ email, password }) => {
-    const res = await axios.post("http://localhost:5000/api/auth/login", {
-      email,
-      password,
-    });
-    return res.data;
+  async ({ email, password }, { rejectWithValue }) => {
+    try {
+      const res = await axios.post("http://localhost:5000/api/auth/login", {
+        email,
+        password,
+      });
+      return res.data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
   }
 );
 
@@ -34,11 +40,21 @@ const userSlice = createSlice({
     logout(state) {
       state.currentUser = null;
     },
+    clearError(state) {
+      state.error = null;
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(login.fulfilled, (state, action) => {
         state.currentUser = action.payload;
+      })
+      .addCase(login.rejected, (state, action) => {
+        if (action.payload) {
+          state.error = action.payload;
+        } else {
+          state.error = action.error.message;
+        }
       })
       .addCase(signUp.fulfilled, (state, action) => {
         state.currentUser = action.payload;
@@ -46,5 +62,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { logout } = userSlice.actions;
+export const { logout, clearError } = userSlice.actions;
 export default userSlice.reducer;

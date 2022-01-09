@@ -25,6 +25,7 @@ const FiltersMobile = ({
           category={category}
           filters={filters}
           setFilters={setFilters}
+          closeMobileFilters={handleClose}
         />
       </Offcanvas.Body>
     </Offcanvas>

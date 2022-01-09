@@ -3,7 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 import Spinner from "react-bootstrap/Spinner";
 
-import ProductFlex from "../ProductFlex";
+import ProductsAll from "../ProductsAll";
 
 const ProductContainer = styled.div`
   padding: 0 3%;
@@ -136,7 +136,7 @@ const ProductList = ({ category, filters, sort }) => {
 
   return (
     <ProductContainer>
-      <ProductFlex products={displayedProducts} />
+      <ProductsAll products={displayedProducts} />
     </ProductContainer>
   );
 };

@@ -6,7 +6,7 @@ import NavOptionsExpand from "./NavOptionsExpand";
 import NavbarMobile from "./NavbarMobile";
 
 const Container = styled.div`
-  height: 3rem;
+  height: 3.5rem;
   padding: 0 3%;
   display: flex;
   justify-content: space-between;
@@ -23,6 +23,7 @@ const Left = styled.div`
 `;
 
 const HamburgerMenu = styled.span`
+  font-size: 1.7rem;
   @media (min-width: 576px) {
     display: none;
   }
@@ -54,9 +55,6 @@ const Center = styled.div`
 const Logo = styled.div`
   font-weight: bold;
   font-size: 1.7rem;
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-  }
 `;
 
 const Right = styled.div`
@@ -72,6 +70,7 @@ const RightItem = styled.div`
   margin-left: ${(props) => props.type === "login" && "10%"};
   @media (max-width: 576px) {
     display: ${(props) => props.type === "login" && "none"};
+    font-size: 1.6rem;
   }
 `;
 

@@ -28,7 +28,9 @@ const userSignUp = async (req, res) => {
 const userLogin = async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
-    !user && res.status(401).json("User does not exist!");
+    if (!user) {
+      return res.status(401).json("User does not exist!");
+    }
 
     const hashedPassword = CryptoJS.AES.decrypt(
       user.password,
@@ -36,8 +38,9 @@ const userLogin = async (req, res) => {
     );
     const storedPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
 
-    storedPassword != req.body.password &&
-      res.status(401).json("Incorrect password!");
+    if (storedPassword != req.body.password) {
+      return res.status(401).json("Incorrect password!");
+    }
 
     const accessToken = jwt.sign(
       {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import styled from "styled-components";
@@ -122,6 +122,7 @@ const CartDetails = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
   const userToken = currentUser?.accessToken;
   const [stripeToken, setStripeToken] = useState(null);
+  const location = useLocation();
   const navigate = useNavigate();
 
   const onToken = (token) => {
@@ -130,7 +131,7 @@ const CartDetails = () => {
 
   const handleCheckout = () => {
     if (!currentUser) {
-      navigate("/login");
+      navigate("/login", { state: { from: location } });
     }
   };
 

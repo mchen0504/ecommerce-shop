@@ -1,8 +1,8 @@
 import styled from "styled-components";
+
 import { bestSellers } from "../../homeData";
-import ProductFlex from "../ProductFlex";
-import ProductScroll from "../ProductScroll";
-import Scroll from "../Scroll";
+import ProductsAll from "../ProductsAll";
+import ProductsCarousel from "../ProductsCarousel";
 
 const ProductContainer = styled.div`
   padding: 0 2%;
@@ -24,12 +24,11 @@ const BestSellers = () => {
   return (
     <ProductContainer>
       <AllProducts>
-        <ProductFlex products={bestSellers} type="home" />
+        <ProductsAll products={bestSellers} type="home" />
       </AllProducts>
 
       <SwipeProducts>
-        <Scroll products={bestSellers} type="home" />
-        {/* <ProductScroll products={bestSellers} type="home" /> */}
+        <ProductsCarousel products={bestSellers} type="home" />
       </SwipeProducts>
     </ProductContainer>
   );

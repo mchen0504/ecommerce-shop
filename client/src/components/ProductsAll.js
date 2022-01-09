@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 
 import ProductItem from "./ProductItem";
 
-const ProductFlex = ({ products, type }) => {
+const ProductsAll = ({ products, type }) => {
   return (
     <Container fluid style={{ padding: "5% 0 10% 0" }}>
       <Row>
@@ -13,7 +13,7 @@ const ProductFlex = ({ products, type }) => {
             <Col
               key={type === "home" ? product.id : product._id}
               xs={6}
-              sm={4}
+              sm={5.5}
               md={3}
             >
               <ProductItem product={product} type={type} />
@@ -25,4 +25,4 @@ const ProductFlex = ({ products, type }) => {
   );
 };
 
-export default ProductFlex;
+export default ProductsAll;

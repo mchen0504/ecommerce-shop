@@ -27,7 +27,7 @@ const FilterOptions = styled.div`
   margin-top: 1rem;
 `;
 
-const Filters = ({ category, filters, setFilters }) => {
+const Filters = ({ category, filters, setFilters, closeMobileFilters }) => {
   const categories = ["tops", "dresses", "bottoms", "knitwear", "outerwear"];
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
   const colors = [
@@ -104,7 +104,8 @@ const Filters = ({ category, filters, setFilters }) => {
               <CategoryOption
                 key={eachCategory}
                 category={eachCategory}
-                currentPageCategory={category}
+                currentCategory={category}
+                closeMobileFilters={closeMobileFilters}
               />
             );
           })}

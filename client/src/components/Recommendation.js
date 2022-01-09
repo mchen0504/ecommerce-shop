@@ -1,25 +1,23 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
-import ProductFlex from "./ProductFlex";
-import ProductScroll from "./ProductScroll";
-
 import Spinner from "react-bootstrap/Spinner";
-import Scroll from "./Scroll";
+
+import ProductsAll from "./ProductsAll";
+import ProductsCarousel from "./ProductsCarousel";
 
 const ProductContainer = styled.div`
   padding: 0 2%;
 `;
 
 const AllProducts = styled.div`
-  @media (max-width: 575px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `;
 
 const SwipeProducts = styled.div`
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;
@@ -70,12 +68,11 @@ const Recommendation = ({ id }) => {
   return (
     <ProductContainer>
       <AllProducts>
-        <ProductFlex products={displayedProducts} type="recommendation" />
+        <ProductsAll products={displayedProducts} type="recommendation" />
       </AllProducts>
 
       <SwipeProducts>
-        {/* <ProductScroll products={displayedProducts} type="recommendation" /> */}
-        <Scroll products={displayedProducts} type="recommendation" />
+        <ProductsCarousel products={displayedProducts} type="recommendation" />
       </SwipeProducts>
     </ProductContainer>
   );

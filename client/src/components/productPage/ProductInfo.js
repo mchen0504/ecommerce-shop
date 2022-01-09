@@ -103,8 +103,8 @@ const AddToCartButton = styled.button`
   border: none;
   font-size: 0.9rem;
   border-radius: 3px;
-  @media (min-width: 576px) {
-    width: 80%;
+  @media (min-width: 768px) {
+    width: 70%;
   }
 `;
 

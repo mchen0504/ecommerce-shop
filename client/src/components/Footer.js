@@ -6,15 +6,21 @@ import styled from "styled-components";
 
 const FooterContainer = styled.div`
   background-color: rgba(247, 240, 219, 0.5);
-  padding: 4% 3%;
+  padding: 5% 3% 7% 3%;
+  @media (min-width: 768px) {
+    padding: 3% 3% 5% 3%;
+  }
 `;
 
-const SectionWrapper = styled.div`
-  padding-bottom: 2rem;
+const StyledRow = styled(Row)`
+  gap: 3rem;
+  @media (min-width: 768px) {
+    gap: 7rem;
+  }
 `;
 
 const Title = styled.h1`
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
 `;
 
@@ -41,6 +47,7 @@ const Input = styled.input`
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 0.3rem;
 `;
 
 const Span = styled.div`
@@ -52,10 +59,10 @@ const Footer = () => {
   return (
     <FooterContainer>
       <Container>
-        <Row className="d-flex justify-content-between">
+        <StyledRow className="d-flex justify-content-between">
           <Col sm>
-            <SectionWrapper>
-              <Title>NEWSLETTER</Title>
+            <Title>NEWSLETTER</Title>
+            <ContentWrapper>
               <Span>Get exclusive updates on deals and new styles!</Span>
               <EmailContainer>
                 <Input type="email" placeholder="Your email address" />
@@ -66,31 +73,27 @@ const Footer = () => {
                   send
                 </span>
               </EmailContainer>
-            </SectionWrapper>
+            </ContentWrapper>
           </Col>
 
           <Col sm>
-            <SectionWrapper>
-              <Title>CONNECT</Title>
-              <ContentWrapper>
-                <Span>Instagram</Span>
-                <Span>Facebook</Span>
-                <Span>Twitter</Span>
-              </ContentWrapper>
-            </SectionWrapper>
+            <Title>CONNECT</Title>
+            <ContentWrapper>
+              <Span>Instagram</Span>
+              <Span>Facebook</Span>
+              <Span>Twitter</Span>
+            </ContentWrapper>
           </Col>
 
           <Col sm>
-            <SectionWrapper>
-              <Title>SUPPORT</Title>
-              <ContentWrapper>
-                <Span>Returns</Span>
-                <Span>Shipping</Span>
-                <Span>Contact Us</Span>
-              </ContentWrapper>
-            </SectionWrapper>
+            <Title>SUPPORT</Title>
+            <ContentWrapper>
+              <Span>Returns</Span>
+              <Span>Shipping</Span>
+              <Span>Contact Us</Span>
+            </ContentWrapper>
           </Col>
-        </Row>
+        </StyledRow>
       </Container>
     </FooterContainer>
   );

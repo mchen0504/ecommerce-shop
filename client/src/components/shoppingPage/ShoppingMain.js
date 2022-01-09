@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import ProductList from "./ProductList";
 
@@ -10,6 +10,7 @@ const Top = styled.div`
   @media (max-width: 575px) {
     flex-direction: column;
     align-items: start;
+    padding: 0 2% 0.5rem 2%;
   }
 `;
 
@@ -55,7 +56,11 @@ const Select = styled.select`
 `;
 
 const ShoppingMain = ({ category, filters, setShowMobileNav }) => {
-  const [sort, setSort] = useState();
+  const [sort, setSort] = useState("default");
+
+  useEffect(() => {
+    setSort("default");
+  }, [category]);
 
   return (
     <div>
@@ -68,7 +73,7 @@ const ShoppingMain = ({ category, filters, setShowMobileNav }) => {
           <Select
             name="sortby"
             id="sortby"
-            defaultValue={"default"}
+            value={sort}
             onChange={(e) => setSort(e.target.value)}
           >
             <option value="default" disabled>

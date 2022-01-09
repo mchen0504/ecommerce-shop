@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import styled from "styled-components";
 
 const SizeOption = styled.button`
@@ -32,18 +30,12 @@ const ColorOption = styled.button`
 `;
 
 const FilterOption = ({ type, label, selected, setFilter }) => {
-  const [optionSelected, setOptionSelected] = useState(selected);
-
   const handleClick = (filterType) => {
     setFilter(label, filterType);
-    setOptionSelected(!optionSelected);
   };
 
   return type === "size" ? (
-    <SizeOption
-      onClick={() => handleClick("sizes")}
-      isSelected={optionSelected}
-    >
+    <SizeOption onClick={() => handleClick("sizes")} isSelected={selected}>
       {label}
     </SizeOption>
   ) : (

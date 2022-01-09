@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled, { css } from "styled-components";
 
-import { useDispatch } from "react-redux";
-import { signUp, login } from "../../redux/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { signUp, login, clearError } from "../../redux/userSlice";
 
 const Container = styled.div`
   height: 70vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
@@ -76,11 +78,46 @@ const SubmitButton = styled.button`
   padding: 0.3rem;
 `;
 
+const ErrorMessage = styled.div`
+  color: red;
+  text-align: center;
+  height: 1rem;
+`;
+
 const Tabs = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const { currentUser, error } = useSelector((state) => state.user);
+
   const [selectedTab, setSelectedTab] = useState("signIn");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: "",
+  });
+  const { email, password } = inputs;
+
+  useEffect(() => {
+    dispatch(clearError());
+  }, [location, selectedTab]);
+
+  useEffect(() => {
+    if (currentUser) {
+      const { from } = location.state || { from: { pathname: "/" } };
+      navigate(from);
+    }
+  }, [currentUser]);
+
+  const handleSwitchTab = (tab) => {
+    setInputs((inputs) => ({ ...inputs, email: "", password: "" }));
+    setSelectedTab(tab);
+  };
+
+  const handleInputsChange = (e) => {
+    const { name, value } = e.target;
+    setInputs((inputs) => ({ ...inputs, [name]: value }));
+  };
 
   const handleLogin = () => {
     dispatch(login({ email, password }));
@@ -96,13 +133,13 @@ const Tabs = () => {
         <Sidebar>
           <TabButton
             selected={selectedTab === "signIn"}
-            onClick={() => setSelectedTab("signIn")}
+            onClick={() => handleSwitchTab("signIn")}
           >
             SIGN IN
           </TabButton>
           <TabButton
             selected={selectedTab === "createAccount"}
-            onClick={() => setSelectedTab("createAccount")}
+            onClick={() => handleSwitchTab("createAccount")}
           >
             CREATE ACCOUNT
           </TabButton>
@@ -113,18 +150,20 @@ const Tabs = () => {
             type="email"
             id="email"
             placeholder="Email"
+            name="email"
+            value={email}
             pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
             required
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleInputsChange}
           />
           <Input
             type="password"
             id="pass"
             name="password"
+            value={password}
             placeholder="Password"
-            minlength="8"
             required
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={handleInputsChange}
           />
           {selectedTab === "signIn" ? (
             <SubmitButton onClick={handleLogin}>SIGN IN</SubmitButton>
@@ -133,6 +172,7 @@ const Tabs = () => {
           )}
         </InputContainer>
       </Wrapper>
+      <ErrorMessage>{error}</ErrorMessage>
     </Container>
   );
 };

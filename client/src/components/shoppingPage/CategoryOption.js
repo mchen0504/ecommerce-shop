@@ -10,23 +10,23 @@ const Input = styled.input`
 
 const Label = styled.label`
   font-size: 1rem;
-  color: ${(props) => (props.isPageCategory ? "black" : "gray")};
+  color: ${(props) => (props.isCurrentCategory ? "black" : "gray")};
   border-bottom: ${(props) =>
-    props.isPageCategory ? "2px solid black;" : "2px solid transparent"};
+    props.isCurrentCategory ? "2px solid black;" : "2px solid transparent"};
   cursor: pointer;
   &:hover {
     color: black;
   }
 `;
 
-const CategoryOption = ({ category, currentPageCategory }) => {
+const CategoryOption = ({ category, currentCategory, closeMobileFilters }) => {
   return (
     <Container>
-      <Link to={`/products/${category}`}>
+      <Link to={`/products/${category}`} onClick={closeMobileFilters}>
         <Input type="radio" value={category} name="category" id={category} />
         <Label
           htmlFor={category}
-          isPageCategory={category === currentPageCategory}
+          isCurrentCategory={category === currentCategory}
         >
           {category.charAt(0).toUpperCase() + category.slice(1)}
         </Label>

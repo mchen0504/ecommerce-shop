@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
@@ -38,6 +38,14 @@ const ShoppingPage = () => {
   });
 
   const [showMobileNav, setShowMobileNav] = useState(false);
+
+  useEffect(() => {
+    setFilters({
+      ...filters,
+      sizes: [],
+      colors: [],
+    });
+  }, [location]);
 
   return (
     <div>
