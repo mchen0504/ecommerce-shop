@@ -19,14 +19,6 @@ import ProfilePage from "./pages/ProfilePage";
 function App() {
   const user = useSelector((state) => state.user.currentUser);
 
-  // const PrivateRoute = ({ children }) => {
-  //   let location = useLocation();
-  //   if (!user) {
-  //     return <Navigate to="/login" state={{ from: location }} />;
-  //   }
-  //   return children;
-  // };
-
   return (
     <Router>
       <ScrollToTop />
@@ -34,10 +26,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products/:category" element={<ShoppingPage />} />
         <Route path="/product/:id" element={<ProductPage />} />
-        <Route
-          path="/login"
-          element={user ? <Navigate to="/profile" /> : <SignUpLoginPage />}
-        />
+        <Route path="/login" element={<SignUpLoginPage />} />
         <Route path="/cart" element={<Cart />} />
         <Route
           path="/profile"

@@ -32,7 +32,7 @@ const CarouselSlide = () => {
           <img
             className="d-block w-100"
             src="https://cdn.shopify.com/s/files/1/1276/0919/products/5_101f4fdf-878d-4c25-a1c4-57b9026f6fda_1080x.jpg?v=1632905516"
-            alt="First slide"
+            alt="Knitwear"
           />
           <Carousel.Caption style={{ marginBottom: "2rem" }}>
             <CaptionContainer>
@@ -48,7 +48,7 @@ const CarouselSlide = () => {
           <img
             className="d-block w-100"
             src="https://cdn.shopify.com/s/files/1/1276/0919/products/2_75fc49d9-80de-4ea3-88d3-e9479dd4a84e_1080x.jpg?v=1630468376"
-            alt="Second slide"
+            alt="Outerwear"
           />
 
           <Carousel.Caption style={{ marginBottom: "2rem" }}>

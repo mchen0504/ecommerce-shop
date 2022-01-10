@@ -15,7 +15,7 @@ const Title = styled.h1`
 
 const SectionTitle = (props) => {
   return (
-    <Container>
+    <Container id="best-sellers">
       <Title>{props.title}</Title>
     </Container>
   );

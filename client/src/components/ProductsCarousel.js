@@ -54,7 +54,7 @@ const ProductsCarousel = ({ products, type }) => {
               <Link
                 to={`/product/${type === "home" ? product.id : product._id}`}
               >
-                <img src={product.src} />
+                <img src={product.src} alt={product.title} />
               </Link>
               <Info>
                 <Link

@@ -105,6 +105,7 @@ const Tabs = () => {
   useEffect(() => {
     if (currentUser) {
       const { from } = location.state || { from: { pathname: "/" } };
+      console.log(from);
       navigate(from);
     }
   }, [currentUser]);

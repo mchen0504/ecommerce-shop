@@ -48,18 +48,22 @@ export const dropdownImgItems = [
   {
     id: "61d0e8adc1a118a805cf180f",
     src: "//cdn.shopify.com/s/files/1/1276/0919/products/4-7.jpg?v=1624005557",
+    title: "Fiona Cotton White Midi Dress",
   },
   {
     id: "61d0eb13b44c5db3eaae0f4c",
     src: "//cdn.shopify.com/s/files/1/1276/0919/products/5_fced3f2e-07e0-4d44-aa0f-1f87217ceb4f.jpg?v=1607485940",
+    title: "Nocry Cotton Coat",
   },
   {
     id: "61d0e921a479a95ab0215004",
     src: "//cdn.shopify.com/s/files/1/1276/0919/products/8_9c5a7324-68f1-434e-81b8-9f27696f53f5.jpg?v=1636447239",
+    title: "Leah High-waisted Straight Trousers",
   },
   {
     id: "61d0e99509db150508c3332b",
     src: "//cdn.shopify.com/s/files/1/1276/0919/products/6_5b19c761-1814-46f4-876b-097d2ce75097.jpg?v=1629195733",
+    title: "Khloe Cotton Pullover Hoodie - Brown",
   },
 ];
 

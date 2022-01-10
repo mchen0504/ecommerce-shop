@@ -129,17 +129,27 @@ const Navbar = () => {
           >
             SHOP ALL
           </LeftItem>
-          <LeftItem style={{ marginLeft: "10%" }}>BEST SELLERS</LeftItem>
+          <LeftItem style={{ marginLeft: "10%" }}>
+            <Link
+              to="/#best-sellers"
+              style={{
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              BEST SELLERS
+            </Link>
+          </LeftItem>
         </Left>
         <Center>
-          <Link to="/" style={{ color: "inhert", textDecoration: "none" }}>
+          <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
             <Logo>MICHELLE</Logo>
           </Link>
         </Center>
         <Right>
           <RightItem className="material-icons-outlined">search</RightItem>
           <Link
-            to={"/login"}
+            to={"/profile"}
             style={{
               textDecoration: "none",
               marginLeft: "10%",

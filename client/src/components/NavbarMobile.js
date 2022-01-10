@@ -22,7 +22,7 @@ const Options = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
 `;
 
 const OptionItem = styled.span`
@@ -40,7 +40,7 @@ const NavbarMobile = ({ showMobileNav, setShowMobileNav }) => {
       onHide={handleClose}
       placement={"top"}
       style={{
-        height: "23rem",
+        height: "25rem",
         backgroundColor: "rgba(247, 240, 219)",
       }}
     >
@@ -69,7 +69,16 @@ const NavbarMobile = ({ showMobileNav, setShowMobileNav }) => {
                 );
               })}
             </Options>
-            <Title>BEST SELLERS</Title>
+            <Link
+              to="/#best-sellers"
+              onClick={handleClose}
+              style={{
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              <Title>BEST SELLERS</Title>
+            </Link>
           </Top>
           <hr />
           <Link to={"/login"} style={{ textDecoration: "none" }}>

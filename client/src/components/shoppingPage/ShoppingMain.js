@@ -55,7 +55,7 @@ const Select = styled.select`
   }
 `;
 
-const ShoppingMain = ({ category, filters, setShowMobileNav }) => {
+const ShoppingMain = ({ category, filters, setShowMobileFilters }) => {
   const [sort, setSort] = useState("default");
 
   useEffect(() => {
@@ -67,7 +67,7 @@ const ShoppingMain = ({ category, filters, setShowMobileNav }) => {
       <Top>
         <Title>{category.charAt(0).toUpperCase() + category.slice(1)}</Title>
         <FilterSort>
-          <FilterButton onClick={() => setShowMobileNav(true)}>
+          <FilterButton onClick={() => setShowMobileFilters(true)}>
             Filters
           </FilterButton>
           <Select

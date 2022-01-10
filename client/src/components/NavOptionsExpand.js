@@ -146,7 +146,7 @@ const NavOptionsExpand = ({
                   to={`/product/${item.id}`}
                 >
                   <ImageContainer>
-                    <Image src={item.src}></Image>
+                    <Image src={item.src} alt={item.title}></Image>
                   </ImageContainer>
                 </Link>
               </ProductContainer>

@@ -5,14 +5,14 @@ const FiltersMobile = ({
   category,
   filters,
   setFilters,
-  showMobileNav,
-  setShowMobileNav,
+  showMobileFilters,
+  setShowMobileFilters,
 }) => {
-  const handleClose = () => setShowMobileNav(false);
+  const handleClose = () => setShowMobileFilters(false);
 
   return (
     <Offcanvas
-      show={showMobileNav}
+      show={showMobileFilters}
       onHide={handleClose}
       style={{
         width: "60%",

@@ -5,9 +5,23 @@ import Categories from "../components/home/Categories";
 import SectionTitle from "../components/SectionTitle";
 import BestSellers from "../components/home/BestSellers";
 import Footer from "../components/Footer";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
-  // const [bestSellers, setBestSellers] = useState();
+  const { pathname, hash, key } = useLocation();
+
+  useEffect(() => {
+    if (hash === "") {
+      window.scrollTo(0, 0);
+    } else {
+      const id = hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView();
+      }
+    }
+  }, [pathname, hash, key]);
 
   return (
     <div>

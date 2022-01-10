@@ -37,7 +37,7 @@ const ShoppingPage = () => {
     colors: [],
   });
 
-  const [showMobileNav, setShowMobileNav] = useState(false);
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
 
   useEffect(() => {
     setFilters({
@@ -57,8 +57,8 @@ const ShoppingPage = () => {
             category={category}
             filters={filters}
             setFilters={setFilters}
-            showMobileNav={showMobileNav}
-            setShowMobileNav={setShowMobileNav}
+            showMobileNav={showMobileFilters}
+            setShowMobileNav={setShowMobileFilters}
           />
           <Left>
             <Filters
@@ -71,7 +71,7 @@ const ShoppingPage = () => {
             <ShoppingMain
               category={category}
               filters={filters}
-              setShowMobileNav={setShowMobileNav}
+              setShowMobileNav={setShowMobileFilters}
             />
           </Right>
         </Content>

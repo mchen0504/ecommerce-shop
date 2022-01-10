@@ -99,7 +99,7 @@ const AddToCartButton = styled.button`
   padding: 0.4rem;
   background-color: ${(props) => (props.disabled ? "gray" : "black")};
   color: white;
-  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
+  cursor: pointer;
   border: none;
   font-size: 0.9rem;
   border-radius: 3px;
@@ -173,7 +173,7 @@ const ProductInfo = () => {
     <Container>
       <Left>
         <ImageContainer>
-          <Image src={product.src} />
+          <Image src={product.src} alt={product.title} />
         </ImageContainer>
       </Left>
       <Right>

@@ -112,7 +112,7 @@ const CartItem = ({ product }) => {
       <ItemContainer>
         <ImageContainer>
           <Link to={`/product/${product.id}`}>
-            <Image src={product.src} />
+            <Image src={product.src} alt={product.title} />
           </Link>
         </ImageContainer>
         <DescContainer>
