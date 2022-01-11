@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const SizeOption = styled.button`
+const SizeButton = styled.button`
   height: 27px;
   width: 27px;
   border: 0.1px solid gray;
@@ -14,7 +14,7 @@ const SizeOption = styled.button`
   }
 `;
 
-const ColorOption = styled.button`
+const ColorButton = styled.button`
   padding: 0.2rem 0.5rem;
   border: 0.1px solid gray;
   border-radius: 3px;
@@ -27,20 +27,22 @@ const ColorOption = styled.button`
   }
 `;
 
-const FilterOption = ({ type, label, selected, setFilter }) => {
-  const handleClick = (filterType) => {
-    setFilter(label, filterType);
-  };
-
+const SelectOption = ({ type, label, selected, setSelected }) => {
   return type === "size" ? (
-    <SizeOption onClick={() => handleClick("sizes")} selected={selected}>
+    <SizeButton
+      selected={selected === label}
+      onClick={() => setSelected(label)}
+    >
       {label}
-    </SizeOption>
+    </SizeButton>
   ) : (
-    <ColorOption onClick={() => handleClick("colors")} selected={selected}>
+    <ColorButton
+      selected={selected === label}
+      onClick={() => setSelected(label)}
+    >
       {label}
-    </ColorOption>
+    </ColorButton>
   );
 };
 
-export default FilterOption;
+export default SelectOption;

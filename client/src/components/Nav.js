@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+
 import NavOptionsExpand from "./NavOptionsExpand";
 import NavbarMobile from "./NavbarMobile";
 

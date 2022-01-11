@@ -81,7 +81,7 @@ const NavbarMobile = ({ showMobileNav, setShowMobileNav }) => {
             </Link>
           </Top>
           <hr />
-          <Link to={"/login"} style={{ textDecoration: "none" }}>
+          <Link to={"/profile"} style={{ textDecoration: "none" }}>
             <Title>ACCOUNT</Title>
           </Link>
         </Offcanvas.Body>

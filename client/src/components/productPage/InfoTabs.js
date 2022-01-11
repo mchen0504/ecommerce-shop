@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const TabContainer = styled.div`
   margin: 2rem 0;
@@ -24,12 +23,9 @@ const TabButton = styled.div`
   cursor: pointer;
   outline: none;
   color: gray;
-  ${(props) =>
-    props.selected &&
-    css`
-      border-bottom: 2px solid rgb(255, 69, 0);
-      color: rgb(255, 69, 0);
-    `}
+  border-bottom: ${(props) => props.selected && "2px solid rgb(255, 69, 0)"};
+  color: ${(props) => props.selected && "rgb(255, 69, 0)"};
+  font-weight: ${(props) => props.selected && "500"};
 `;
 
 const ContentContainer = styled.div`

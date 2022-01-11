@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import styled from "styled-components";
+
 import Spinner from "react-bootstrap/Spinner";
 
 import ProductsAll from "../ProductsAll";
@@ -16,23 +16,8 @@ const EmptyContainer = styled.div`
   align-items: center;
 `;
 
-const ProductList = ({ category, filters, sort }) => {
-  const [products, setProducts] = useState([]);
+const ProductList = ({ category, products, filters, sort }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
-
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const res = await axios.get(
-          category
-            ? `http://localhost:5000/api/products?category=${category}`
-            : "http://localhost:5000/api/products"
-        );
-        setProducts(res.data);
-      } catch (error) {}
-    };
-    getProducts();
-  }, [category]);
 
   useEffect(() => {
     let filtered = products;
@@ -102,10 +87,6 @@ const ProductList = ({ category, filters, sort }) => {
     }
   }, [filters, sort]);
 
-  let displayedProducts = category
-    ? filteredProducts
-    : filteredProducts.slice(0, 8);
-
   if (products.length === 0) {
     return (
       <ProductContainer>
@@ -136,7 +117,7 @@ const ProductList = ({ category, filters, sort }) => {
 
   return (
     <ProductContainer>
-      <ProductsAll products={displayedProducts} />
+      <ProductsAll products={filteredProducts} />
     </ProductContainer>
   );
 };

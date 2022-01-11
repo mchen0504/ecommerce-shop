@@ -1,8 +1,10 @@
 import Offcanvas from "react-bootstrap/Offcanvas";
+
 import Filters from "./Filters";
 
 const FiltersMobile = ({
   category,
+  products,
   filters,
   setFilters,
   showMobileFilters,
@@ -23,6 +25,7 @@ const FiltersMobile = ({
       <Offcanvas.Body>
         <Filters
           category={category}
+          products={products}
           filters={filters}
           setFilters={setFilters}
           closeMobileFilters={handleClose}

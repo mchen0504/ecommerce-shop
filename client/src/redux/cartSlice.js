@@ -31,9 +31,14 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     removeFromCart(state, action) {
-      state.products = state.products.filter(
-        (existedProduct) => existedProduct.id !== action.payload
+      const product = action.payload;
+      const toBeRemovedIndex = state.products.findIndex(
+        (target) =>
+          target.id === product.id &&
+          target.size === product.size &&
+          target.color === product.color
       );
+      state.products.splice(toBeRemovedIndex, 1);
       state.total = state.products
         .reduce((price, product) => product.price * product.qty + price, 0)
         .toFixed(2);

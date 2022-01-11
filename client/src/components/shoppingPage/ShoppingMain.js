@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+
 import ProductList from "./ProductList";
 
 const Top = styled.div`
@@ -55,7 +56,12 @@ const Select = styled.select`
   }
 `;
 
-const ShoppingMain = ({ category, filters, setShowMobileFilters }) => {
+const ShoppingMain = ({
+  category,
+  products,
+  filters,
+  setShowMobileFilters,
+}) => {
   const [sort, setSort] = useState("default");
 
   useEffect(() => {
@@ -85,7 +91,12 @@ const ShoppingMain = ({ category, filters, setShowMobileFilters }) => {
           </Select>
         </FilterSort>
       </Top>
-      <ProductList category={category} filters={filters} sort={sort} />
+      <ProductList
+        category={category}
+        products={products}
+        filters={filters}
+        sort={sort}
+      />
     </div>
   );
 };

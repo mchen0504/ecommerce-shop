@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Container = styled.div``;
-
 const Input = styled.input`
   position: fixed;
   opacity: 0;
@@ -21,7 +19,7 @@ const Label = styled.label`
 
 const CategoryOption = ({ category, currentCategory, closeMobileFilters }) => {
   return (
-    <Container>
+    <div>
       <Link to={`/products/${category}`} onClick={closeMobileFilters}>
         <Input type="radio" value={category} name="category" id={category} />
         <Label
@@ -31,7 +29,7 @@ const CategoryOption = ({ category, currentCategory, closeMobileFilters }) => {
           {category.charAt(0).toUpperCase() + category.slice(1)}
         </Label>
       </Link>
-    </Container>
+    </div>
   );
 };
 

@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import axios from "axios";
-
-import styled from "styled-components";
-
 import { useSelector } from "react-redux";
+import axios from "axios";
+import styled from "styled-components";
+import StripeCheckout from "react-stripe-checkout";
 
 import CartItem from "./CartItem";
-
-import StripeCheckout from "react-stripe-checkout";
 
 const PUBLIC_KEY =
   "pk_test_51KBwafLsJMKgwPZfRMS0rIiml3PC3cdMNWpnD5ZbWzcRumnVsMmWSYZWqO7sC8rlOOPI27nLBQeEVZqouSZzvGxt00vRFHUPQ0";
@@ -85,7 +82,7 @@ const NextStep = styled.div`
   justify-content: space-between;
   @media (max-width: 575px) {
     flex-direction: column-reverse;
-    gap: 1rem;
+    margin-top: 1rem;
   }
 `;
 
@@ -94,12 +91,12 @@ const CheckoutButton = styled.button`
   background-color: black;
   color: white;
   border: 1px solid black;
-  font-size: 1rem;
+  font-size: 1.1rem;
   border-radius: 3px;
   width: 18.5rem;
   @media (max-width: 575px) {
     width: 90vw;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -200,7 +197,8 @@ const CartDetails = () => {
       <hr />
 
       {cart.products.map((product) => {
-        return <CartItem key={product.id} product={product} />;
+        let key = product.id + product.size + product.color;
+        return <CartItem key={key} product={product} />;
       })}
       <hr />
 

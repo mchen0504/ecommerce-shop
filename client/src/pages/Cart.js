@@ -1,9 +1,9 @@
 import Announcement from "../components/Announcement";
-import CartDetails from "../components/cart/CartDetails";
-import Footer from "../components/Footer";
 import Navbar from "../components/Nav";
-import Recommendation from "../components/Recommendation";
+import CartDetails from "../components/cart/CartDetails";
 import SectionTitle from "../components/SectionTitle";
+import Recommendation from "../components/Recommendation";
+import Footer from "../components/Footer";
 
 const Cart = () => {
   return (

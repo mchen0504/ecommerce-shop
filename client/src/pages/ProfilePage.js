@@ -1,10 +1,11 @@
-import Announcement from "../components/Announcement";
-import Footer from "../components/Footer";
-import Navbar from "../components/Nav";
 import { useDispatch } from "react-redux";
-import { logout } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+
+import Announcement from "../components/Announcement";
+import Navbar from "../components/Nav";
+import Footer from "../components/Footer";
+import { logout } from "../redux/userSlice";
 
 const Container = styled.div`
   padding: 0 3%;

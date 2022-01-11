@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import CategoryOption from "./CategoryOption";
 import FilterOption from "./FilterOption";
 
@@ -27,21 +28,26 @@ const FilterOptions = styled.div`
   margin-top: 1rem;
 `;
 
-const Filters = ({ category, filters, setFilters, closeMobileFilters }) => {
+const Filters = ({
+  category,
+  products,
+  filters,
+  setFilters,
+  closeMobileFilters,
+}) => {
   const categories = ["tops", "dresses", "bottoms", "knitwear", "outerwear"];
-  const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
-  const colors = [
-    "red",
-    "orange",
-    "yellow",
-    "green",
-    "blue",
-    "purple",
-    "brown",
-    "black",
-    "beige",
-    "white",
-  ];
+  const sizes = new Set();
+  products.forEach((product) => {
+    product.sizes.forEach((size) => {
+      sizes.add(size);
+    });
+  });
+  const colors = new Set();
+  products.forEach((product) => {
+    product.colors.forEach((color) => {
+      colors.add(color);
+    });
+  });
 
   const handleFilterSelect = (selected, filterType) => {
     let copy = [...filters[filterType]];
@@ -62,7 +68,7 @@ const Filters = ({ category, filters, setFilters, closeMobileFilters }) => {
     }
   };
 
-  let sizeButtons = sizes.map((size) => {
+  let sizeButtons = [...sizes].map((size) => {
     let selected = false;
     if (filters.sizes.includes(size)) {
       selected = true;
@@ -78,7 +84,7 @@ const Filters = ({ category, filters, setFilters, closeMobileFilters }) => {
     );
   });
 
-  let colorButtons = colors.map((color) => {
+  let colorButtons = [...colors].map((color) => {
     let selected = false;
     if (filters.colors.includes(color)) {
       selected = true;

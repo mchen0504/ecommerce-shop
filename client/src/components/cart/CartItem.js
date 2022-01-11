@@ -18,12 +18,20 @@ const ItemContainer = styled.div`
 
 const ImageContainer = styled.div`
   flex: 1;
+  margin-right: 0.5rem;
 `;
 
 const Image = styled.img`
-  width: 70%;
+  width: 90%;
   height: 20vh;
   object-fit: cover;
+  @media (min-width: 575px) {
+    width: 80%;
+  }
+  @media (min-width: 1024px) {
+    width: 70%;
+    height: 25vh;
+  }
 `;
 
 const DescContainer = styled.div`
@@ -103,7 +111,13 @@ const CartItem = ({ product }) => {
         })
       );
     } else {
-      dispatch(removeFromCart(product.id));
+      dispatch(
+        removeFromCart({
+          id: product.id,
+          size: product.size,
+          color: product.color,
+        })
+      );
     }
   };
 

@@ -2,15 +2,14 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
+import { useDispatch } from "react-redux";
 
 import Spinner from "react-bootstrap/Spinner";
 
-import ColorOption from "./ColorOption";
-import SizeOption from "./SizeOption";
-import Tabs from "./InfoTabs";
-
-import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
+import SelectOption from "./SelectOption";
+import Tabs from "./InfoTabs";
+import AddedConfirmation from "./AddedConfirmation";
 
 const LoadingContainer = styled.div`
   padding: 5% 10% 10% 10%;
@@ -69,8 +68,6 @@ const Price = styled.span`
   font-weight: bold;
 `;
 
-const FilterContainer = styled.div``;
-
 const Filter = styled.div`
   margin: 1rem 0;
 `;
@@ -92,16 +89,14 @@ const Select = styled.select`
   text-align: center;
 `;
 
-const Option = styled.option``;
-
 const AddToCartButton = styled.button`
   width: 90%;
-  padding: 0.4rem;
+  padding: 0.5rem;
   background-color: ${(props) => (props.disabled ? "gray" : "black")};
   color: white;
   cursor: pointer;
   border: none;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   border-radius: 3px;
   @media (min-width: 768px) {
     width: 70%;
@@ -119,6 +114,7 @@ const ProductInfo = () => {
   const [selectedSize, setSelectedSize] = useState();
   const [selectedColor, setSelectedColor] = useState();
   const [selectedQuantity, setSelectedQuantity] = useState(1);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
   useEffect(() => {
     const getProduct = async () => {
@@ -126,9 +122,11 @@ const ProductInfo = () => {
       try {
         const res = await axios.get(`http://localhost:5000/api/products/${id}`);
         setProduct(res.data);
+        setSelectedSize();
+        setSelectedColor();
+        setSelectedQuantity(1);
         setLoading(false);
       } catch (error) {
-        console.log(error);
         setLoading(false);
       }
     };
@@ -141,9 +139,9 @@ const ProductInfo = () => {
   }
   let quantityOptions = [...Array(maxQuantity).keys()].map((q) => {
     return (
-      <Option key={q + 1} value={q + 1}>
+      <option key={q + 1} value={q + 1}>
         {q + 1}
-      </Option>
+      </option>
     );
   });
 
@@ -164,9 +162,7 @@ const ProductInfo = () => {
         selectedQuantity,
       })
     );
-    setSelectedSize();
-    setSelectedColor();
-    setSelectedQuantity(1);
+    setShowConfirmation(true);
   };
 
   return (
@@ -182,17 +178,20 @@ const ProductInfo = () => {
           <Price>${product.price?.$numberDecimal}</Price>
         </Section>
         <Section>
-          <FilterContainer>
+          <div>
             <Filter>
-              <FilterTitle>SIZE</FilterTitle>
+              <FilterTitle>
+                {selectedSize ? `SIZE - ${selectedSize}` : "SIZE"}
+              </FilterTitle>
               <FilterOptions>
                 {product.sizes?.map((size) => {
                   return (
-                    <SizeOption
+                    <SelectOption
                       key={size}
-                      size={size}
-                      selectedSize={selectedSize}
-                      setSelectedSize={setSelectedSize}
+                      type="size"
+                      label={size}
+                      selected={selectedSize}
+                      setSelected={setSelectedSize}
                     />
                   );
                 })}
@@ -205,11 +204,12 @@ const ProductInfo = () => {
               <FilterOptions>
                 {product.colors?.map((color) => {
                   return (
-                    <ColorOption
+                    <SelectOption
                       key={color}
-                      color={color}
-                      selectedColor={selectedColor}
-                      setSelectedColor={setSelectedColor}
+                      type="color"
+                      label={color}
+                      selected={selectedColor}
+                      setSelected={setSelectedColor}
                     />
                   );
                 })}
@@ -221,13 +221,14 @@ const ProductInfo = () => {
                 <Select
                   name="quantity"
                   id="quantity"
+                  value={selectedQuantity}
                   onChange={(e) => setSelectedQuantity(e.target.value)}
                 >
                   {quantityOptions}
                 </Select>
               </FilterOptions>
             </Filter>
-          </FilterContainer>
+          </div>
         </Section>
         <Section>
           <AddToCartButton
@@ -239,12 +240,24 @@ const ProductInfo = () => {
             }
             onClick={handleAddToCart}
           >
-            ADD TO CART
+            ADD TO BAG
           </AddToCartButton>
         </Section>
         <Section>
           <Tabs product={product} />
         </Section>
+
+        <AddedConfirmation
+          show={showConfirmation}
+          onHide={() => setShowConfirmation(false)}
+          id={id}
+          title={product.title}
+          src={product.src}
+          price={product.price?.$numberDecimal}
+          quantity={selectedQuantity}
+          size={selectedSize}
+          color={selectedColor}
+        />
       </Right>
     </Container>
   );

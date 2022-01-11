@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import styled, { css } from "styled-components";
-
+import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
+
 import { signUp, login, clearError } from "../../redux/userSlice";
 
 const Container = styled.div`
@@ -15,7 +15,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 65%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   @media (min-width: 576px) {
@@ -39,13 +39,9 @@ const TabButton = styled.div`
   cursor: pointer;
   outline: none;
   color: gray;
-  ${(props) =>
-    props.selected &&
-    css`
-      border-bottom: 2px solid #2e1f0f;
-      color: #2e1f0f;
-      font-weight: 600;
-    `}
+  border-bottom: ${(props) => props.selected && "2px solid #2e1f0f"};
+  color: ${(props) => props.selected && "#2e1f0f"};
+  font-weight: ${(props) => props.selected && "600"};
 `;
 
 const InputContainer = styled.div`
@@ -56,7 +52,7 @@ const InputContainer = styled.div`
 
 const Input = styled.input`
   width: 100%;
-  height: 2.1rem;
+  height: 2.5rem;
   font-size: 1rem;
   background-color: transparent;
   border: 1.5px solid #d3d3d3;
@@ -69,8 +65,8 @@ const Input = styled.input`
 
 const SubmitButton = styled.button`
   width: 100%;
-  height: 2.1rem;
-  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
   background-color: #2e1f0f;
   color: white;
   border: none;
@@ -105,7 +101,6 @@ const Tabs = () => {
   useEffect(() => {
     if (currentUser) {
       const { from } = location.state || { from: { pathname: "/" } };
-      console.log(from);
       navigate(from);
     }
   }, [currentUser]);

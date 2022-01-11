@@ -1,12 +1,11 @@
 import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import axios from "axios";
-
 import styled from "styled-components";
 
 import Spinner from "react-bootstrap/Spinner";
+
 import { resetCart } from "../redux/cartSlice";
 
 const Container = styled.div`

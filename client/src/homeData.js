@@ -1,3 +1,18 @@
+export const carouselSlideItems = [
+  {
+    src: "https://cdn.shopify.com/s/files/1/1276/0919/products/5_101f4fdf-878d-4c25-a1c4-57b9026f6fda_1080x.jpg?v=1632905516",
+    category: "knitwear",
+    title: "STAYING WARM",
+    text: "Cozy knitwear to wear under your coats.",
+  },
+  {
+    src: "https://cdn.shopify.com/s/files/1/1276/0919/products/2_75fc49d9-80de-4ea3-88d3-e9479dd4a84e_1080x.jpg?v=1630468376",
+    category: "outerwear",
+    title: "STAYING WARM",
+    text: "Check out our outerwear for a warm winter.",
+  },
+];
+
 export const categoryItems = [
   {
     id: 1,

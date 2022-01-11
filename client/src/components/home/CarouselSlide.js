@@ -1,8 +1,8 @@
 import styled from "styled-components";
-
 import { Link } from "react-router-dom";
-
 import Carousel from "react-bootstrap/Carousel";
+
+import { carouselSlideItems } from "../../homeData";
 
 const CaptionContainer = styled.div`
   background: rgba(255, 255, 255, 0.4);
@@ -27,38 +27,25 @@ const Paragraph = styled.p``;
 const CarouselSlide = () => {
   return (
     <Carousel controls={false}>
-      <Carousel.Item style={{ height: "80vh" }}>
-        <Link to="/products/knitwear">
-          <img
-            className="d-block w-100"
-            src="https://cdn.shopify.com/s/files/1/1276/0919/products/5_101f4fdf-878d-4c25-a1c4-57b9026f6fda_1080x.jpg?v=1632905516"
-            alt="Knitwear"
-          />
-          <Carousel.Caption style={{ marginBottom: "2rem" }}>
-            <CaptionContainer>
-              <Title>STAYING WARM</Title>
-              <Paragraph>Cozy knitwear to wear under your coats.</Paragraph>
-            </CaptionContainer>
-          </Carousel.Caption>
-        </Link>
-      </Carousel.Item>
-
-      <Carousel.Item style={{ height: "80vh" }}>
-        <Link to="/products/outerwear">
-          <img
-            className="d-block w-100"
-            src="https://cdn.shopify.com/s/files/1/1276/0919/products/2_75fc49d9-80de-4ea3-88d3-e9479dd4a84e_1080x.jpg?v=1630468376"
-            alt="Outerwear"
-          />
-
-          <Carousel.Caption style={{ marginBottom: "2rem" }}>
-            <CaptionContainer>
-              <Title>STAYING WARM</Title>
-              <Paragraph>Check out our outerwear for a warm winter.</Paragraph>
-            </CaptionContainer>
-          </Carousel.Caption>
-        </Link>
-      </Carousel.Item>
+      {carouselSlideItems.map((slide) => {
+        return (
+          <Carousel.Item style={{ height: "75vh" }}>
+            <Link to={`/products/${slide.category}`}>
+              <img
+                className="d-block w-100"
+                src={slide.src}
+                alt="slide.category"
+              />
+              <Carousel.Caption style={{ marginBottom: "2rem" }}>
+                <CaptionContainer>
+                  <Title>{slide.title}</Title>
+                  <Paragraph>{slide.text}</Paragraph>
+                </CaptionContainer>
+              </Carousel.Caption>
+            </Link>
+          </Carousel.Item>
+        );
+      })}
     </Carousel>
   );
 };

@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import Announcement from "../components/Announcement";
 import Navbar from "../components/Nav";
 import CarouselSlide from "../components/home/CarouselSlide";
@@ -5,8 +8,6 @@ import Categories from "../components/home/Categories";
 import SectionTitle from "../components/SectionTitle";
 import BestSellers from "../components/home/BestSellers";
 import Footer from "../components/Footer";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 const Home = () => {
   const { pathname, hash, key } = useLocation();

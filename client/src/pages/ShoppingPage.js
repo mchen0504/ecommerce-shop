@@ -1,13 +1,14 @@
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-
+import axios from "axios";
 import styled from "styled-components";
+
 import Announcement from "../components/Announcement";
-import Footer from "../components/Footer";
 import Navbar from "../components/Nav";
 import FiltersMobile from "../components/shoppingPage/FiltersMobile";
 import Filters from "../components/shoppingPage/Filters";
 import ShoppingMain from "../components/shoppingPage/ShoppingMain";
+import Footer from "../components/Footer";
 
 const Container = styled.div`
   padding: 3%;
@@ -32,12 +33,24 @@ const ShoppingPage = () => {
   const location = useLocation();
   const category = location.pathname.split("/")[2];
 
+  const [products, setProducts] = useState([]);
   const [filters, setFilters] = useState({
     sizes: [],
     colors: [],
   });
-
   const [showMobileFilters, setShowMobileFilters] = useState(false);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await axios.get(
+          `http://localhost:5000/api/products?category=${category}`
+        );
+        setProducts(res.data);
+      } catch (error) {}
+    };
+    getProducts();
+  }, [category]);
 
   useEffect(() => {
     setFilters({
@@ -55,14 +68,16 @@ const ShoppingPage = () => {
         <Content>
           <FiltersMobile
             category={category}
+            products={products}
             filters={filters}
             setFilters={setFilters}
-            showMobileNav={showMobileFilters}
-            setShowMobileNav={setShowMobileFilters}
+            showMobileFilters={showMobileFilters}
+            setShowMobileFilters={setShowMobileFilters}
           />
           <Left>
             <Filters
               category={category}
+              products={products}
               filters={filters}
               setFilters={setFilters}
             />
@@ -70,8 +85,9 @@ const ShoppingPage = () => {
           <Right>
             <ShoppingMain
               category={category}
+              products={products}
               filters={filters}
-              setShowMobileNav={setShowMobileFilters}
+              setShowMobileFilters={setShowMobileFilters}
             />
           </Right>
         </Content>
