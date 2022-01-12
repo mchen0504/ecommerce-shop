@@ -65,7 +65,6 @@ const userLogin = async (req, res) => {
       { expiresIn: "3d" }
     );
 
-    // send everything but password to the client
     const { password, ...others } = user._doc;
 
     res.status(200).json({ ...others, accessToken });

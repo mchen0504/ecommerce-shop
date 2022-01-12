@@ -127,9 +127,7 @@ const CartDetails = () => {
   };
 
   const handleCheckout = () => {
-    if (!currentUser) {
-      navigate("/login", { state: { from: location } });
-    }
+    navigate("/login", { state: { from: location } });
   };
 
   useEffect(() => {

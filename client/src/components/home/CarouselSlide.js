@@ -29,7 +29,7 @@ const CarouselSlide = () => {
     <Carousel controls={false}>
       {carouselSlideItems.map((slide) => {
         return (
-          <Carousel.Item style={{ height: "75vh" }}>
+          <Carousel.Item key={slide.category} style={{ height: "75vh" }}>
             <Link to={`/products/${slide.category}`}>
               <img
                 className="d-block w-100"
