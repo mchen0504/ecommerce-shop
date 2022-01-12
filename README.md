@@ -9,4 +9,4 @@ An ecommerce web application built using
 - Frontend: **React**
 - Deployment: **Heroku**
 
-All product information is scraped from [Simple Retro] (https://www.simpleretro.com/) using **BeautifulSoup**.
+All product information is scraped from [Simple Retro](https://www.simpleretro.com/) using **BeautifulSoup**.
